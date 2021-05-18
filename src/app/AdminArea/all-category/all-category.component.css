@@ -1,0 +1,35 @@
+mat-card{
+  margin-bottom:20px;
+}
+.post-image{
+  width: 100%;
+}
+input#search_text {
+  height: 41px;
+  font-size: 16px;
+}
+.post-image img{
+  width: 100%;
+  max-width: 63px;
+  height: 100%;
+  max-height: 60px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+table.table.table-striped {
+  font-size: 18px;
+}
+.btn-my{
+  font-size: 15px;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    border-color: #ddd;
+    background: linear-gradient(45deg, #ffe8ef, #deffeb);
+}
+mat-form-field.mat-form-field {
+  margin: 0 18px;
+}
+h3.panel-title {
+  width: 100%;
+  margin-top: 10px;
+}

@@ -1,0 +1,13 @@
+<div class="main">
+  <p class="sign" align="center">se connecter</p>
+  <form class="form1" (ngSubmit)="saverapide(rapidecom)" #rapidecom="ngForm" >
+    <input class="un " type="text" align="center" placeholder="Nom d'utilisateur" name="name" ngModel required>
+    <input class="pass" type="password" align="center" placeholder="Mode de passe" name="pass" ngModel required="">
+    <button class="submit" align="center">se connecter</button>
+<!--    <p class="forgot" align="center"><a>Forgot Password?</a></p>-->
+
+  </form>
+</div>
+<div class="back-home text-center">
+  <a mat-button style="color: orangered" [routerLink]="['/dashboard/all_orders']"> retour à la page d'accueil <span class="material-icons">swap_horiz</span></a>
+</div>

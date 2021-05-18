@@ -1,0 +1,47 @@
+<table class="table table-striped table-hover classm">
+  <tr class="">
+    <th></th>
+    <th>N°</th>
+    <th>poids</th>
+    <th>prix de vente</th>
+    <th>prix d'achats</th>
+    <th>prix promotion</th>
+    <th>quantity</th>
+    <th>date create</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tbody *ngFor="let poids of poids; let i = index">
+  <tr *ngIf="poids.poids" [ngClass]="poids.qtypoids == 0 ?'epuise':''">
+    <td></td>
+    <td>{{i}}</td>
+    <td>{{poids.poids}}</td>
+    <td>{{poids.pricepoids | currency:'DH'}}</td>
+    <td>{{poids.prixAchats | currency:'DH'}}</td>
+    <td>{{(poids.prixPromo?poids.prixPromo:0) | currency:'DH'}}</td>
+    <td>{{poids.qtypoids}}</td>
+    <td>{{poids.created_at}}</td>
+    <td><i class="fa fa-trash" (click)="delete(poids.id_manage_gramage,poids.product_id,poids.poids)"></i></td>
+    <td><a [routerLink]="['/dashboard/update_poids/',poids.id_manage_gramage]"><i class="fa fa-edit"></i></a></td>
+    <td><span class="text-danger"*ngIf="poids.qtypoids ==0">Epuisé</span><button class="btn-warning" (click)="epuise(poids.id_manage_gramage,poids.product_id,poids.poids)" *ngIf="poids.qtypoids !=0 ">Epuisé <span class="spinner-border" *ngIf="isepuise && poids.id_manage_gramage == id2"></span></button></td>
+    <td *ngIf="poids.defaults == 1 " class="df" style="cursor: pointer"><i class="fa fa-check" >
+    </i>défaut</td>
+    <td *ngIf="poids.qtypoids == 0"></td>
+    <td *ngIf="poids.defaults != 1 && poids.qtypoids != 0"  style="cursor: pointer" (click)="updefaults(poids.id_manage_gramage,poids.product_id,poids.poids,poids.qtypoids,poids.prixPromo,poids.prixAchats,poids.pricepoids)"><i class="fa fa-check" *ngIf="poids.id_manage_gramage != id"> Non défaut
+    </i>   <div class="spinner" *ngIf="idloading && poids.id_manage_gramage ==id">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div></td>
+  </tr>
+  </tbody>
+</table>
+<mat-divider></mat-divider>
+<br>
+<br>
+<br>
+<div class="container" style="text-align: center;">
+  <app-managegramage-and-litrage (gettingThePoids) = "gettingUpThePoids(prodId)"></app-managegramage-and-litrage>
+</div>

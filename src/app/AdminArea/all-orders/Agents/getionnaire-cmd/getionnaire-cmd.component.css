@@ -1,0 +1,1424 @@
+.jumbotron-fluid{
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  height: auto;
+  background: #41de00;
+  box-shadow: none;
+  margin: 0;
+  padding-top: 21px;
+  box-shadow: 0px 3px 7px #b3b1b1;
+}
+h1.display-1 {
+  font-size: 41px;
+  text-shadow: 2px 2px 3px grey;
+  position: relative;
+  top: 92px;
+}
+mat-radio-group.mat-radio-group {
+  margin-left: 35px;
+  font-size: 11px;
+}
+mat-radio-button#mat-radio-3 {
+  padding-left: 27px;
+}
+mat-form-field.mat-form-field{
+  border: 2px solid #c7c4c4;
+  border-radius: 20px;
+  width: 212px;
+  padding: 0px 9px 2px 10px;
+}
+.text-success.role {
+  color: #ffffff!important;
+  font-size: 13px;
+  text-shadow: 2px 2px 7px #b9b6b6;
+  font-weight: bold;
+}
+h1.display-3 {
+  font-size: 41px;
+  text-shadow: 2px 2px 3px grey;
+}
+/************ about_us css end ***************/
+/* line 2, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  background-color: #e8f0f2;
+}
+
+/* line 7, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb .breadcrumb_iner p {
+  font-size: 15px;
+  color: #777777;
+}
+
+/* line 14, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb {
+  margin-bottom: 0px !important;
+}
+
+
+/* line 1616, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group textarea {
+  height: 150px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+/* line 1622, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select {
+  width: 100%;
+}
+
+/* line 1625, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select span {
+  color: #797979;
+}
+
+/* line 1629, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select .list {
+  width: 100%;
+  border-radius: 0px;
+}
+
+/* line 1633, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select .list li {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1642, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account #f-option2 {
+  margin-right: 5px;
+}
+
+/* line 1646, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account #f-option3 {
+  margin-right: 5px;
+}
+
+/* line 1650, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account a {
+  color: #2f7dfc;
+}
+
+/* line 1658, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box {
+  background: #f4f4f4;
+  padding: 30px;
+}
+
+/* line 1662, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box h2 {
+  border-bottom: 1px solid #dddddd;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2a2a;
+  padding-bottom: 15px;
+}
+
+/* line 1672, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a {
+  font-size: 14px;
+  color: #797979;
+  font-weight: normal;
+  border-bottom: 1px solid #eeeeee;
+  display: block;
+  line-height: 42px;
+}
+
+/* line 1680, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a span {
+  float: right;
+}
+
+/* line 1684, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a .middle {
+  float: none;
+  width: 50px;
+  text-align: right;
+  display: inline-block;
+  margin-left: 30px;
+  color: #2a2a2a;
+}
+
+/* line 1696, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li:nth-child(4) a .middle {
+  margin-left: 48px;
+}
+
+/* line 1706, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li a {
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500;
+}
+
+/* line 1711, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li a span {
+  color: #797979;
+  text-transform: capitalize;
+}
+
+/* line 1719, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li:last-child a span {
+  color: #2a2a2a;
+}
+
+/* line 1728, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500;
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* line 1738, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+  background: #fff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* line 1752, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+}
+
+/* line 1764, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4 img {
+  padding-left: 60px;
+}
+
+/* line 1769, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item p {
+  background: #fff;
+  padding: 20px;
+}
+
+/* line 1776, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item.active h4:before {
+  background: #2f7dfc;
+  border-color: #2f7dfc;
+}
+
+/* line 1784, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account {
+  margin: 15px 0;
+}
+
+/* line 1787, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account label {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #2a2a2a;
+}
+
+/* line 1793, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account a {
+  color: #2f7dfc;
+}
+
+/* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .btn_3 {
+  display: block;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  /* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+  .order_box .btn_3 {
+    padding: 9px 34px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+  .order_box .btn_3 {
+    padding: 9px 34px;
+  }
+}
+
+/* End Cart Area css
+============================================================================================ */
+/* Tracking Form Area css
+============================================================================================ */
+/* line 1820, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner p {
+  max-width: 870px;
+  color: #2a2a2a;
+  margin-bottom: 25px;
+}
+
+/* line 1826, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+}
+/* line 1820, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner p {
+  max-width: 870px;
+  color: #2a2a2a;
+  margin-bottom: 25px;
+}
+
+/* line 1826, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+}
+
+/* End Tracking Form Area css
+============================================================================================ */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(0, 142, 5, 0.26);
+}
+
+/* End Tracking Form Area css
+============================================================================================ */
+
+/* line 39, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_3 {
+  display: inline-block;
+  padding: 9px 42px;
+  border-radius: 50px;
+  background-color: #2f7dfc;
+  border: 1px solid #f4f4f4;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: 1px solid #2f7dfc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 52, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_3:hover {
+  background-color: #00c81d;
+  color: #fff;
+}
+
+/* line 57, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_2 {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  color: #1e1e1e;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  text-transform: capitalize;
+}
+
+/* line 72, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_2:hover {
+  color: #fff !important;
+  background-color: #2f7dfc;
+}
+
+@media (max-width: 991px) {
+  /* line 57, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+  .btn_2 {
+    height: 50px;
+    width: 140px;
+    line-height: 50px;
+  }
+}
+
+/* line 87, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_4 {
+  color: #2f7dfc;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 53px;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+  /* line 87, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+  .btn_4 {
+    margin-top: 30px;
+  }
+}
+
+/* line 100, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_4 img {
+  width: 20px;
+  margin-left: 15px;
+}
+
+/*=================== custom button rule start ====================*/
+/* line 108, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+/*.button {*/
+/*  display: inline-block;*/
+/*  border: 1px solid transparent;*/
+/*  font-size: 15px;*/
+/*  font-weight: 500;*/
+/*  padding: 12px 54px;*/
+/*  border-radius: 4px;*/
+/*  color: #fff;*/
+/*  border: 1px solid #edeff2;*/
+/*  text-transform: uppercase;*/
+/*  background-color: #2f7dfc;*/
+/*  cursor: pointer;*/
+/*  -webkit-transition: 0.5s;*/
+/*  transition: 0.5s;*/
+/*}*/
+
+@media (max-width: 767px) {
+/*  !* line 108, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss *!*/
+/*  .button {*/
+/*    font-size: 13px;*/
+/*    padding: 9px 24px;*/
+/*  }*/
+/*}*/
+
+/*!* line 127, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss *!*/
+/*.button:hover {*/
+/*  color: #fff;*/
+}
+button.btn-info {
+  background: #30c300;
+  border: none;
+  width: 123px;
+  height: 44px;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 0px 4px grey;
+}
+.table-responsive {
+  border: 2px solid #eae5e5;
+  padding: 16px 7px 12px 8px;
+  border-radius: 14px;
+  box-shadow: 1px 2px 6px #e8e7e7;
+  margin-top: 26px;
+}
+
+.nonlivree{
+  background: #f31a1a;
+  color: white;
+}
+.reserve{
+  background: orange;
+  color: white;
+}
+.payee{
+  background: #33c11a;
+  color: white;
+}
+.statusnon{
+  color: #292828!important;
+  font-size: 12px;
+  text-shadow: 2px 2px 7px #b9b6b6;
+  font-weight: bold;
+}
+/* line 132, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-link {
+  letter-spacing: 0;
+  color: #3b1d82;
+  border: 0;
+  padding: 0;
+}
+
+/* line 138, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-link:hover {
+  background: transparent;
+  color: #3b1d82;
+}
+/*.text-success.mystatus{*/
+/*  color: #1eabd8 !important;*/
+/*  font-size: 13px;*/
+/*  font-weight: bold;*/
+/*  !*text-shadow: 2px 3px 4px #5d5d5d;*!*/
+/*  !*background: #909090;*!*/
+/*  !*padding: 8px 0px 0px 22px;*!*/
+/*  margin: 0;*/
+/*  border-radius: 11px;*/
+/*}*/
+.text-success.mystatus {
+  color: #1b7e9e !important;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  border-radius: 11px;
+}
+
+/* line 144, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-header {
+  color: #fff;
+  border-color: #edeff2;
+}
+
+/* line 148, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-header:hover {
+  background: #b8024c;
+  color: #fff;
+}
+
+/* line 154, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-contactForm {
+  color: #fff;
+  border-color: #edeff2;
+  padding: 12px 25px;
+}
+p {
+  color: black;
+  font-size: large;
+  font-family: sans-serif;
+  font-style: oblique;
+  text-shadow: 2px 2px 5px #bbbbbb;
+}
+
+/* End Main Button Area css
+============================================================================================ */
+section.tracking_box_area.section_padding {
+  margin-top: 183px;
+}
+section.breadcrumb.breadcrumb_bg {
+  position: relative;
+  top: 124px;
+}
+
+.white-box {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.white-box .box-title {
+  margin: 0 0 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.text-muted {
+  color: #8d9ea7;
+}
+button.btn-success {
+  float: right;
+  border: none;
+  box-shadow: 1px 1px 4px grey;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+code, kbd, pre, samp {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+.table-responsive {
+  overflow-y: hidden;
+}
+
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+.table {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table {
+  background-color: transparent;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #e4e7ea;
+}
+.row.tableux {
+  position: relative;
+  top: 141px;
+  left: 15px;
+  width: 100%;
+  margin-top: 31px;
+  font-size: 16px;
+  box-shadow: 1px 2px 3px #d4d4d4;
+}
+tbody {
+  color: #797979;
+}
+.container.mycontainer {
+  position: relative;
+  top: 155px;
+}
+a.float-left {
+  position: absolute;
+  right: 0;
+}
+i.fa.fa-eye:hover {
+  color: #02d002;
+  transform: scale(1.5);
+}
+.mat-ripple.mat-list-item-ripple {
+  width: 100%;
+}
+span.myspan {
+  padding: 28px;
+}
+p.text-danger {
+  font-size: 17px;
+  margin-left: 30px;
+}
+.table-responsive {
+  font-size: 18px;
+}
+.myord {
+  margin: 0px 38px 0px 18px;
+}
+.col-md-12 {
+  margin-top: 2px;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.form-control {
+  display: block;
+  width: 50%;
+  height: calc(2.0em + .75rem + 2px);
+  padding: 0.375rem .75rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  position: absolute;
+  left: 343px;
+}
+td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+}
+i.fa.fa-search {
+  position: absolute;
+  top: 29px;
+  left: 54%;
+  right: 0px;
+  font-size: 13px;
+  color: #058a2e;
+  text-shadow: 1px 2px 3px #b9b9b9;
+}
+.controlrs {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin-top: 20px;
+}
+th {
+  font-size: 11px;
+  font-family: sans-serif;
+  /* width: 138px!important; */
+}
+.sections {
+  height: 100vh;
+  background: #ffffff47;
+}
+button.btn-secondary {
+  background: #00a1bb;
+  border: none;
+  width: 23px;
+  height: 21px;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 0px 4px grey;
+  position: relative;
+  top: 13px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sections{
+    height: 100vh;
+    width: 100%;
+    background: #43a53100;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  .controlrs {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin-top: 21px;
+    display: inline-block;
+  }
+  mat-form-field.mat-form-field {
+    border: 2px solid #c7c4c4;
+    border-radius: 20px;
+    width: 142px;
+    padding: 0px 9px 2px 10px;
+  }
+  mat-radio-button#mat-radio-3 {
+    padding-left: 11px;
+    font-size: 10px;
+    /* width: 70px; */
+  }
+  .form-control{
+    display: block;
+    width: 50%;
+    height: calc(2.0em + .75rem + 2px);
+    padding: 0.375rem .75rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    position: absolute;
+    left: 188px;
+  }
+  .table-responsive{
+    border: 2px solid #eae5e5;
+    padding: 16px 0px 9px 4px;
+    border-radius: 14px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+  }
+}
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 2px solid #eae5e5;
+    padding: 16px 0px 9px 4px;
+    border-radius: 14px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+    width: 758px;
+    margin-left: -12px;
+  }
+}
+@media (min-width: 425px) and (max-width: 720px) {
+  .sections{
+    background: #43a53100;
+    width: 100%!important;
+    display: inline-block;
+    display: inline-block;
+  }
+  .spinner-border.myspiners{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+  }
+  .spinner-border.fullsoiners {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    position: relative;
+    top: 78px;
+  }
+  h1.display-1 {
+    font-size: 29px;
+    text-shadow: 2px 2px 3px grey;
+    position: relative;
+    top: 70px;
+  }
+  button.btn-info{
+    background: #30c300;
+    border: none;
+    width: 95px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    box-shadow: 0px 0px 4px grey;
+  }
+  .jumbotron-fluid{
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    height: auto;
+    background: #41de00;
+    box-shadow: none;
+    margin: 0;
+    padding-top: 21px;
+    box-shadow: 0px 3px 7px #b3b1b1;
+    width: 100%;
+  }
+  .table-responsive {
+    border: 2px solid #eae5e5;
+    border-radius: 14px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+    width: 412px;
+  }
+  .form-control {
+    display: block!important;
+    width: 100%!important;
+    height: calc(2.0em + .75rem + 2px)!important;
+    padding: 0.375rem .75rem!important;
+    font-size: 1.5rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #495057!important;
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    border: 1px solid #ced4da!important;
+    border-radius: .25rem!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+    position: absolute;
+    left: 0;
+    margin-left: 22px;
+  }
+  h1.display-3 {
+    font-size: 23px;
+    text-shadow: 2px 2px 3px grey;
+  }
+  mat-form-field.mat-form-field {
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+    position: relative;
+    top: 23px;
+  }
+  mat-form-field.mat-form-field.myselect2{
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+
+  }
+  mat-radio-group.mat-radio-group {
+    margin-left: 0;
+    font-size: 9px;
+  }
+  .controlrs {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    position: relative;
+    left: -10px;
+  }
+}
+@media (min-width: 400px) and (max-width: 424px) {
+  .sections{
+    background: #43a53100;
+    width: 100%!important;
+    display: inline-block;
+    display: inline-block;
+  }
+  .spinner-border.myspiners{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+  }
+  .spinner-border.fullsoiners {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    position: relative;
+    top: 78px;
+  }
+  h1.display-1 {
+    font-size: 29px;
+    text-shadow: 2px 2px 3px grey;
+    position: relative;
+    top: 70px;
+  }
+  button.btn-info{
+    background: #30c300;
+    border: none;
+    width: 95px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    box-shadow: 0px 0px 4px grey;
+  }
+  .jumbotron-fluid{
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    height: auto;
+    background: #41de00;
+    box-shadow: none;
+    margin: 0;
+    padding-top: 21px;
+    box-shadow: 0px 3px 7px #b3b1b1;
+    width: 100%;
+  }
+  .table-responsive {
+    border: 2px solid #eae5e5;
+    border-radius: 3px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+    width: 401px;
+  }
+  .form-control {
+    display: block!important;
+    width: 100%!important;
+    height: calc(2.0em + .75rem + 2px)!important;
+    padding: 0.375rem .75rem!important;
+    font-size: 1.5rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #495057!important;
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    border: 1px solid #ced4da!important;
+    border-radius: .25rem!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+    position: absolute;
+    left: 0;
+    margin-left: 22px;
+  }
+  h1.display-3 {
+    font-size: 23px;
+    text-shadow: 2px 2px 3px grey;
+  }
+  mat-form-field.mat-form-field {
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+    position: relative;
+    top: 15px;
+  }
+  mat-form-field.mat-form-field.myselect2{
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+
+  }
+  mat-radio-group.mat-radio-group {
+    margin-left: 0;
+    font-size: 9px;
+  }
+  .controlrs {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    position: relative;
+    left: -10px;
+  }
+}
+@media (min-width: 360px) and (max-width: 378px) {
+  .sections{
+    background: #43a53100;
+    width: 100%!important;
+    display: inline-block;
+    display: inline-block;
+  }
+  .spinner-border.myspiners{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+  }
+  .spinner-border.fullsoiners {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    position: relative;
+    top: 78px;
+  }
+  h1.display-1 {
+    font-size: 23px;
+    text-shadow: 2px 2px 3px grey;
+    position: relative;
+    top: 70px;
+  }
+  button.btn-info{
+    background: #30c300;
+    border: none;
+    width: 95px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    box-shadow: 0px 0px 4px grey;
+  }
+  .jumbotron-fluid{
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    height: auto;
+    background: #41de00;
+    box-shadow: none;
+    margin: 0;
+    padding-top: 21px;
+    box-shadow: 0px 3px 7px #b3b1b1;
+    width: 100%;
+  }
+  .table-responsive {
+    border: 2px solid #eae5e5;
+    border-radius: 14px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+    width: 360px;
+  }
+  .form-control {
+    display: block!important;
+    width: 100%!important;
+    height: calc(2.0em + .75rem + 2px)!important;
+    padding: 0.375rem .75rem!important;
+    font-size: 1.5rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #495057!important;
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    border: 1px solid #ced4da!important;
+    border-radius: .25rem!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+    position: absolute;
+    left: 0;
+    margin-left: 22px;
+  }
+  h1.display-3 {
+    font-size: 23px;
+    text-shadow: 2px 2px 3px grey;
+  }
+  mat-form-field.mat-form-field {
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+    position: relative;
+    top: 15px;
+  }
+  mat-form-field.mat-form-field.myselect2{
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+
+  }
+  mat-radio-group.mat-radio-group {
+    margin-left: 0px;
+    font-size: 8px;
+    /*padding-bottom: 14px!impo;*/
+    /* margin-bottom: 16px; */
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 15px;
+    top: -7px;
+  }
+  .controlrs {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    position: relative;
+    left: -10px;
+  }
+}
+@media (min-width: 310px) and (max-width: 359px) {
+  .sections{
+    background: #43a53100;
+    width: 100%!important;
+    display: inline-block;
+    display: inline-block;
+  }
+  .spinner-border.myspiners{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+  }
+  .spinner-border.fullsoiners {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    position: relative;
+    top: 78px;
+  }
+  h1.display-1 {
+    font-size: 18px;
+    text-shadow: 2px 2px 3px grey;
+    position: relative;
+    top: 70px;
+  }
+  button.btn-info{
+    background: #30c300;
+    border: none;
+    width: 95px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    box-shadow: 0px 0px 4px grey;
+  }
+  .jumbotron-fluid{
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    height: auto;
+    background: #41de00;
+    box-shadow: none;
+    margin: 0;
+    padding-top: 21px;
+    box-shadow: 0px 3px 7px #b3b1b1;
+    width: 100%;
+  }
+  .table-responsive {
+    border: 2px solid #eae5e5;
+    border-radius: 4px;
+    box-shadow: 1px 2px 6px #e8e7e7;
+    margin-top: 26px;
+    width: 310px;
+  }
+  .form-control {
+    display: block!important;
+    width: 100%!important;
+    height: calc(2.0em + .75rem + 2px)!important;
+    padding: 0.375rem .75rem!important;
+    font-size: 1.5rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #495057!important;
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    border: 1px solid #ced4da!important;
+    border-radius: .25rem!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+    position: absolute;
+    left: 0;
+    margin-left: 22px;
+  }
+  .select {
+    position: relative;
+    left: 25px;
+    top: 16px;
+  }
+  mat-radio-button#mat-radio-3 {
+    padding-left: 0px;
+    position: relative;
+    left: -5px;
+    top: 11px;
+  }
+  h1.display-3 {
+    font-size: 21px;
+    text-shadow: 2px 2px 3px grey;
+  }
+  mat-form-field.mat-form-field {
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+    position: relative;
+    top: 15px;
+  }
+  mat-form-field.mat-form-field.myselect2{
+    border: 2px solid #c7c4c4;
+    border-radius: 9px;
+    width: 121px;
+    padding: 0px 10px 0px 6px;
+
+  }
+  mat-radio-group.mat-radio-group {
+    margin-left: 0px;
+    font-size: 8px;
+    /*padding-bottom: 14px!impo;*/
+    /* margin-bottom: 16px; */
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 15px;
+    top: -7px;
+  }
+  .controlrs {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    position: relative;
+    left: -10px;
+  }
+}

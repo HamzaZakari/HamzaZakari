@@ -1,0 +1,49 @@
+
+<form [formGroup]="postForm" (ngSubmit)="savecat()">
+  <mat-card class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="example-container">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add New Boutique</h4>
+      </div>
+      <br><br>
+      <br>
+
+      <mat-form-field class="field">
+        <input matInput placeholder="le nome de boutique" name="titlefr" formControlName="titlefr">
+      </mat-form-field> <br>
+      <mat-form-field>
+        <input matInput placeholder="Botique name" name="titleAng" formControlName="titleAng">
+      </mat-form-field> <br>
+      <mat-form-field>
+        <input matInput placeholder="اسم متجر" name="titlearab" formControlName="titlearab">
+      </mat-form-field> <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom Fournisseur</mat-label>
+        <mat-select name="forni" formControlName="forni">
+          <mat-option *ngFor="let f of Fournisseur" [value]="f.id_forni">{{f.nom_forni}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="modal-body">
+        <div class="imgprv">
+          <button mat-stroked-button type="button" (click)="openFile.click()">Upload pecture</button>
+          <input type="file" class="inputclass" #openFile (change)="onchangeimage($event)">
+        </div>
+        <div class="image-privew" *ngIf="imagepreview && postForm.get('image').valid && mode === 'created' ">
+          <img [src]="imagepreview" alt="postForm.value.title">
+        </div>
+        <div class="image-privew" *ngIf="postForm.get('image').valid && mode === 'edit'">
+          <img [src]="imagepreview ? imagepreview : url+category.image"s alt="postForm.value.title">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-my" placement="top" ngbTooltip="dissmiss add product">
+            Close
+          </button>
+          <button mat-button class="btn btn-success btn-my" type="submit" >Save</button>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+  </mat-card>
+
+</form>

@@ -1,0 +1,183 @@
+<div class="sections">
+<header class="jumbotron jumbotron-fluid">
+  <div class="container-fluid text-center">
+    <h1 class="display-3">Bonjour {{full_name}} <span class="text-success role">{{role}}</span> </h1>
+<!--    <p class="lead pb-4">We help you maximize performance and build a healthy organization.</p>-->
+<!--    <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn More</a></p>-->
+  </div>
+</header>
+<div class="myord">
+  <div class="section">
+    <div class="controlrs">
+      <ngb-panel>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1" (change)="radio1($event)">Filtrer les nouvelles commandes</mat-radio-button>
+          <mat-radio-button value="2" (change)="radio1($event)">Filtrer toutes les commandes</mat-radio-button>
+        </mat-radio-group>
+        <div class="select">
+        <mat-form-field class="myselect">
+          <mat-label>Filtrer par statut</mat-label>
+          <mat-select value="" *ngIf="role == 'Agent de Commandes'">
+            <mat-option value="Voir tout les commandes" (click)="seeall()">Voir tout les commandes</mat-option>
+<!--            <mat-option value="" >Aucun</mat-option>-->
+            <span *ngFor="let rol of statusAf">
+            <mat-option  value="{{rol.status}}"(click)="click(rol.status, rol.val)"  *ngIf="rol.status == 'Commandée' || rol.status == 'en cours de traitement' || rol.status == 'Traitée' || rol.status == 'Réserve'">
+              {{rol.status}}
+            </mat-option>
+          </span>
+          </mat-select>
+
+          <mat-select value="" *ngIf="role == 'Agent de livraisons'">
+            <mat-option value="Voir tout les commandes" (click)="seeall()">Voir tout les commandes</mat-option>
+            <span *ngFor="let rol of statusAf">
+            <mat-option value="{{rol.status}}"(click)="click(rol.status, rol.val)" *ngIf="rol.status == 'préparation de livraison' || rol.status == 'en cours de livraison' || rol.status == 'Non Livrée' || rol.status == 'Livrée' || rol.status == 'payée'">
+              {{rol.status}}
+            </mat-option>
+              </span>
+          </mat-select>
+
+          <mat-select value="" *ngIf="role == 'Livreurs'">
+            <mat-option value="Voir tout les commandes" (click)="seeall()">Voir tout les commandes</mat-option>
+            <span *ngFor="let rol of statusAf" >
+            <mat-option value="{{rol.status}}"(click)="click(rol.status, rol.val)" *ngIf="rol.status == 'Livrée' || rol.status == 'Non Livrée' || rol.status =='en cours de livraison'">
+              {{rol.status}}
+            </mat-option>
+              </span>
+          </mat-select>
+        </mat-form-field>
+
+          <mat-form-field class="myselect1" *ngIf="role == 'Agent de livraisons'">
+            <mat-label>Filtrer par le nom de livreur</mat-label>
+            <mat-select value="" *ngIf="role == 'Agent de livraisons'">
+<!--              <mat-option value="Voir tout les commandes" (click)="seeall()">Voir tout les commandes</mat-option>-->
+              <span *ngFor="let rol of LesLivreurs">
+            <mat-option  value="{{rol.Full_name}}"(click)="fliterLiv(rol.Full_name, rol.id_Admin)">
+              {{rol.Full_name}}
+            </mat-option>
+          </span>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="ml-2 myselect2">
+            <mat-label>Filter par date</mat-label>
+            <input matInput [matDatepicker]="picker" (dateChange)="dateD($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </ngb-panel>
+
+    <div class="col-md-12" *ngIf="!fullspinner">
+      <input class="form-control" type="text" id="search_text" name="search_text" placeholder="Recherche..." (keyup)="search($event)">
+<!--   <i class="fa fa-search"></i>-->
+    </div>
+    </div>
+    <header class="lenthpage">
+      <div class="container-fluid text-center">
+        <h1 class="display-1" *ngIf="orders.length == 0 && !messageafterdate && !fullspinner">Pas de commandes pour l'instant</h1>
+        <h1 class="display-1" *ngIf="orders.length == 0 && messageafterdate && !fullspinner">Pas de commandes pour cette Date </h1>
+        <!--    <p class="lead pb-4">We help you maximize performance and build a healthy organization.</p>-->
+        <!--    <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn More</a></p>-->
+        <span class="spinner-border fullsoiners" *ngIf="fullspinner"></span>
+      </div>
+    </header>
+    <div style="width: 100%">
+      <mat-form-field *ngIf="role == 'Agent de livraisons' && orders.length !=0 && showselect_livreurs" >
+        <mat-label>les Livreurs</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let ag2 of LesLivreurs" [value]="ag2.Full_name" (click)="Livreurschose(ag2.Role, ag2.Full_name)">
+            {{ag2.Full_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field *ngIf="role == 'Agent de Commandes' && orders.length !=0 && showselect_liv" >
+        <mat-label>les agents de Livraison</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let ag2 of lesagentsLivraison" [value]="ag2.Full_name" (click)="agentsLivreurschose(ag2.Role, ag2.Full_name)">
+            {{ag2.Full_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="table-responsive" *ngIf="orders.length !=0">
+      <table class="table">
+        <thead>
+        <tr>
+          <th *ngIf="role != 'Agent de livraisons' && role != 'Livreurs'"></th>
+          <th *ngIf="role != 'Agent de livraisons' && role != 'Livreurs'"></th>
+          <th *ngIf="role == 'Agent de livraisons' && role != 'Livreurs'"></th>
+          <th *ngIf="role == 'Agent de livraisons' && role != 'Agent de Commandes'"></th>
+          <th *ngIf="role == 'Agent de Commandes'"></th>
+          <th *ngIf="role == 'Agent de Commandes'"></th>
+          <th *ngIf="role == 'Livreurs'"></th>
+          <th *ngIf="role == 'Livreurs'"></th>
+          <th *ngIf="role != 'Agent de livraisons' && role != 'Livreurs'"></th>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Telephone</th>
+          <th>Ville</th>
+          <th>region</th>
+          <th>adress</th>
+          <th>quantite</th>
+<!--          <th *ngIf="role != 'Livreurs' && role != 'Agent de livraisons'">Totale commande</th>-->
+          <th>Totale avec livraison</th>
+<!--          <th *ngIf="role != 'Livreurs' && role != 'Agent de livraisons'">prix livraison</th>-->
+<!--          <th>code Commande</th>-->
+          <th>la date de Commande</th>
+          <th>le status</th>
+          <th *ngIf="role == 'Agent de livraisons'">Livreur</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let o of orders; let i = index;">
+        <tr [ngClass]="o.status == 'Non Livrée'?'nonlivree':'' || o.status =='Réserve'?'reserve':'' || o.status == 'Livrée'?'payee':''">
+<!--         <td *ngIf="role == 'Agent de livraisons'"></td>-->
+          <td class="text-secondary" *ngIf="role == 'Agent de Commandes'">
+            <a class="btn btn-secondary" [routerLink]="['/dashboard/detail_Order' , o.id_orders?o.id_orders:o.id]" ><i class="fa fa-info"></i></a>
+          </td>
+          <td class="text-success" *ngIf="role == 'Agent de Commandes'"><button class="btn-info"*ngIf="o.status =='en cours de traitement'" (click)="reverse(o.id_orders?o.id_orders:o.id)">Réserve
+            <span class="spinner-border myspiners" *ngIf="isloading7 && o.id_orders == id7"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Agent de Commandes'"><button class="btn-info"*ngIf="o.status =='Commandée'" (click)="traiter(o.id_orders?o.id_orders:o.id)">Traiter
+            <span class="spinner-border myspiners" *ngIf="isloading && o.id_orders == id1"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Agent de Commandes'"><button class="btn-info" *ngIf="o.status =='en cours de traitement' || o.status == 'Réserve'" (click)="Traite(o.id_orders?o.id_orders:o.id)">Traitée
+            <span class="spinner-border myspiners" *ngIf="isloading2 && o.id_orders == id2"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Agent de Commandes'"><button class="btn-info" *ngIf="o.status =='Traitée'" (click)="preparation(o.id_orders?o.id_orders:o.id)" >préparation de livraison
+            <span class="spinner-border myspiners" *ngIf="isloading3 && o.id_orders == id3"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Agent de livraisons'"><button class="btn-info"*ngIf="o.status =='préparation de livraison' || o.status == 'Non Livrée'" (click)="encoursdelivraison(o.id_orders?o.id_orders:o.id)">Livrer
+            <span class="spinner-border myspiners" *ngIf="isloading4 && o.id_orders == id4"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Livreurs'"><button class="btn-info"*ngIf="o.status =='en cours de livraison'" (click)="livraisonsuccess(o.id_orders?o.id_orders:o.id)">Livrée
+            <span class="spinner-border myspiners" *ngIf="isloading5 && o.id_orders == id5"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Livreurs'"><button class="btn-info"*ngIf="o.status =='en cours de livraison'" (click)="NoLivree(o.id_orders)">Non livrée
+            <span class="spinner-border myspiners" *ngIf="isloading6 && o.id_orders == id6"></span>
+          </button></td>
+          <td class="text-success" *ngIf="role == 'Agent de livraisons'"><button class="btn-info"*ngIf="o.status =='Livrée'" (click)="payee(o.id_orders)">payée
+            <span class="spinner-border myspiners" *ngIf="isloading8 && o.id_orders == id8"></span>
+          </button></td>
+          <!--          <td class="text-info">{{o.Ville}}</td>-->
+          <!--          <td>Totale </td>-->
+          <td>{{i+1}}</td>
+          <td>{{o.Full_name?o.Full_name:o.clientfulname}}</td>
+          <td >{{o.telephone?'0'+o.telephone:o.teleclient}}</td>
+          <td >{{o.Ville?o.Ville:o.ville}}</td>
+          <td >{{o.regions?o.regions:o.regions}}</td>
+          <td >{{o.adress}}</td>
+          <td >{{o.count_pro}}</td>
+<!--          <td *ngIf="role != 'Livreurs' && role != 'Agent de livraisons'">{{o.total_whitout_prix_levrison | currency:'DH'}}</td>-->
+          <td >{{(o.total_whit_prix_livreson + o.prixLevrison) | currency:'DH'}}</td>
+<!--          <td *ngIf="role != 'Livreurs ' && role != 'Agent de livraisons'">{{o.prixLevrison | currency:'DH'}}</td>-->
+<!--          <td >{{o.CodeCMD}}</td>-->
+          <td >{{(o.created_at?o.created_at:o.created_atord) | date:'dd/MM/yyyy hh:mm':'GMT'}}</td>
+          <td class="text-success mystatus" [ngClass]="o.status == 'Non Livrée'?'statusnon':''">{{o.status}}</td>
+          <td *ngIf="role == 'Agent de livraisons'">{{o.livreur?o.livreur: "  "}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

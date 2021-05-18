@@ -1,0 +1,17 @@
+
+<div class="mycarousel">
+  <div class="noimage" *ngIf="showbande">
+  </div>
+<ngb-carousel class="mt-lg-4" interval="5000" *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngbSlide *ngFor="let image of imagesS">
+    <div class="picsum-img-wrapper topwrapper" [ngStyle]="{backgroundImage:'url('+image.images+')'}">
+    </div>
+    <div class="carousel-caption">
+      <h3 ><span class="titleor"></span></h3>
+    </div>
+  </ng-template>
+</ngb-carousel>
+</div>
+<br>
+<br>
+

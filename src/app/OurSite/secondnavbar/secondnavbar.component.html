@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+<script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<app-searchbar></app-searchbar>
+<div class="navbar">
+  <div class="con-logo" (click)="click_logo()"><img style="cursor: pointer" class="img-responsive logochia" src="assets/slideImages/logo.png" (click)="click_logo()"></div>
+
+  <ul class="nav-item-bar">
+    <li [routerLink]="['/']">Accueil</li>
+    <li (click)="scrollto()">Nos catégories</li>
+    <li [routerLink]="['/all_product']">Nos produits</li>
+    <li [routerLink]="['/my-ordres']">Mes commandes</li>
+    <li [routerLink]="['/about-us']">Contactez-nous</li>
+  </ul>
+
+  <div class="con-btns" (click)="openpupus()">
+    <button>
+      <img src="assets/shopping-cart.png" style="width: 30px; height: 30px;">
+      <span class="count">{{total ? total : 0}}</span></button>
+   </div>
+</div>
+
+<div class="navbar2" >
+  <!-- <div class="service-clients1">
+    <img class="img-responsive1 src1" src="assets/telemarketing.jpg">
+    <span class="phone-number1">0701232223  7j/7</span>
+  </div> -->
+  <div class="con-logo2" (click)="click_logo()"><img style="cursor: pointer" class="img-responsive" src="assets/slideImages/logo.png" (click)="click_logo()"></div>
+  <div class="con-btns2" >
+    <button class="res-btn"  (click)="openpupus()"><img src="assets/shopping-cart.png" style="width: 30px; height: 30px;"><span class="count2">{{total ? total : 0}}</span></button>
+  </div>
+  <div class="my-nemu"><div>
+    <img src="assets/open-menu.png" class="img-menu" (click)="opensidenav()">
+<!--    <i class="fa fa-list"></i>-->
+  </div>
+  </div>
+  <div class="js-side-nav-container side-nav-container" [ngClass]="close_side_nav" (click)="closesidenav()">
+    <div class="js-side-nav side-nav">
+      <a href="#0" class="js-menu-close menu-close">
+        <i class="sid-nav-logo" (click)="click_logo()"><img class="logo-image" style="cursor: pointer" src="assets/slideImages/logo.png"></i>
+        <i class="material-icons" (click)="closesidenav()"><img style="cursor: pointer" src="assets/close.png" class="close-img"></i>
+      </a>
+      <ul class="ul-list">
+        <li class="li-list" [routerLink]="['/']">Accueil</li>
+        <li class="li-list" [routerLink]="['/all_product']">Nos produits</li>
+        <li class="li-list" [routerLink]="['/my-ordres']">Mes commandes</li>
+        <li class="li-list" [routerLink]="['/about-us']">Contactez-nous</li>
+        <li class="li-list nos">Nos catégories</li>
+        <div class="chia-cols">
+          <li class=" nocollections" *ngFor="let cat of Category; let i = index;" [routerLink]="['/products',cat.id_boutique,cat.id]"> {{i+1}} . {{cat.titlefr != 'null' ? cat.titlefr :  cat.titlearab}}</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section" [ngClass]="openpupuspanier">
+  <div class="mask" (click)="closepupus()"></div>
+  <div class="pupup">
+    <div class="pupup-header">
+      <h3 class="title-parent">Votre panier{{cartPro.length > 0 ? '('+ cartPro.length +'..articles)' : '('+ cartPro.length +'..article)'}}</h3>
+      <button class="closebtn" (click)="closepupus()">Fermer</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="text-center total">
+      <span class="toto">Total</span>
+      <p class="price-t">{{Thetotalprice | number:'1.2-2'}} Dhs</p>
+    </div>
+    <div class="data-here" *ngFor="let p of cartPro">
+      <img class="pupup-img" [src]="url + p.image">
+      <p class="title">{{p.title != 'null' ? p.title : p.titleArab}}</p>
+      <p class="prices-qty">({{p.qtyPanier > 1 ? p.qtyPanier + ' articles' : p.qtyPanier + ' article'}}) x {{p.price | number:'1.2-2'}} Dhs</p>
+      <button class="btn-item" (click)="removetocart(p.product_id , p.qtyPanier ,p.qtypoids,p.restqty, p.price , p.poids)">Effacer</button>
+    </div>
+     <div class="empty">
+      <h2 class="text-danger" *ngIf="cartPro.length == 0">Votre panier est vide</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="pupup-footer">
+      <!-- <a class="btn-info" [routerLink]="['/panier']">Voire votre panier</a>
+      <a class="btn-success"  *ngIf="cartPro.length != 0" (click) = 'Acheter()'>Acheter</a> -->
+      <div class="button-area">
+        <a [routerLink]="['/panier']">Modifier le panier</a>
+        <a *ngIf="cartPro.length != 0" (click) = 'Acheter()'> passer à la caisse  </a>
+      </div>
+    </div>
+  </div>
+</div>

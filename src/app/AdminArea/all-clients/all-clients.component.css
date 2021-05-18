@@ -1,0 +1,103 @@
+table.table.table-striped {
+  font-size: 13px;
+}
+
+/*popups*/
+i.fa.fa-plus {
+  float: right;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: block;
+  width: 100%;
+  background: #0000002e;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+.modal-content {
+  height: 225px;
+  width: 500px;
+  font-size: 15px;
+}
+.modal-header {
+  /* font-size: 26px; */
+  padding-top: 19px;
+  margin: 2px;
+}
+button.btn.btn-success.mr-1 {
+  font-size: 14px;
+  padding: 8px 33px 8px 32px;
+}
+.modal-footer .btn+.btn {
+  margin-bottom: 0;
+  margin-left: 11px;
+  font-size: 14px;
+  padding: 8px 33px 8px 32px;
+}
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  font-size: 25px;
+}
+.text-danger {
+  color: #dc3545!important;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 19px;
+  width: 100%;
+}
+.spinner-border-sm {
+  width: 1.3rem;
+  height: 1.4rem;
+  border-width: .2em;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+.modal-footer {
+  padding-bottom: 13px;
+  margin: 2px;
+}
+/*popus*/
+.spinner-border.mys {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: text-bottom;
+  border: .15em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border .75s linear infinite;
+  animation: spinner-border .75s linear infinite;
+}
+.modal-contentngclass {
+  height: 418px;
+  width: 500px;
+  font-size: 15px;
+}
+mat-form-field.mat-form-field{
+  float: left;
+  display: contents;
+  /* padding: 14px; */
+  /* margin: 23px; */
+}
+select {
+  position: relative;
+  left: -2px;
+  margin-left: 13px;
+  width: 92%;
+  padding: 7px;
+  border-radius: 12px;
+  border: 2px solid #dcdedc;
+  color: gray;
+}
+input {
+  width: 91%;
+  height: 35px;
+  font-size: 11px;
+  position: relative;
+  left: 25px;
+}

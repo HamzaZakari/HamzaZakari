@@ -1,0 +1,452 @@
+<!--================Home Banner Area =================-->
+<app-secondnavbar></app-secondnavbar>
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="breadcrumb_iner">
+          <div class="breadcrumb_iner_item">
+            <p>Accueil / suivi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb start-->
+
+<!--================Tracking Box Area =================-->
+<!--<div class="mydiv" *ngIf="mynewdetail_oredrs.length == 0 && mynewOrders.length == 0">-->
+<!--  <button class="btn-info"> PFD COMMANDE <i class="fa fa-download"></i></button>-->
+<!--</div>-->
+<section class="tracking_box_area section_padding" >
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-12">
+        <div class="tracking_box_inner">
+<!--          <p>Pour suivre votre commande, veuillez entrer votre code de commande ou votre numéro de téléphone dans la case ci-dessous et appuyez sur le bouton "Suivre"..</p>-->
+          <form class="row tracking_form"  novalidate="novalidate">
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" id="order" name="order" placeholder="Code de commande ou Numéro de téléphone" [(ngModel)]="codecmd">
+            </div>
+<!--            <div class="col-md-12 form-group">-->
+<!--              <input type="email" class="form-control" id="email" name="email" placeholder="Numéro de téléphone" [(ngModel)]="telephone">-->
+<!--            </div>-->
+            <div class="col-md-12 form-group">
+              <button type="submit" value="submit" class="btn_3" (click)="suivi(codecmd)">rechercher
+              <span class="spinner-border" *ngIf="isloading"></span>
+              </button>
+            </div>
+            <p class="text-danger" *ngIf="no_orders">Il n'y a aucune demande pour cette information </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<div class="container mycontainer" *ngIf="mynewOrders.length > 0">
+  <div class="table-responsive mytb1">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>prix</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ord of mynewOrders let i = index">
+        <td>{{i+1}}</td>
+        <td>{{ord.Full_name}}</td>
+        <td class="text-info"> {{(ord.total_whit_prix_livreson + ord.prixLevrison) | currency:'DH'}} </td>
+          <td class="text-info">{{ord.created_atord | date:'dd/MM/yyyy hh:mm'}}</td>
+        <td><i matTooltip="pour voir les produits de ce commande " class="fa fa-eye" (click)="find(ord.id_orders)"></i> </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--================End Tracking Box Area =================-->
+<div class="container" *ngIf="mynewdetail_oredrs.length>0">
+<div class="row tableux">
+  <div class="col-sm-12">
+<!--    <button class="btn-success" (click)="pdfmaker()"><i class="fa fa-download"></i></button>-->
+    <div class="white-box" id="content">
+
+
+      <!-- Horizontal Steppers -->
+      <div *ngFor="let ord of mynewOrders">
+        <div *ngIf="ord.id_orders == myid">
+          <!-- /.Horizontal Steppers -->
+
+
+          <p class="text-muted">Nom : {{ord.Full_name}}</p>
+      <p class="text-muted">code :  {{ord.CodeCMD}}</p>
+      <p class="text-muted">total avec livraison  {{(ord.total_whit_prix_livreson + ord.prixLevrison) | currency:'DH'}}</p>
+          <div class="row" *ngIf="ord.status == 'Commandée'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <!-- First Step -->
+                <li matTooltip="Votre commande est dans cet état {{ord.status}}" class="warning">
+                  <a class="text-warning">
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetap ">Commandée</span>
+                  </a>
+                </li>
+                <!--                <li class="completed">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="circle">1</span>-->
+                <!--                    <span class="label">Commandée</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+                <!-- Second Step -->
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">en cours de traitement</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">Traitée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- Third Step  Livrée -->
+                <li class="active">
+                  <a>
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">Livrée</span>
+                  </a>
+                </li>
+                <!--                <li class="warning">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="text-success"><i class="fa fa-check-circle"></i></span>-->
+                <!--                    <span class="label">Third step</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'en cours de traitement'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <!-- First Step -->
+                <li matTooltip="Votre commande est dans cet état {{ord.status}}" class="warning">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetap">en cours de traitement</span>
+                  </a>
+                </li>
+                <!--                <li class="completed">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="circle">1</span>-->
+                <!--                    <span class="label">Commandée</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+                <!-- Second Step -->
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">Traitée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a>
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- Third Step  Livrée -->
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label ">Livrée</span>
+                  </a>
+                </li>
+                <!--                <li class="warning">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="text-success"><i class="fa fa-check-circle"></i></span>-->
+                <!--                    <span class="label">Third step</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'Traitée'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de traitement</span>
+                  </a>
+                </li>
+                <!-- First Step -->
+                <li  matTooltip="Votre commande est dans cet état {{ord.status}}" class="warning">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetap">Traitée</span>
+                  </a>
+                </li>
+                <!--                <li class="completed">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="circle">1</span>-->
+                <!--                    <span class="label">Commandée</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+                <!-- Second Step -->
+                <li class="active">
+                  <a >
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- Third Step  Livrée -->
+                <li class="active">
+                  <a>
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">Livrée</span>
+                  </a>
+                </li>
+                <!--                <li class="warning">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="text-success"><i class="fa fa-check-circle"></i></span>-->
+                <!--                    <span class="label">Third step</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'en cours de livraison'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de traitement</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Traitée</span>
+                  </a>
+                </li>
+                <!-- First Step Traitée -->
+                <li matTooltip="Votre commande est dans cet état {{ord.status}}" class="warning">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetap">en cours de livraison</span>
+                  </a>
+                </li>
+                <!--                <li class="completed">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="circle">1</span>-->
+                <!--                    <span class="label">Commandée</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+                <!-- Second Step -->
+                <!-- Third Step  Livrée -->
+                <li class="active">
+                  <a>
+                    <span class="text-muted"><i class="fa fa-history"></i></span>
+                    <span class="label">Livrée</span>
+                  </a>
+                </li>
+                <!--                <li class="warning">-->
+                <!--                  <a href="#!">-->
+                <!--                    <span class="text-success"><i class="fa fa-check-circle"></i></span>-->
+                <!--                    <span class="label">Third step</span>-->
+                <!--                  </a>-->
+                <!--                </li>-->
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'Livrée'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a>
+                    <span class="circle"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a>
+                    <span class="circle"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de traitement</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="circle"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Traitée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="circle"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- First Step Traitée -->
+                <li matTooltip="Votre commande est dans cet état {{ord.status}}" class="warning">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetap">Livrée</span>
+                  </a>
+                </li>
+
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'payée'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de traitement</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Traitée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- First Step Traitée -->
+                <li class="warning">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Livrée</span>
+                  </a>
+                </li>
+
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+          <div class="row" *ngIf="ord.status == 'Clôturée'">
+            <div class="col-md-12">
+              <!-- Stepers Wrapper -->
+              <ul class="stepper stepper-horizontal">
+                <li class="active">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Commandée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a>
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de traitement</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Traitée</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">en cours de livraison</span>
+                  </a>
+                </li>
+                <!-- First Step Traitée -->
+                <li class="warning">
+                  <a >
+                    <span class="text-success"><i class="fa fa-check-circle"></i></span>
+                    <span class="label myetapfin">Livrée</span>
+                  </a>
+                </li>
+
+              </ul>
+              <!-- /.Stepers Wrapper -->
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="table-responsive mytb2" *ngIf="myid">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>PRODUITS</th>
+            <th>PRIX TOTAL</th>
+            <th>POIDS</th>
+            <th>QUANTITÉ</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let det of mynewdetail_oredrs; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{det.title != 'null' ? det.title:det.title_arab}}</td>
+            <td class="text-info">{{det.totalcomonde | currency:'DH'}} </td>
+            <td class="text-info">{{det.poidscomonde}}</td>
+            <td>{{det.qtycomonde}} </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!-- /.row -->

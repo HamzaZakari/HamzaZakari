@@ -1,0 +1,61 @@
+<!--<div [ngClass]="containerclass" *ngIf="imagesS.length != 0">-->
+<!--  <div [ngClass]="rowclass">-->
+<!--    <div class="col-3">-->
+<!--      <div class="collections">-->
+<!--        <ul class="list-group">-->
+<!--          <li class="list-group-item nos-col">Nos collections</li>-->
+<!--          <li class="list-group-item itm" *ngFor="let c of Category1"><a style="color: #867e7eb5" [routerLink]="['/products',c.id_boutique,c.cat_id]">{{c.titleFr != 'null' ? c.titleFr : c.titleArab}}</a></li>-->
+<!--          <li class="list-group-item itm">Voir plus (...)</li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="side-nav-categories">-->
+<!--        <div class="title"><strong>Nos collections</strong></div>-->
+<!--        <ul id="category-tabs">-->
+<!--          <li *ngFor="let c of Category1" (click)="urllls(c.id_boutique,c.cat_id)"><a class="main-category" [routerLink]="['/products',c.id_boutique,c.cat_id]" > {{c.titleFr != 'null' ? c.titleFr : c.titleArab}}<i class="fa fa-minus"></i></a>-->
+<!--          </li><li (click)="scrollto()"><a class="main-category" > Voir plus <i class="fa fa-minus"></i></a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div [ngClass]="classMa">-->
+<!--      <div class="brands-carousel">-->
+<!--        <div class="swiper-container h-100" [swiper]="config">-->
+<!--          <div class="swiper-wrapper h-100">-->
+<!--            <div *ngFor="let brand of imagesS" class="swiper-slide">-->
+<!--              <div  class="slide-item">-->
+<!--                <a  class="brand-item" (click)="sliderroute(brand.product_id, brand.cat_id, brand.boutique_id)">-->
+<!--                  <img [attr.data-src]="url + brand.images" class="swiper-lazy">-->
+<!--                </a>-->
+<!--                <div class="swiper-lazy-preloader"></div>-->
+<!--                &lt;!&ndash;            <div class="parent-title">&ndash;&gt;-->
+<!--                &lt;!&ndash;              <span class="title">{{brand.titlefr}}</span>&ndash;&gt;-->
+<!--                &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="swiper-pagination"></div>-->
+<!--          <button mat-icon-button class="swiper-button-prev swipe-arrow" style="position: absolute; outline: none" color="primary"><mat-icon class="material-icons">keyboard_arrow_left</mat-icon></button>-->
+<!--          <button mat-icon-button class="swiper-button-next swipe-arrow" style="position: absolute;outline: none" color="primary"><mat-icon class="material-icons">keyboard_arrow_left</mat-icon></button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="empty-div" *ngIf="imagesS.length === 0">-->
+<!--  <div class="mt-lg-5">-->
+<!--    <br><br><br>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" [showNavigationIndicators]="false" (slide)="onSlide($event)">
+  <ng-template ngbSlide *ngFor="let img of imagesS; index as i">
+    <a  target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper" >
+        <div class="myslide"  [ngStyle]="{backgroundImage: 'url('+url+ img.images +')'}">
+
+        </div>
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>

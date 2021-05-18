@@ -1,0 +1,346 @@
+*{
+  box-sizing: border-box;
+}
+.noimage {
+  width: 100%;
+  height: 49px;
+  background: white;
+  display: inline-block;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+}
+.myfirstcarousel {
+  margin-top: 107px;
+}
+.picsum-img-wrapper.topwrapper.ng-star-inserted {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 38px;
+  width: 100%;
+}
+@media screen and (max-width: 1440px){
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50px!important;
+    width: 100%;
+  }
+
+}
+.picsum-img-wrapper.sliderH {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+ngb-carousel.carousel.slide {
+  outline: none!important;
+}
+@media screen and (min-width: 991px) and (max-width: 1024px) {
+  .myfirstcarousel{
+    margin-top: 91px;
+  }
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 52px!important;
+    width: 100%;
+  }
+  .picsum-img-wrapper.sliderH {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 477px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 2560px ){
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90px;
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px) {
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 38px;
+    width: 100%;
+  }
+}
+@media screen and(max-width: 425px){
+
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 31px;
+    width: 100%;
+    position: relative;
+    top: -2px;
+  }
+}
+/*.picsum-img-wrapper{*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: center;*/
+/*  background-size: cover;*/
+/*  height: 53px;*/
+/*}*/
+.mycarousel {
+  position: fixed;
+  top: -15px;
+  z-index: 10;
+  left: 0;
+  right: 0;
+}
+div.carousel {
+  touch-action: auto!important;
+}
+ngb-carousel.carousel.slide {
+  touch-action: auto!important;
+}
+span.titleor {
+  font-size: 13px!important;
+}
+div .carousel-caption{
+  width: 100%;
+  text-align: left;
+}
+h3 {
+  text-align: center;
+}
+.carousel-caption {
+  position: absolute!important;
+  right: 0!important;
+  left: 0!important;
+  z-index: 10;
+  padding-bottom: 0px;
+  color: #fff;
+  text-align: center;
+  top: 0px;
+}
+body{
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:1rem;
+  font-weight:normal;
+  line-height:1.5;
+  color:#333;
+  overflow-x:hidden;
+}
+
+.v-header{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+}
+@media screen and (min-width: 1550px) and (max-width: 2560px) {
+  .picsum-img-wrapper.sliderH{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1188px;
+    width: 100%;
+  }
+  .myfirstcarousel {
+    margin-top: 161px;
+  }
+}
+.container{
+  max-width:960px;
+  padding-left:1rem;
+  padding-right:1rem;
+  margin:auto;
+  text-align:center;
+}
+
+.fullscreen-video-wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.fullscreen-video-wrap video{
+  min-height:100%;
+  min-width:100%;
+}
+
+.header-overlay{
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  z-index:1;
+  background:#225470;
+  opacity:0.85;
+}
+
+.header-content{
+  z-index:2;
+}
+
+.header-content h1{
+  font-size:50px;
+  margin-bottom:0;
+}
+
+.header-content p{
+  font-size:1.5rem;
+  display:block;
+  padding-bottom:2rem;
+}
+@media (max-width: 320px) {
+  .picsum-img-wrapper.sliderH {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 151px!important;
+    width: 100% !important;
+  }
+}
+.btn{
+  background: #34b3a0;
+  color:#fff;
+  font-size:1.2rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.section{
+  padding:20px 0;
+}
+
+.section-b{
+  background:#333;
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .container{
+    padding-right:3rem;
+    padding-left:3rem;
+  }
+}
+
+
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%!important;
+  }
+}
+
+
+h1{
+  color: #d5dcd4;
+}
+
+p.subtitle{
+  font-size: 13px!important;
+}
+.carousel-caption {
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and(max-width: 768px){
+  .carousel-caption {
+    z-index: 10!important;
+    color: #fff!important;
+    text-align: center!important;
+  }
+  .mycarousel {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    left: 0;
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
+  span.titleor {
+    font-size: 14px;
+  }
+  span.titleor {
+    font-size: 11px!important;
+  }
+  .mycarousel {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    left: 0;
+    right: 0;
+  }
+  .carousel-caption{
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+
+  }
+}
+@media (max-width: 425px) {
+  span.titleor {
+    font-size: 11px;
+  }
+  .picsum-img-wrapper.sliderH {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 192px;
+    width: 100%;
+  }
+  .myfirstcarousel{
+    margin-top: 115px;
+  }
+}
+@media (max-width: 375px) {
+  .carousel-caption{
+    position: absolute;
+    top: -15px;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+  }
+  .picsum-img-wrapper.sliderH {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 174px;
+    width: 100%;
+  }
+}
+@media(min-width: 2561px) and (max-width: 2700px){
+  .picsum-img-wrapper.topwrapper.ng-star-inserted{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 97px!important;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1780px) {
+  .picsum-img-wrapper.topwrapper.ng-star-inserted {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 63px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+<div class="main">
+  <p class="sign" align="center">Super Admin authentifications</p>
+  <form class="form1" (ngSubmit)="saverapide(rapidecom)" #rapidecom="ngForm" *ngIf="!isloading2">
+    <input class="un " type="text" align="center" placeholder="Nom complète" name="name" ngModel required>
+    <input class="pass" type="password" align="center" placeholder="Mot de passe" name="pass" ngModel required="">
+    <button class="submit" align="center">se connecter <span class="spinner-border" *ngIf="isloading"></span></button>
+  </form>
+  <span class="spinner-border mybordres" *ngIf="isloading2"></span>
+</div>

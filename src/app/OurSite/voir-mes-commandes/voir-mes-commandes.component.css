@@ -1,0 +1,782 @@
+/************ about_us css end ***************/
+/* line 2, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  background-color: #e8f0f2;
+}
+.mat-form-field {
+  margin-top: 16px;
+}
+/* line 7, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb .breadcrumb_iner p {
+  font-size: 15px;
+  color: #777777;
+}
+ul.stepper li a .label.myetap {
+  display: inline-block;
+  color: rgb(255, 166, 2);
+}
+ul.stepper li a .label.myetapfin {
+  display: inline-block;
+  color: rgb(0, 147, 38);
+}
+/* line 14, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_breadcrumb.scss */
+.breadcrumb {
+  margin-bottom: 0px !important;
+}
+
+
+/* line 1616, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group textarea {
+  height: 150px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+/* line 1622, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select {
+  width: 100%;
+}
+
+/* line 1625, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select span {
+  color: #797979;
+}
+
+/* line 1629, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select .list {
+  width: 100%;
+  border-radius: 0px;
+}
+
+/* line 1633, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .country_select .list li {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1642, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account #f-option2 {
+  margin-right: 5px;
+}
+
+/* line 1646, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account #f-option3 {
+  margin-right: 5px;
+}
+
+/* line 1650, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.billing_details .contact_form .form-group .creat_account a {
+  color: #2f7dfc;
+}
+
+/* line 1658, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box {
+  background: #f4f4f4;
+  padding: 30px;
+}
+
+/* line 1662, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box h2 {
+  border-bottom: 1px solid #dddddd;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2a2a;
+  padding-bottom: 15px;
+}
+
+/* line 1672, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a {
+  font-size: 14px;
+  color: #797979;
+  font-weight: normal;
+  border-bottom: 1px solid #eeeeee;
+  display: block;
+  line-height: 42px;
+}
+
+/* line 1680, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a span {
+  float: right;
+}
+
+/* line 1684, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li a .middle {
+  float: none;
+  width: 50px;
+  text-align: right;
+  display: inline-block;
+  margin-left: 30px;
+  color: #2a2a2a;
+}
+
+/* line 1696, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list li:nth-child(4) a .middle {
+  margin-left: 48px;
+}
+
+/* line 1706, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li a {
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500;
+}
+
+/* line 1711, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li a span {
+  color: #797979;
+  text-transform: capitalize;
+}
+
+/* line 1719, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .list_2 li:last-child a span {
+  color: #2a2a2a;
+}
+
+/* line 1728, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500;
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* line 1738, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+  background: #fff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* line 1752, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+}
+
+/* line 1764, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item h4 img {
+  padding-left: 60px;
+}
+
+/* line 1769, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item p {
+  background: #fff;
+  padding: 20px;
+}
+
+/* line 1776, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .payment_item.active h4:before {
+  background: #2f7dfc;
+  border-color: #2f7dfc;
+}
+
+/* line 1784, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account {
+  margin: 15px 0;
+}
+
+/* line 1787, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account label {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #2a2a2a;
+}
+
+/* line 1793, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .creat_account a {
+  color: #2f7dfc;
+}
+
+/* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.order_box .btn_3 {
+  display: block;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  /* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+  .order_box .btn_3 {
+    padding: 9px 34px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 1798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+  .order_box .btn_3 {
+    padding: 9px 34px;
+  }
+}
+
+/* End Cart Area css
+============================================================================================ */
+/* Tracking Form Area css
+============================================================================================ */
+/* line 1820, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner p {
+  max-width: 870px;
+  color: #2a2a2a;
+  margin-bottom: 25px;
+}
+
+/* line 1826, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+}
+/* line 1820, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner p {
+  max-width: 870px;
+  color: #2a2a2a;
+  margin-bottom: 25px;
+}
+
+/* line 1826, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+}
+
+/* End Tracking Form Area css
+============================================================================================ */
+.tracking_box_area .tracking_box_inner .tracking_form {
+  max-width: 645px;
+}
+
+/* line 1829, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 1831, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input {
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 0px 15px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 65, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 68, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 71, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 74, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_mixins.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+/* line 1851, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 1855, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.tracking_box_area .tracking_box_inner .tracking_form .form-group .btn_3 {
+  box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(0, 142, 5, 0.26);
+}
+
+/* End Tracking Form Area css
+============================================================================================ */
+
+/* line 39, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_3 {
+  display: inline-block;
+  padding: 9px 42px;
+  border-radius: 50px;
+  background-color: #2f7dfc;
+  border: 1px solid #f4f4f4;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: 1px solid #2f7dfc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 52, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_3:hover {
+  background-color: #00c81d;
+  color: #fff;
+}
+
+/* line 57, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_2 {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  color: #1e1e1e;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  text-transform: capitalize;
+}
+
+/* line 72, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_2:hover {
+  color: #fff !important;
+  background-color: #2f7dfc;
+}
+
+@media (max-width: 991px) {
+  /* line 57, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+  .btn_2 {
+    height: 50px;
+    width: 140px;
+    line-height: 50px;
+  }
+}
+
+/* line 87, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_4 {
+  color: #2f7dfc;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 53px;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+  /* line 87, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+  .btn_4 {
+    margin-top: 30px;
+  }
+}
+
+/* line 100, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.btn_4 img {
+  width: 20px;
+  margin-left: 15px;
+}
+
+/*=================== custom button rule start ====================*/
+/* line 108, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button {
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 54px;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid #edeff2;
+  text-transform: uppercase;
+  background-color: #2f7dfc;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 767px) {
+  /* line 108, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+  .button {
+    font-size: 13px;
+    padding: 9px 24px;
+  }
+}
+
+/* line 127, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button:hover {
+  color: #fff;
+}
+
+/* line 132, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-link {
+  letter-spacing: 0;
+  color: #3b1d82;
+  border: 0;
+  padding: 0;
+}
+
+/* line 138, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-link:hover {
+  background: transparent;
+  color: #3b1d82;
+}
+
+/* line 144, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-header {
+  color: #fff;
+  border-color: #edeff2;
+}
+
+/* line 148, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-header:hover {
+  background: #b8024c;
+  color: #fff;
+}
+
+/* line 154, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_button.scss */
+.button-contactForm {
+  color: #fff;
+  border-color: #edeff2;
+  padding: 12px 25px;
+}
+p {
+  color: black;
+  font-size: large;
+  font-family: sans-serif;
+  font-style: oblique;
+  text-shadow: 2px 2px 5px #bbbbbb;
+}
+
+/* End Main Button Area css
+============================================================================================ */
+section.tracking_box_area.section_padding {
+  margin-top: 183px;
+}
+section.breadcrumb.breadcrumb_bg {
+  position: relative;
+  top: 124px;
+}
+
+.white-box {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.white-box .box-title {
+  margin: 0 0 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.text-muted {
+  color: #8d9ea7;
+}
+button.btn-success {
+  float: right;
+  border: none;
+  box-shadow: 1px 1px 4px grey;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+code, kbd, pre, samp {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+.table-responsive {
+  overflow-y: hidden;
+}
+
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+.table {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table {
+  background-color: transparent;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #e4e7ea;
+}
+.row.tableux {
+  position: relative;
+  top: 11px;
+  left: 15px;
+  width: 100%;
+  margin-top: 31px;
+  font-size: 16px;
+  box-shadow: 1px 2px 3px #d4d4d4;
+}
+tbody {
+  color: #797979;
+}
+.container.mycontainer {
+  position: relative;
+  top: 25px;
+}
+a.float-left {
+  position: absolute;
+  right: 0;
+}
+i.fa.fa-eye:hover {
+  color: #02d002;
+  transform: scale(1.5);
+}
+.mat-ripple.mat-list-item-ripple {
+width: 100%;
+}
+span.myspan {
+  padding: 28px;
+}
+p.text-danger {
+  font-size: 17px;
+  margin-left: 30px;
+}
+.table-responsive {
+  font-size: 18px;
+}
+@media (min-width: 423px) and (max-width: 520px) {
+  .table-responsive.mytb1 {
+    font-size: 13px;
+  }
+  .table-responsive.mytb2 {
+    font-size: 12px;
+    width: 395px;
+    position: relative;
+    left: -40px;
+  }
+  p {
+    color: black;
+    font-size: 19px;
+    font-family: sans-serif;
+    font-style: oblique;
+    text-shadow: 2px 2px 5px #bbbbbb;
+  }
+}
+@media (min-width: 360px) and (max-width: 379px)  {
+  .table-responsive.mytb1 {
+    font-size: 12px;
+  }
+  .table-responsive.mytb2 {
+    font-size: 12px;
+    position: relative;
+    left: -40px;
+    width: 345px;
+  }
+  p {
+    color: black;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-style: oblique;
+    text-shadow: 2px 2px 5px #bbbbbb;
+  }
+}
+@media (min-width: 310px) and (max-width: 359px) {
+  .table-responsive.mytb1 {
+    font-size: 11px;
+    width: 316px;
+    position: relative;
+    right: 13px;
+  }
+  .white-box{
+    background: #fff;
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 301px;
+    margin-left: -17px;
+  }
+  p {
+    color: black;
+    font-size: small;
+    font-family: sans-serif;
+    font-style: oblique;
+    text-shadow: 2px 2px 5px #bbbbbb;
+  }
+  .table-responsive.mytb2 {
+    font-size: 11px;
+    position: relative;
+    left: -17px;
+    width: 310px;
+  }
+}

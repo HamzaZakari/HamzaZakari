@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Ajouter Fournisseur</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Nom Fornisseur</mat-label>
+        <input matInput placeholder="Nom Fournisseur" [(ngModel)]="nom">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      <button style="color: white; background: green" (click)="save(nom)"> Add <span class="spinner-border" *ngIf="load"></span></button>
+      <button style="color: white; background: orangered"> close</button>
+    </mat-card-footer>
+  </mat-card>
+  <mat-card class="card2">
+    <mat-card-title>
+      tout les fournisseur
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let f of Fornisseur"><span>{{f.nom_forni}}</span>
+          <button style="color: white; background: orangered" (click)="delete(f.id_forni)" class="delete"><i class="fa fa-trash"></i> <span class="spinner-border" *ngIf="load2 && f.id_forni == id"></span></button></mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,73 @@
+<!--<link rel="stylesheet" href="assets/css/font-awesome.min.css">-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+<script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<app-secondnavbar></app-secondnavbar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 mylist">
+      <div class="section-title mt-3">
+        <h2>Produits</h2>
+      </div>
+    </div>
+  </div>
+    <div class="panel-body">
+      <div class=" float-left">
+        <p class="total_pro">{{Produits.length}} Produits</p>
+        <hr>
+      </div>
+      <div class="searchbar float-right">
+               <input class="search_input" type="text" name="" placeholder="Search..." [(ngModel)]="element.value" #element (keyup)="search(element.value)">
+          <a class="search_icon "><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-6" *ngFor="let pro of Produits">
+      <div class="product-grid">
+        <div class="product-image" [ngClass]="pro.quantity == 0 ? 'epuisee': ''" [ngStyle]="{backgroundImage: 'url('+url+ pro.image +')'}">
+          <a  class="images">
+            <img class="pic-1" >
+            <!--              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">-->
+          </a>
+          <ul class="social">
+            <li><a [routerLink]="['/product_detail',pro.id]"data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>
+            <!--              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>-->
+            <li *ngIf="pro.quantity != 0" class="cartadd"><a  data-tip="Ajouter au panier" (click)="addtocart(pro.id,pro.poids)"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+          <span class="product-new-label" *ngIf="pro.state === 'BIO'">{{pro.state}}</span>
+<!--          <span class="product-discount-label" *ngIf="pro.quantity !=0">New</span>-->
+          <span class="product-discount-label" *ngIf="pro.quantity ==0" style="color: red">Épuisé</span>
+        </div>
+        <div class="product-content" [ngClass]="pro.quantity == 0?'puisee':''">
+          <h3 class="title"><span *ngIf="pro.poids !='null' && pro.quantity !=0">{{pro.poids}}</span><a [routerLink]="['/product_detail',pro.id]" ><span *ngIf="pro.title!='null'">{{pro.title}}</span> <small class="tiarabe" *ngIf="pro.titlearab !='null'"> {{pro.titlearab}}</small></a></h3>
+           <h3 class="mybadge" *ngIf="pro.quantity ==0">Épuisé</h3>
+          <div class="price" *ngIf="pro.quantity != 0">{{(pro.pricep?pro.pricep : pro.price) | currency:'DH' }}
+            <span *ngIf="pro.pricep">{{pro.price|currency:'DH'}}</span>
+          </div>
+          <a class="add-to-cart" (click)="addtocart(pro.id,pro.poids)" style="cursor: pointer" *ngIf="pro.quantity !=0">+ Au panier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-lg-5">
+    <div class="spinner-border" *ngIf="isloading"></div>
+    <p class="alert alert-warning"  id="alert" *ngIf="!isloading && Produits.length <=0">aucun produit trouvé</p>
+  </div>
+</div>
+<mat-paginator [length]="totalproduit"
+               [pageSize]="produitperpage"
+               [pageSizeOptions]="pageSize"
+               (page)="onChangePage($event)"
+               *ngIf="Produits.length>0"></mat-paginator>
+<hr>
+  <div class="clearfix">
+  <h5 class="total_pro" *ngIf="Produits">{{Produits.length}} produits</h5>
+  </div>
+<hr>
+<app-footer></app-footer>
+

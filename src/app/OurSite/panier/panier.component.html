@@ -1,0 +1,174 @@
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<app-secondnavbar></app-secondnavbar>
+<div class="container">
+  <div class="span9" style="width: 100%;">
+    <ul class="breadcrumb">
+      <li><a [routerLink]="''">Accueil </a> <span class="divider"></span></li>
+      <li><a [routerLink]="'/all_product'">Produits</a> <span class="divider"></span></li>
+      <li class="active">Panier</li>
+    </ul>
+    <p *ngIf="checkbtn == true">
+      <ngb-alert [dismissible]="false">
+        <strong>Avertissement!</strong>{{msg}}
+        <button class="closebtn" (click)="close()">X</button>
+      </ngb-alert>
+    </p>
+<!--    *ngIf="check_ofre== true && btnofre == true"-->
+<!--    <p  class="alert-info" style="position: fixed;overflow: hidden">-->
+<!--    <strong style="float: right" class="closedbtn" (click)="closeofre()">x</strong></p>-->
+  </div>
+  <br>
+  <div class="cart-header">
+    <h1 class="cart-header__title">Votre panier</h1>
+    <a [routerLink]="'/all_product'" class="text-link text-link--accent">
+      Poursuivre vos achats
+    </a>
+  </div>
+  <div class="pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" *ngIf="Produit.length > 0">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr >
+                <th scope="col" class="border-0 bg-light">
+                  <div class="p-2 px-3 text-uppercase ">Produit</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase ">Prix</div>
+                </th>
+<!--                <th scope="col" class="border-0 bg-light">-->
+<!--                  <div class="py-2 text-uppercase">Poids</div>-->
+<!--                </th>-->
+                <th scope="col" class="border-0 bg-light res">
+                  <div class="py-2 text-uppercase ">Quantité</div>
+                </th>
+                <th scope="col" class="border-0 bg-light res">
+                  <div class="py-2 text-uppercase ">Total</div>
+                </th>
+                <th scope="col" class="border-0 bg-light res">
+                  <div class="py-2 text-uppercase res"></div>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let pro of Produit">
+                <th scope="row" class="border-0">
+                  <div class="p-2" >
+                    <div class="product-image" [ngStyle]="{backgroundImage:'url('+url+pro.image+')'}">
+                      <!--                    <img [src]="[pro.image]" alt="" width="70" class="img-fluid rounded shadow-sm">-->
+                    </div>
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="mb-0"> <a [routerLink]="['/product_detail',pro.product_id]" class="text-dark d-inline-block align-middle"><span class="poids" *ngIf="pro.poids != 'null'">{{pro.poids}}</span> <span *ngIf="pro.title !='null'">{{pro.title}}</span>
+                        <br><small *ngIf="pro.title_arab !='null'">
+                          {{pro.title_arab}}
+                          <br> <span class="text-muted font-weight-normal font-italic " *ngIf="pro.poids !='null'" >poids: {{pro.poids}}</span>
+                        </small></a>
+
+                      </h5>
+
+<!--                      <span class="text-muted font-weight-normal font-italic d-block">le rest : {{pro.qtypoids}}</span><br>-->
+                      <a class="btn-link" (click)="removetocart(pro.product_id , pro.qtyPanier ,pro.qtypoids,pro.restqty, pro.pricepoids , pro.poids)">supprimer</a>
+<!--                      <span class="text-muted font-weight-normal font-italic " >poids: {{pro.poids}}</span>-->
+                      <span class="" [(ngModel)]="poids.poids" *ngIf="check && pro.product_id == poids.idpro && poids.poids !='null'" id="mypoids">({{poids.poids}})</span>
+                    </div>
+                  </div>
+                </th>
+
+<!--                <td class="border-0 align-middle"><strong>-->
+<!--                  <mat-form-field style=" font-size: 15px;">-->
+<!--                    <input matInput placeholder="Change your poids g(kg)/L" (change)="changepoids($event, pro.product_id)">-->
+<!--                  </mat-form-field></strong></td>-->
+
+                <td class="border-0 align-middle prix"><strong >{{(pro.pricepoids ? pro.pricepoids : pro.price) | currency: 'DH'}}</strong></td>
+                <td class="border-0 align-middle prix"><strong>
+                  <input type="number" class="form-control"
+                         id="qte"
+                         step="1"
+                         (keypress)="keypress($event)"
+                         [(ngModel)]="pro.qtyPanier"
+                         (change)="sume(pro.product_id, pro.qtyPanier , pro.pricepoids,pro.poids , $event)"
+                         [max]="pro.qtypoids + pro.qtyPanier" [min]="1" style="width: 60px"
+                  [minLength]="1">
+                </strong></td>
+                <td class="border-0 align-middle west prix" *ngIf="pro.pricepoids"><strong>{{(pro.pricepoids * (pro.qtyPanier < 0?0:pro.qtyPanier) | currency: 'DH') }}</strong></td>
+                <td class="border-0 align-middle west prix" *ngIf="pro.price && ! pro.pricepoids"><strong>{{(pro.price * (pro.qtyPanier < 0?0:pro.qtyPanier) | currency:'DH') }}</strong></td>
+                <td class="border-0 align-middle west res prix"><a class="text-dark" (click)="removetocart(pro.product_id , pro.qtyPanier ,pro.qtypoids,pro.restqty, pro.pricepoids , pro.poids )">
+                 <span class="material-icons">delete_forever</span>
+                </a></td>
+            <td class="prixpoids"><strong>{{(pro.pricepoids ? pro.pricepoids : pro.price) | currency: 'DH'}}</strong>
+           <strong>
+              <input type="number" class="form-control"
+                     id="qte"
+                     step="1"
+                     (keypress)="keypress($event)"
+                     [(ngModel)]="pro.qtyPanier"
+                     (change)="sume(pro.product_id, pro.qtyPanier , pro.pricepoids,pro.poids , $event)"
+                     [max]="pro.qtypoids?pro.qtypoids:pro.quantity" [min]="1" style="width: 60px"
+              [minLength]="1">
+              </strong>
+              <strong *ngIf="pro.price && ! pro.pricepoids">{{(pro.price * pro.qtyPanier | currency:'DH') }}</strong>
+              <strong *ngIf="pro.pricepoids">{{(pro.pricepoids * pro.qtyPanier | currency: 'DH') }}</strong>
+            </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.Produit.length > 0" class="pricesship">
+    <hr>
+  <div class="float-right"  style="position: relative;" *ngIf="checksubtotal1 && !checksubtotal2">
+    <h5> Totale: <strong>{{(subtotal1  | currency:'DH')}}</strong></h5>
+  </div>
+  <div class="float-right" *ngIf="!subtotal1 && !subtotal2" style="position: relative;">
+    <h5> Totale:     <strong>{{(subtotal  | currency:'DH')}}</strong></h5>
+  </div>
+<!--    <div class="float-right"  style="position: relative;" *ngIf="checksubtotal2 && !checksubtotal1">-->
+<!--      <h5> subtotal12:    <strong>{{(subtotal2  | currency:'DH')}}</strong></h5>-->
+<!--    </div>-->
+  <br>
+  <hr>
+<p class="alert alert-dismissable">
+
+ <span class="text-center">
+<!-- Offre exceptionnelle jusqu'au 31 Mai: 50% de réduction sur le service de livraison à partir de 200dh&ndash;&gt;-->
+<!--    <br>-->
+<!--    <small class="text-center"> عرض خاص حتى متم شهر ماي، خصم 50% على ثمن خدمة التوصيل للطلبات ابتداءً من 200 درهم.-->
+
+<!--</small><hr>-->
+   <small>Taxes incluses. <a [routerLink]="['/policies/shipping-policy']">Frais de port</a> calculés à la caisse.</small></span>
+</p>
+    <br>
+    <hr>
+<!--    <div class="float-right"  style="position: relative;" >-->
+<!--      <h5 *ngIf="subtotal1"> Totale:     <strong >{{(subtotal1  | currency:'DH')}}</strong></h5>-->
+<!--      <h5  *ngIf="!subtotal1 "> Totale:     <strong>{{(subtotal | currency:'DH')}}</strong></h5>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <hr>-->
+
+  <div class="panel-body" style="position: relative;">
+    <button style="float: right" type="button" class="btn btn-success btn-my" id="btn2" (click)="passorder()">
+      passe à la caisse <span class="fa fa-play" *ngIf="!isloading"></span>
+      <span class="spinner-border spinner-border-sm" *ngIf="isloading"></span>
+    </button>
+    <a type="button"  style="float: right ;margin: 1px 3px 1px 19px;" class="btn btn-default btn-my" id="btn1" [routerLink]="'/all_product'">
+      <i class="fa fa-shopping-cart"></i> <span> Roteur à L'aceuil</span>
+    </a>
+  </div>
+</div>
+  <div *ngIf="Produit.length <=0">
+    <h4 class="alert alert-warning" id="warning">votre panier est vide <a [routerLink]="['/all_product']">retour au magasin</a></h4>
+  </div>
+</div>
+<!---->
+<app-footer></app-footer>

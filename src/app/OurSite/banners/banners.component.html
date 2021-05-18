@@ -1,0 +1,14 @@
+<hr>
+<ngb-carousel [showNavigationIndicators]="false">
+  <ng-template  ngbSlide *ngFor="let b of banners">
+    <div class="picsum-img-wrapper" style="background-image: url('assets/slideImages/between.png')">
+
+    </div>
+    <div class="carousel-caption">
+      <h3 *ngIf="b.titlefr !='null'">{{b.titlefr}}</h3>
+      <h2 *ngIf="b.titlearb !='null'">{{b.titlearb}}</h2>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+<hr>

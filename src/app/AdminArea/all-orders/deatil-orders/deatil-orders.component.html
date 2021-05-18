@@ -1,0 +1,223 @@
+
+<!-- The Modal -->
+<div class="modal" id="myModal" *ngIf="showModules">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title text-warning">Avertissement !!</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="showModules = false">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-danger">
+        êtes-vous sûr de vouloir supprimer ce produit !!
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info mr-1 mybtns" data-dismiss="modal"(click)="yeshesur()">Oui
+          <span class="spinner-border spinner-border-sm" *ngIf="showspenner"></span>
+        </button>
+        <button type="button" class="btn btn-danger mybtns" data-dismiss="modal" (click)="nosur()">No</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-12">
+  <div class="div">
+  <button class="btn btn-success pdf" id="export"  (click)="exportAsXLSX()" >Excel <i class="fa fa-file-excel-o"></i></button>
+  <button class="btn btn-warning" id="export1"  printSectionId="content" ngxPrint>PDF format <i class="fa fa-file-pdf-o"></i></button>
+  <a class="btn btn-info" *ngIf="role == 'Agent de Commandes'"  [routerLink]="['/Agents_cmd']" >Roteur a la page agent commandes <i class="fa fa-arrow-right"></i></a>
+  </div>
+  <div class="panel panel-default">
+    <div>
+      <a [routerLink]="['/dashboard/Informations-pour-Livraison/',ordid]"><i class="fa fa-plus" ngbTooltip="Ajouet une product"></i></a></div>
+    <mat-card>
+      <mat-tab-group>
+        <mat-tab label="Details Produit"> <table class="table table-striped">
+          <thead style="text-align: center;">
+          <tr style="text-align: center;">
+            <th scope="col"></th>
+            <th></th>
+            <th scope="col" style="text-align: center;">Produits</th>
+            <th scope="col" style="text-align: center;">Prix de Commande</th>
+            <th scope="col" style="text-align: center;" *ngIf="role == 'super admin' || role == 'admin'">Prix achate de Commande</th>
+            <th scope="col">poids Commande</th>
+            <th scope="col">quantity Commandee</th>
+            <th>actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr style="text-align: center;" *ngFor="let ord of DetaiOrd; let i = index">
+            <th>{{i+1}}</th>
+
+            <td>
+              <img [src]="[url+ord.image]" class="mr-2" style="width: 40px; height: 40px">
+            </td>
+            <th scope="row" *ngIf="ord.title != 'null'">{{ord.title}}</th>
+            <th scope="row" *ngIf="ord.title == 'null' && ord.titlearab !='null'">{{ord.titlearab}}</th>
+            <td>{{ord.toprix}}</td>
+            <td *ngIf="role == 'super admin' || role == 'admin'">{{ord.realprixachat}}</td>
+            <td>{{ord.poidscmd?ord.poidscmd:ord.poids}}</td>
+            <td>{{ord.qtycomonde}}</td>
+            <td><button *ngIf="!deletechck && role != 'Agent de Commandes'"  (click)="delete(ord.id_detail ,ord.id_produits, ord.id_orders, ord.toprix,ord.qtycomonde, ord.poids,ord.realprixachat)" ><span class="material-icons" *ngIf="!deletechck">delete_forever</span>
+            </button> <span class="spinner-border" *ngIf="deletechck && ord.id_detail == id_oredrs"></span></td>
+<!--            <td *ngIf="role != 'Agent de Commandes'"><a [routerLink]="['/dashboard/edit_ord',ord.id_detail ]" ><i class="fa fa-edit"></i></a></td>-->
+          </tr>
+          </tbody>
+        </table></mat-tab>
+
+        <mat-tab label="Mise a jour Commonde">
+          <mat-spinner *ngIf="idloading"></mat-spinner>
+          <table class="table table-striped" *ngIf="!idloading">
+
+          <br>
+          <div class="example-container"  >
+            <mat-form-field appearance="fill" >
+              <mat-label>Frais livraison</mat-label>
+              <input matInput [value]="frail?frail:''" [(ngModel)]="fraisL" name="frais">
+            </mat-form-field>
+<!--            <mat-form-field appearance="fill" *ngIf="frail">-->
+<!--              <mat-label>Frais livraison</mat-label>-->
+<!--              <input matInput [value]="frail" name="frais" disabled>-->
+<!--            </mat-form-field>-->
+          </div>
+          <br>
+          <div class="example-container" >
+            <mat-form-field appearance="fill">
+              <mat-label>Code Livraison</mat-label>
+              <input matInput [value]="codl?codl:''" [(ngModel)]="codelivraison" name="code">
+            </mat-form-field>
+<!--            <mat-form-field appearance="fill" *ngIf="codl">-->
+<!--              <mat-label>Code Livraison</mat-label>-->
+<!--              <input matInput [value]="codl" name="code" disabled>-->
+<!--            </mat-form-field>-->
+          </div>
+          <br>
+          <div class="example-container"  >
+            <mat-form-field appearance="fill">
+              <mat-label>charge commande</mat-label>
+              <input matInput [value]="chrrgeL?chrrgeL:''" [(ngModel)]="chargecommande" name="charge">
+            </mat-form-field>
+<!--            <mat-form-field appearance="fill" *ngIf="chrrgeL">-->
+<!--              <mat-label>charge commande</mat-label>-->
+<!--              <input matInput [value]="chrrgeL" name="charge" disabled>-->
+<!--            </mat-form-field>-->
+          </div>
+          <div class="example-container"  >
+            <mat-form-field appearance="fill" >
+              <mat-label>Commentaire</mat-label>
+              <input matInput [value]="comml?comml:''" [(ngModel)]="commentaire" name="comm">
+            </mat-form-field>
+<!--            <mat-form-field appearance="fill" *ngIf="comml">-->
+<!--              <mat-label>Commentaire</mat-label>-->
+<!--              <input matInput [value]="comml" name="comm" disabled>-->
+<!--            </mat-form-field>-->
+            <button mat-button  style="outline-color: transparent; background: green;margin-left: 4%;" (click)="valideF(fraisL, codelivraison, commentaire,chargecommande)">Valide </button>
+            <p class="alert-link"   *ngIf="chrrgeL && frail && comml && codl" disabled>deja Valide </p>
+          </div>
+        </table></mat-tab>
+        <mat-tab label="Tous Les details">
+          <mat-list role="list">
+            <mat-list-item role="listitem">Client :  {{nom}}</mat-list-item>
+            <mat-list-item role="listitem">téléphone : {{'0' + tele}}</mat-list-item>
+            <mat-list-item role="listitem">Adress : {{adress}}</mat-list-item>
+            <mat-list-item role="listitem">Ville : {{ville}}</mat-list-item>
+            <!-- <mat-list-item role="listitem">Code Liveraison : {{codl}}</mat-list-item> -->
+            <mat-list-item role="listitem" *ngIf="role == 'super admin' || role == 'admin'">Marge Cadeaux : {{margeCadeau | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="role == 'super admin' || role == 'admin'">La marge : {{(total - prixcahts) | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem">Total commande : {{total | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem">Total commande avec livraison  : {{(total +toto) | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="role == 'super admin' || role == 'admin'">Totale prix d'achat   : {{prixcahts | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="role == 'super admin' || role == 'admin'">Charge commande : {{chrrgeL | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem">Total livraison : {{toto | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem">Charge livraison : {{chargeliv | currency:'DH'}}</mat-list-item>
+            <mat-list-item role="listitem">Commentaire : {{commentaire?commentaire: 'NO Commentaire'}}</mat-list-item>
+            <mat-list-item role="listitem">Code commande : {{cmdcodde}}</mat-list-item>
+          </mat-list>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-card>
+
+</div>
+</div>
+<div class="mypdf">
+<div id="content">
+  <div >
+    <div class="container">
+      <div class="party_image" style="width: 100%">
+      <div>
+        <img [src]="Actuiel_protocol + '/assets/slideImages/logo.png'" style="width: 100px; height: 100px">
+      </div>
+      </div>
+      <div class="mol-body" style="width: 100%; text-align: center">
+        <div style="display: grid">
+          <h3 style="display: grid;text-align: initial;">
+            <span>1 - Le destinataire : <em style="color: #e03232;text-transform: capitalize;font-style: normal;">{{this.nom}}</em></span>
+            <span>2 - Le N° du commande : <em style="color: #e03232;text-transform: capitalize;font-style: normal;">{{cmdcodde}}</em></span>
+            <span>3 - La region et l'adress <em style="color: #e03232;text-transform: capitalize;font-style: normal;">{{regions}} , {{adress}}</em></span>
+            <span>4 - Total de commande : <em style="color: #e03232;text-transform: capitalize;font-style: normal;">{{ (total + toto) | currency:'DH'}} </em></span>
+            <span>5 - téléphone: <em style="color: #e03232;text-transform: capitalize;font-style: normal;">0{{tele}}</em></span>
+          </h3>
+
+        </div>
+      </div>
+  <table class=" pdftble" style="text-align: center; width: 68%; border: 1px solid grey;">
+    <thead style="text-align: center;border: 1px solid grey;">
+    <tr style="text-align: center;">
+      <th style="border: 1px solid grey;padding: 7px;"></th>
+      <th  style="border: 1px solid grey;padding: 7px;">Produits</th>
+      <th  style="border: 1px solid grey;padding: 7px;">Prix unitaire</th>
+      <th style="border: 1px solid grey;padding: 7px;">le poids</th>
+      <th style="border: 1px solid grey;padding: 7px;">La quantité</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="text-align: center;" *ngFor="let ord of DetaiOrd; let i = index">
+      <th  style="border: 1px solid grey;padding: 7px;">{{i+1}}</th>
+      <th  style="border: 1px solid grey;padding: 7px;" >{{ord.title != 'null'?ord.title:ord.titlearab}}</th>
+      <td style="border: 1px solid grey;padding: 7px;">{{ord.toprix}}</td>
+      <td style="border: 1px solid grey;padding: 7px;">{{ord.poidscmd?ord.poidscmd:ord.poids}}</td>
+      <td style="border: 1px solid grey;padding: 7px;">{{ord.qtycomonde}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+<!--      <table class="table table-borderless">-->
+
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th>Firstname</th>-->
+<!--          <th>Lastname</th>-->
+<!--          <th>Email</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--          <td>John</td>-->
+<!--          <td>Doe</td>-->
+<!--          <td>john@example.com</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Mary</td>-->
+<!--          <td>Moe</td>-->
+<!--          <td>mary@example.com</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>July</td>-->
+<!--          <td>Dooley</td>-->
+<!--          <td>july@example.com</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+    </div>
+  </div>
+</div>
+</div>

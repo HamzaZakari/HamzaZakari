@@ -1,0 +1,21 @@
+<div class="example-container">
+  <mat-card style="width: 100%">
+    <form (ngSubmit)="save(postForm)" #postForm="ngForm" >
+  <mat-form-field >
+    <mat-label>title francaise</mat-label>
+    <input matInput name="banerfr" ngModel>
+  </mat-form-field>
+  <br>
+  <mat-form-field >
+    <mat-label>title arabe</mat-label>
+    <input matInput name="banerar" ngModel>
+  </mat-form-field>
+  <br>
+  <mat-form-field >
+    <mat-label>title english</mat-label>
+    <input matInput name="banereng" ngModel>
+  </mat-form-field>
+      <button type="submit" mat-button class="btn-success"> Ajouter</button>
+    </form>
+  </mat-card>
+</div>

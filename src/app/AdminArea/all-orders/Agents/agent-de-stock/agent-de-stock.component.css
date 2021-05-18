@@ -1,0 +1,122 @@
+.row {
+  margin-right: -7.5px;
+  margin-left: -7.5px;
+}
+@media (min-width: 768px) {
+  .col-sm-12 {
+    width: 100%;
+  }
+  .jumbotron h1 {
+    font-size: 37px;
+  }
+}
+.white-box .box-title {
+  margin: 0 0 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.text-success {
+  color: #28a745!important;
+  font-size: 15px;
+  font-weight: bold;
+}
+.text-muted {
+  color: #8d9ea7;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+code, kbd, pre, samp {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+.table-responsive {
+  overflow-y: hidden;
+}
+
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+.table {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table {
+  background-color: transparent;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+tbody {
+  color: #797979;
+}
+.table-responsive {
+  font-size: 15px;
+}
+div.product-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 59px;
+  height: 70px;
+  transform: scale(0.9);
+}
+i.fa.fa-exclamation-circle {
+  color: red;
+  font-size: 24px;
+  margin-top: 20px;
+}
+.badge {
+  display: inline-block;
+  padding: 10px 11px 10px 9px;
+  font-size: 75%;
+  font-weight: 700;
+  margin-top: 20px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  background: #54d654;
+  border-radius: 50%;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+th {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+td span.text-danger{
+  position: relative;
+  top: 20px;
+}
+button.btn.btn-success {
+  padding: 9px 20px 9px 20px;
+  position: relative;
+  top: 18px;
+}
+/*.reds{*/
+/*  background: #e000003d;*/
+/*  color: black;*/
+/*}*/
+/*.oranges {*/
+/*  background: #ef6b29;*/
+/*  color: white;*/
+/*}*/
+/*.greens{*/
+/*  background: rgba(224, 183, 18, 0.93);*/
+/*  color: white;*/
+/*}*/

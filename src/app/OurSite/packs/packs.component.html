@@ -1,0 +1,38 @@
+<div class="container-fluid" *ngIf="Pack.length > 4">
+  <div class="card" style="border: none;background: #fbfbfb;">
+    <div class="row">
+      <div class="col-lg-12 pack">
+
+        <div class="section-title packtitle">
+          <h2  class="nos">Produits D'argan</h2>
+        </div>
+        <h2 class="savoir1"><a [routerLink]="['/products', id_boutique, cat_id]">Voir plus <i class="fa fa-arrow-right"></i></a></h2>
+
+      </div>
+    </div>
+    <div class="space_prod" style="text-align:center" *ngIf="Pack.length != 0">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide  *ngFor="let pro of Pack">
+          <div  class="product-grid6">
+            <span class="poids1" *ngIf = "pro.poids">{{pro.poids}}</span>
+            <div class="product-image" [ngStyle]="{backgroundImage: 'url('+ url + pro.image +')'}">
+              <img src=""></div>
+              <span class="poids" *ngIf="pro.quantity !=0">{{(pro.pricePromo?pro.pricePromo : pro.price) | number:'1.2-2'}} Dhs</span>
+            <div class="pro1">
+              <h3 class="tit"><a >{{pro.title != 'null'?pro.title:pro.title_arab}}</a></h3>
+              <span class="text-danger" *ngIf="pro.quantity == 0">Epuisé</span>
+              <!-- <span class="text-danger" *ngIf="pro.test_pro == 1">VIDE</span> -->
+            </div>
+            <ul class="social" *ngIf="pro.test_pro != 1">
+              <li><a  [routerLink]="['/product_detail',pro.id?pro.id:pro.product_id]"data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>
+<!--              <li><a  (click)="show_quicks(pro.id?pro.id:pro.product_id)"data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>-->
+              <!--        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>-->
+              <li *ngIf="pro.quantity !=0"><a data-tip="Ajouter au panier" (click)="addtocart(pro.product_id,pro.title != 'null' ? pro.title : pro.title_arab,pro.poids)"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+<app-quick-views [QuickDetail]="QuickDetail" [PoidsQuick]="PoidsQuick"></app-quick-views>

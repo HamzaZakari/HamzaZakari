@@ -1,0 +1,53 @@
+
+<form [formGroup]="postForm" (ngSubmit)="savecat()">
+  <mat-card class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="example-container">
+      <div class="modal-header d-flex">
+        <h4 class="modal-titl w-100" id="myModalLabel">Nouvelle catégorie</h4>
+        <button mat-button (click) = 'goToCat()'><span class="material-icons">
+          reply
+          </span>
+          </button>
+      </div>
+      <br><br>
+      <br>
+      <!-- <div class="form-group">
+        <label for="sel1">Select boutique:</label>
+        <select class="form-control" id="sel1" name="boutique" formControlName="boutique">
+          <option>  </option>
+          <option *ngFor="let p of boutique" [value]="p.id_boutique">{{p.nomFr}}</option>
+        </select>
+      </div> -->
+      <mat-form-field class="field">
+        <input matInput placeholder="Nome de Catégorie" name="titlefr" formControlName="titlefr">
+      </mat-form-field> <br>
+      <mat-form-field>
+        <input matInput placeholder="Category name" name="titleAng" formControlName="titleAng">
+      </mat-form-field> <br>
+      <mat-form-field>
+        <input matInput placeholder="اسم الفئة" name="titlearab" formControlName="titlearab">
+      </mat-form-field> <br>
+      <div class="modal-body">
+        <div class="imgprv">
+          <button mat-stroked-button type="button" (click)="openFile.click()">Charger une photo</button>
+          <input type="file" class="inputclass" #openFile (change)="onchangeimage($event)">
+        </div>
+        <div class="image-privew" *ngIf="imagepreview && postForm.get('image').valid && mode === 'created' ">
+          <img [src]="imagepreview" alt="postForm.value.title">
+        </div>
+        <div class="image-privew" *ngIf="postForm.get('image').valid && mode === 'edit'">
+          <img [src]="imagepreview ? imagepreview : url+category.image"s alt="postForm.value.title">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-my" placement="top" ngbTooltip="dissmiss add product">
+            fermer
+          </button>
+          <button mat-button class="btn btn-success btn-my" type="submit" >enregistrer</button>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+  </mat-card>
+
+</form>

@@ -1,0 +1,31 @@
+export interface Products {
+  id?: string;
+  idpropoids?: string;
+  catid: string;
+  title: string;
+  titlearab?: string;
+  titleengalish?: string;
+  qtyPanier?: number;
+  restqty?: number;
+  perpoidsqty?: number;
+  descreption: string;
+  image: File;
+  imagecat?: File;
+  price: string;
+  quantity: string;
+  Libele?: string;
+  catId?: number;
+  date?: string;
+  state?: string;
+  poids?: string;
+  pricepoids?: string;
+  created_at?: string;
+  priceqty?: string;
+  prixa?:string;
+  prixp?:string;
+  qtypoids?:number;
+  ciel?: number;
+  min?: number;
+  id_forni?: string;
+  test_pro?: any;
+}

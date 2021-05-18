@@ -1,0 +1,84 @@
+<!--::header part start::-->
+<header [ngClass]="changenav" class="main_menu home_menu" >
+    <div class="row align-items-center justify-content-center" >
+      <div class="col-lg-11" >
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" [ngClass]="links" [routerLink]="'/'"> <img src="assets/slideImages/logo3.png" alt="logo"> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="openresopnsivenave()"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="menu_icon"><i class="fa fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse main-menu-item" [ngClass]="coloapse">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a  [ngClass]="links"  class="nav-link dropdown-toggle"id="navbarDropdown_2"
+                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Toutes les catégories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                  <a class="dropdown-item"*ngFor="let cat of Category" [routerLink]="['/products',cat.id_boutique,cat.id]"><span *ngIf="cat.titlefr !='null'">{{cat.titlefr}}</span><small style="color: #240900" *ngIf="cat.titlearab !='null'"> {{cat.titlearab}}</small></a>
+                </div>
+              </li>
+              <li>
+                <mat-accordion>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Toutes les catégories
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                    <a class="dropdown-item"*ngFor="let cat of Category" [routerLink]="['/products',cat.id_boutique,cat.id]">
+                      <span *ngIf="cat.titlefr !='null'">{{cat.titlefr}}</span><small style="color: #240900" *ngIf="cat.titlearab != 'null'">({{cat.titlearab}})</small></a>
+                </mat-expansion-panel>
+              </mat-accordion>
+              </li>
+              <li class="nav-item">
+                <a [ngClass]="links" class="nav-link"  [routerLink]="['/']">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a [ngClass]="links" class="nav-link" [routerLink]="['/all_product']">Toutes les produits</a>
+              </li>
+              <li class="nav-left">
+                <a [ngClass]="links" class="nav-link" [routerLink]="['/my-ordres']">Voir mes commandes</a>
+              </li>
+<!--              <li class="nav-item">-->
+<!--                <a [ngClass]="links" class="nav-link" href="#myproduit">Noveau Produits</a>-->
+<!--              </li>-->
+              <!--              <li class="nav-item dropdown">-->
+              <!--                <a  [ngClass]="links"  class="nav-link dropdown-toggle"  href="blog.html" id="navbarDropdown_2"-->
+              <!--                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+              <!--                  blog-->
+              <!--                </a>-->
+              <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">-->
+              <!--                  <a class="dropdown-item" href="blog.html"> blog</a>-->
+              <!--                  <a class="dropdown-item" href="single-blog.html">Single blog</a>-->
+              <!--                </div>-->
+              <!--              </li>-->
+            </ul>
+          </div>
+          <div class="hearer_icon d-flex">
+            <div class="dropdown cart">
+              <a class="dropdown-toggle" [routerLink]="['/panier']" id="navbarDropdown3" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-shopping-bag" [ngClass]="cartnavcart"> <small [ngClass]="cartnav">{{total ? total : 0}}</small></i>
+              </a>
+            </div>
+<!--            <a id="search_1" (click)="opensearch()"><i class="fa fa-search" [ngClass]="iconsearch"></i></a>-->
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  <div class="search_input" id="search_input_box" *ngIf="search">
+    <div class="container ">
+      <form class="d-flex justify-content-between search-inner">
+        <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+        <button type="submit" class="btn"></button>
+        <span class="fa fa-close" id="close_search" title="Close Search" (click)="search=false"></span>
+      </form>
+    </div>
+  </div>
+</header>
+<!-- Header part end-->

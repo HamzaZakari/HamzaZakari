@@ -1,0 +1,60 @@
+
+<div class="container">
+  <div class="alert alert-primary" role="alert" *ngIf="ProforCMD.length !=0">
+   <div class="col-md-2 col-xs-3 col-6" *ngFor="let add of ProforCMD">
+     <div class="product-image" [ngStyle]="{backgroundImage:'url('+url+ add.image+')'}" *ngIf="!isloading1">
+       <i class="fa fa-close" (click)="remove(add.product_id, add.poids)"></i>
+<!--       <i class="fa fa-check"></i>-->
+       <h3 class="text-success poids">{{add.poids}}</h3>
+     </div>
+   </div>
+    <span class="spinner-border" *ngIf="isloading1"></span>
+    <button mdbBtn class="matbtn" (click)="ajouterAucmd()">Ajouter
+    </button>
+  </div>
+  <br *ngIf="ProforCMD.length !=0">
+  <h3 class="h3">List des produits pour spécifique commande ({{Product.length}}) <span>produits</span></h3>
+  <hr>
+  <mat-form-field>
+    <mat-label>Choisir une catégorie</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1" (click)="getall()">Voir tous les produits</mat-option>
+      <mat-option value="2" *ngFor="let cat of Category" (click)="filter(cat.id)">{{cat.titlefr != 'null'? cat.titlefr : cat.titlearab}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="spinner-border" *ngIf="isloading"></div>
+  <div class="row" *ngIf="!isloading">
+    <div class="col-md-3 col-sm-6" *ngFor="let pro of Product" (click)="checkpoids = false">
+      <div class="product-grid5">
+        <div class="product-image5">
+          <a class="pic-1" [ngStyle]="{backgroundImage:'url('+ url +pro.image+')'}">
+<!--          <a class="pic-1" [ngStyle]="{backgroundImage:'url('+pro.image+')'}" [ngClass]="pro.quantity == 0 ?'epuise':''">-->
+            <img >
+          </a>
+          <ul class="social">
+            <li ><a ngbTooltip="Ajouter à la commande" (click)="infopro(pro.product_id,pro.price,pro.poids,pro.priceAchette,pro.pricePromo, pro.title,pro.image,pro.title_arab)"><i class="fa fa-plus"></i></a></li>
+<!--            <li ><a ngbTooltip="Ajouter à la commande" (click)="infopro(pro.product_id,pro.price,pro.poids,pro.priceAchette, pro.title,pro.image,pro.title_arab)" *ngIf="pro.quantity !=0"><i class="fa fa-plus"></i></a></li>-->
+<!--            <li  class="text-danger"><a ngbTooltip="le produit est epuisé" *ngIf="pro.quantity == 0 " class="text-danger"> Epuisé </a></li>-->
+<!--            <li *ngIf><a ngbTooltip="Ajoutée"><i class="fa fa-check"></i></a></li>-->
+<!--            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>-->
+<!--            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>-->
+          </ul>
+          <a  class="select-options" (click)="getpoids(pro.product_id)" ><i class="fa fa-arrow-right"></i>Changement de poids</a>
+<!--          <a  class="select-options" (click)="getpoids(pro.product_id)" *ngIf="pro.quantity != 0"><i class="fa fa-arrow-right"></i>Changement de poids</a>-->
+<!--          <a  class="select-options text-danger" *ngIf="pro.quantity == 0">le produits est epuisé</a>-->
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a >{{pro.title !='null'?pro.title:pro.title_arab}}</a></h3>
+<!--          <h4 class="text-danger" *ngIf="pro.quantity == 0">Epuisé</h4>-->
+          <div class="price" >{{(pro.price) | currency:'DH'}} - {{pro.poids}}<small class="badge">default</small></div>
+<!--          <div class="price" *ngIf="pro.quantity != 0">{{(pro.price) | currency:'DH'}} - {{pro.poids}}<small class="badge">default</small></div>-->
+          <div class="price text-success" *ngIf="pro.product_id == id && this.poidsmy != null"><i class="fa fa-check"></i>{{(pricepoidsmy) | currency:'DH'}} - {{poidsmy}}<small class="badge-success">checked</small></div>
+          <mat-list role="list" *ngIf="checkpoids && id == pro.product_id">
+            <mat-list-item role="listitem" *ngFor="let poid of poids" (click)="allpoids(poid.product_id, poid.poids,poid.pricepoids,poid.prixAchats)">{{poid.poids}}</mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

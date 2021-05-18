@@ -1,0 +1,30 @@
+
+<!--breadcrumb-->
+
+<!--/breadcrmb-->
+
+<!--main-->
+<section id="main">
+    <div class="row">
+        <div class="mydiv">
+            <div class="list-group">
+              <!-- <a [routerLink]="'/dashboard/index'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" class="list-group-item myClass">
+                <span class="fa fa-cog" aria-hidden="true"></span> Dashboard
+                </a> -->
+                <a [routerLink]="'/dashboard/all_products'" [routerLinkActive]="'active'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-list-alt" aria-hidden="true"></span> Produits <span class="badge">{{totalpro}}</span></a>
+
+                <a [routerLink]="'/dashboard/all_categorys'" [routerLinkActive]="'active'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-paperclip" aria-hidden="true"></span> Catégories <span class="badge">{{totalcat}}</span></a>
+                <!-- <a [routerLink]="'/dashboard/all_boutique'" [routerLinkActive]="'active'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-home" aria-hidden="true"></span> Boutiques <span class="badge">?</span></a> -->
+                <a [routerLink]="'/dashboard/all_clients'" [routerLinkActive]="'active'" class="list-group-item myClass" *ngIf="role == 'super admin'"><span class="fa fa-user" aria-hidden="true"></span>  Agents <span class="badge">{{totalclinet}}</span></a>
+                  <a [routerLink]="'/dashboard/all_orders'" class="list-group-item myClass" *ngIf="role != 'Agent de Commandes'"><span class="fa fa-check" aria-hidden="true" ></span> Commandes <span class="badge">{{totalOrders}}</span></a>
+                  <!-- <a [routerLink]="'/dashboard/All-banner-images'" class="list-group-item myClass"*ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-image" aria-hidden="true" ></span> Banner_images <span class="badge"></span></a> -->
+                  <!-- <a [routerLink]="'/dashboard/tout-titres-banner'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-flash" aria-hidden="true" ></span> Tout les titres de banner <span class="badge"></span></a> -->
+                  <a [routerLink]="'/dashboard/all-image-slider'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-sliders" aria-hidden="true"></span> Images du slider <span class="badge"></span></a>
+                  <a [routerLink]="'/dashboard/Creat-acount'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-users" aria-hidden="true"></span> Gérer mes utilisateurs <span class="badge"></span></a>
+                  <!-- <a [routerLink]="'/dashboard/recap_orders'" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="fa fa-list" aria-hidden="true"></span> Recap commandes<span class="badge"></span></a> -->
+                  <a (click) = "openNewOngle()" class="list-group-item myClass" *ngIf="role == 'super admin' || role == 'admin'"><span class="material-icons">calculate</span> Comptabilité<span class="badge"></span></a>
+<!--                  <a [routerLink]="'/dashboard/Informations-pour-Livraison'" class="list-group-item myClass"><span class="fa fa-info" aria-hidden="true"></span> Informations pour Livraison <span class="badge"></span></a>-->
+            </div>
+        </div>
+</div>
+</section>

@@ -1,0 +1,12 @@
+<div class="row ml-0">
+  <div class="col-lg-3 col-xs-4 col-sm-3  col-6 mycats" *ngFor="let cat of images">
+    <div class="single-banner">
+      <a  class="catimage">
+        <div class="catimage" [ngStyle]="{backgroundImage:'url('+url+cat.images+')'}">
+          <img [src]="">
+        </div>
+      </a>
+      <div class="panel-footer"><button (click)="trash(cat.id_banner)"><span class="material-icons"  style="cursor:pointer;">delete_forever</span></button></div>
+    </div>
+  </div>
+</div>

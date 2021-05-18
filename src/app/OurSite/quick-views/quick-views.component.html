@@ -1,0 +1,21 @@
+<!-- <div class="quick_views" [ngClass]="QuickDetail.length > 0 ? 'show_quick' : ''" >
+  <div class="header">
+    <h2  [ngClass]="type == 'all' ? 'nohometitle' : 'quick_title'">Details de produits</h2>
+    <div class="mask" (click)="hide_quick()"><i class="fa fa-close"></i></div>
+  </div>
+  <div class="row" *ngIf="QuickDetail.length > 0">
+    <div [ngClass]="rowclass">
+      <img class="img-responsive quick_img" [src]=" url + QuickDetail[0].image" [ngClass]="type == 'all' ? 'nohome': ''" >
+    </div>
+    <div [ngClass]="seconrowclass">
+      <h4 class="title_prduits" >{{QuickDetail[0].title != 'null' ? QuickDetail[0].title : QuickDetail[0].title_arab}}</h4>
+      <span class="prix">{{(QuickDetail[0].pricePromo?QuickDetail[0].pricePromo : QuickDetail[0].price) | currency:'DH'}}</span><br>
+      <select>
+        <option *ngFor="let poid of PoidsQuick" (click)="click($event , poid.pricepoids ,poid.qtypoids,poid.prixa,poid.prixp , QuickDetail[0].id, poid.poids)"> {{poid.poids}}</option>
+      </select>
+      <br>
+      <mat-divider></mat-divider>
+      <button class="quick_add_to_cart" data-tip="Ajouter au panier" (click)="addtocart(QuickDetail[0].product_id ,QuickDetail[0].title != 'null' ? QuickDetail[0].title : QuickDetail[0].titlearab,QuickDetail[0].poids, poidschange , poidprice , pricep , qtypoids )">Ajouter au panier | <i class="fa fa-shopping-cart"></i></button>
+    </div>
+  </div>
+</div> -->

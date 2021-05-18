@@ -1,0 +1,28 @@
+<div class="searchbox">
+<!--  <img src="assets/search.png" >-->
+  <span class="material-icons" (click)="opensearch()" *ngIf="showiconssearch == true">search</span>
+<!--  <img src="assets/close-search.png" (click)="closesearch()" *ngIf="showiconclosesearch == true">-->
+  <span class="material-icons" (click)="closesearch()" *ngIf="showiconclosesearch == true">close</span>
+</div>
+<div class="box-search" [ngClass]="setclass">
+  <mat-form-field appearance="legacy">
+    <mat-label>Recherche</mat-label>
+    <input matInput placeholder="Recherche" (keyup)="productsSearch(key)" [(ngModel)]="key" id= 'myinpt'>
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+</div>
+<div class="box-list-search" [ngClass]="boxAddesClass">
+  <ul class="list-group" [ngClass]="ulAddesClass">
+    <li class="list-group-item" *ngFor="let prod of Products" (click)="gotoproduits(prod.id)">
+      <img style="width: 50px; height: 40px" class="img-prod" [src]="url  + prod.image">
+      <span style="margin-left: 10px;font-weight: bold;">{{prod.title != 'null' ? prod.title : prod.titlearab}}</span>
+    </li>
+    <li class="list-group-item">total produits ({{mydata > 1 ? mydata + 'articles' : mydata + 'article'}})</li>
+  </ul>
+</div>
+<!--<div class="space-shopping-cart" (click)="gotocheck()">-->
+<!--  <div class="space-icon">-->
+<!--    <span class="material-icons cart">shopping_cart</span>-->
+<!--  </div>-->
+<!--  <div class="space-phrase">passe à la caisse</div>-->
+<!--</div>-->

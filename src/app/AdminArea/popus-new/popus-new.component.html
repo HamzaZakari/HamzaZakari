@@ -1,0 +1,58 @@
+
+  <div class="dropdown update" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button class="btn btn-default dropdown-toggle" ngbDropdownToggle>Ajouter
+      <span class=""></span>
+    </button>
+    <ul class="dropdown-menu" ngbDropdownMenu>
+      <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/add_product'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;">Produit</a></li>
+      <!-- <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/add_boutique'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >Boutique</a></li> -->
+      <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/add_category'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >Catégorie</a></li>
+      <!-- <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/new_founisseur'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >New Fournisseur</a></li> -->
+      <!-- <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/new-banner-images'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >Banner images</a></li> -->
+      <!-- <li *ngIf="role =='super admin' || role =='admin'"><a
+      [routerLink]="'/dashboard/new-title-banner'"
+      type="button"
+      ngbDropdownItem
+      style="cursor: pointer;"
+    >Banner title</a></li> -->
+      <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/new-image-slider'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >Slider image</a></li>
+      <li *ngIf="role =='super admin' || role =='admin'"><a
+        [routerLink]="'/dashboard/livraisn-modifier'"
+        type="button"
+        ngbDropdownItem
+        style="cursor: pointer;"
+      >Gestion des Villes </a></li>
+      </ul>
+  </div>
+
+
+

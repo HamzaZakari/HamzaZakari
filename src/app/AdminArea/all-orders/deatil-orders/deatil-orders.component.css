@@ -1,0 +1,195 @@
+ng-template{
+  color: cornflowerblue;
+  font-size: 15px;
+  font-family: -webkit-body;
+}
+.modal-content {
+  height: 100%!important;
+  width: 600px!important;
+  font-size: 15px!important;
+}
+a.btn.btn-info {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  top: -37px;
+  padding: 8px 10px 9px 10px;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    border-color: #ddd;
+    background: linear-gradient(45deg, #ffe8ef, #deffeb);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: block;
+  width: 100%;
+  background: #0000002e;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+.modal-content {
+  height: 225px;
+  width: 500px;
+  font-size: 15px;
+}
+.modal-header {
+  /* font-size: 26px; */
+  padding-top: 19px;
+  margin: 2px;
+}
+/*.modal-footer .btn+.btn {*/
+/*  margin-bottom: 0;*/
+/*  margin-left: 11px;*/
+/*  font-size: 14px;*/
+/*  padding: 8px 33px 8px 32px;*/
+/*}*/
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  font-size: 25px;
+}
+.modal-footer {
+  padding-bottom: 13px;
+  margin: 2px;
+}
+
+
+.modal-content {
+  height: 100%!important;
+  width: 600px!important;
+  font-size: 15px!important;
+}
+.modal-content {
+  height: 225px;
+  width: 500px;
+  font-size: 15px;
+}
+.modal-header {
+  /* font-size: 26px; */
+  padding-top: 19px;
+  margin: 2px;
+}
+
+/*.modal-footer .btn+.btn {*/
+/*  margin-bottom: 0;*/
+/*  margin-left: 11px;*/
+/*  font-size: 14px;*/
+/*  padding: 8px 33px 8px 32px;*/
+/*}*/
+.modal-footer {
+  padding-bottom: 13px;
+  margin: 2px;
+}
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  font-size: 25px;
+}
+div#content {
+  height: 0;
+  top: 0;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+.table-dark {
+  color: #fff;
+  background-color: #343a40;
+  display: table;
+  z-index: -1;
+}
+h3 {
+  color: #3a3939;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  line-height: 28px;
+  font-weight: bold;
+}
+.mypdf {
+  position: relative;
+  top: 45px;
+}
+button.btn.btn-success.pdf {
+  display: inline-block;
+  position: absolute;
+  /* right: 105px; */
+  padding: 9px 33px 9px 33px;
+  top: -39px;
+  font-size: 11px;
+  z-index: 1;
+}
+button.btn.mybtns {
+  border: none;
+  padding: 8px 20px 8px 20px;
+  margin: 7px 5px 5px 7px;
+}
+/*.modal-body {*/
+/*  position: relative;*/
+/*  z-andex: 1;*/
+/*  flex: 1 1 auto;*/
+/*  padding: 1rem;*/
+/*  width: 629px;*/
+/*}*/
+button.btn.btn-warning {
+  display: inline-block;
+  position: absolute;
+  top: -38px;
+  left: 133px;
+  padding: 11px 24px 7px 24px;
+  font-size: 11px;
+}
+p.alert-link.ng-star-inserted {
+  outline-color: transparent;
+  background: gray;
+  color: white;
+  /* margin-left: 3%; */
+  width: 51%;
+  height: 36px;
+  position: relative;
+  text-align: center;
+  padding-top: 6px;
+}
+i.fa.fa-plus {
+  display: block;
+  float: right;
+  position: relative;
+  /* left: 5px; */
+  z-index: 100;
+  top: 22px;
+  right: 39px;
+  font-size: 20px;
+  color: #007eff;
+}
+mat-spinner.mat-spinner.mat-progress-spinner.mat-primary.mat-progress-spinner-indeterminate-animation.ng-star-inserted {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 43%;
+}
+
+mat-tab-body#mat-tab-content-0-1 {
+  padding: 33px!important;
+}
+p.alert-info {
+  height: 82px;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px;
+  text-shadow: 1px 1px 3px grey;
+}
+.mat-form-field {
+  width: 600px!important;
+}
+
+
+.table.pdftble {
+  width: 71%!important;
+  margin-bottom: 1rem;
+  color: #212529;
+}

@@ -1,0 +1,67 @@
+
+<div class="container">
+  <div class="panel-body">
+    <h3>resultat de Tout les commande {{affstatus?affstatus:'?'}}</h3>
+  </div>
+  <hr>
+  <br>
+  <div class="page-header" style="width: 100%; text-align: center">
+      <mat-form-field class="ml-2">
+        <mat-label>sélectionner le statut</mat-label>
+        <mat-select >
+          <mat-option  *ngFor="let st of mystatus" [value]="st.status" (click)="selectstatus(st.status)">{{st.status}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <mat-form-field appearance="fill">
+      <mat-label>Nom Fournisseur</mat-label>
+      <mat-select >
+        <mat-option (click)="id_forni = -1; forni = 'aucuns'" [value]="-1" >aucuns</mat-option>
+        <mat-option *ngFor="let f of Fournisseur" [value]="f.id_forni" (click)="getforni(f.id_forni, f.nom_forni)">{{f.nom_forni}}</mat-option>
+      </mat-select>
+      </mat-form-field> -->
+      <mat-form-field class="ml-2">
+        <mat-label>Date debut</mat-label>
+        <input matInput [matDatepicker]="picker" (dateChange)="dateD($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="mr-2">
+        <mat-label>Date fin </mat-label>
+        <input matInput [matDatepicker]="picker1" (dateChange)="dateF($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    <button class="btn btn-info" (click)="getdata()">Valider</button>
+  </div>
+  <div>
+
+    <div class="panel-body" *ngIf="commandeFilter.length == 0 && !isloading">
+      <h3>Veuillez sélectionner une date</h3>
+      <h3>Aucune date trouvée </h3>
+    </div>
+    <div class="container" *ngIf="isloading"><div class="text-center"><span class="spinner-border"></span></div></div>
+    <mat-tab-group *ngIf="commandeFilter.length > 0">
+    <mat-tab label="Tous Les details">
+      <mat-list role="list">
+        <mat-list-item role="listitem" style="width: 100%;">Totale toutes commandes  <span style="float: left">{{(toprixwithLiv2 != 0 ? toprixwithLiv2 : toprixwithLiv) | number:'1.2-2'}} Dhs</span></mat-list-item>
+        <mat-list-item role="listitem" style="width: 100%;">Totale avec livraison <span style="float: left">{{((toprixwithLiv2 != 0 ? toprixwithLiv2 : toprixwithLiv) + toprixLiv) | number:'1.2-2'}} Dhs</span></mat-list-item>
+        <mat-list-item role="listitem">Totale prix  de livraison <span>{{toprixLiv | number:'1.2-2'}}Dhs</span></mat-list-item>
+        <mat-list-item role="listitem" >Totale prix d'achat <span>{{toprixAchat2 != 0 ? toprixAchat2 : toprixAchat | number: '1.2-2'}}Dhs</span></mat-list-item>
+        <mat-list-item role="listitem" *ngIf= "toprixAchat2 != 0 && toprixAchat != 0">Totale de la marge  <span>{{((toprixwithLiv2 != 0 ? toprixwithLiv2 : toprixwithLiv) - (toprixAchat2 != 0 ? toprixAchat2 : toprixAchat)) | number:'1.2-2'}}Dhs</span></mat-list-item>
+        <!-- <mat-list-item role="listitem">Totale de frais de livraison  <span>{{tofarisLiv | number:'1.2-2'}}Dhs</span></mat-list-item> -->
+        <!-- <mat-list-item role="listitem" *ngIf="tofarisLiv != 0">Totale marge frais de livraison  et prix livraison<span>{{(toprixLiv - tofarisLiv) | number:'1.2-2'}}Dhs</span></mat-list-item> -->
+        <!-- <mat-list-item role="listitem">Totale de charge commande <span>{{toChargecom | number: '1.2-2'}}Dhs</span></mat-list-item> -->
+        <!-- <mat-list-item role="listitem">Totale charge de Livraison <span>{{to_charge_livraison | number: '1.2-2'}}Dhs</span></mat-list-item> -->
+<!--        <mat-list-item role="listitem">Totale prix de livraison <span>{{toprixLiv | currency:'DH'}}</span></mat-list-item>-->
+        <mat-list-item role="listitem">status <span>{{selectedstatus}}</span></mat-list-item>
+        <mat-list-item role="listitem">Numéro de commande  <span>{{commandeFilter.length}}</span></mat-list-item>
+        <!-- <mat-list-item role="listitem">Fournisseur  <span>{{forni}}</span></mat-list-item> -->
+
+      </mat-list>
+    </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<div class="back-home text-center">
+  <a mat-button style="color: orangered" [routerLink]="['/dashboard/all_orders']"> retour à la page d'accueil <span class="material-icons">swap_horiz</span></a>
+</div>

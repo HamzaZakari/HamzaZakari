@@ -1,0 +1,73 @@
+<div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+  <div class="alert alert-info alert-dismissible fade show" [ngClass]="myclass" *ngIf="myclasscheck == true">
+    <button type="button" class="close" data-dismiss="alert"(click)="close()" >&times;</button>
+    <strong class="badge infomessage">Message!</strong> <small class="message">Changed saved</small>
+  </div>
+
+  <!-- Shopping cart table -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" class="border-0 bg-light">
+          <div class="p-2 px-3 text-uppercase">Product</div>
+        </th>
+        <th scope="col" class="border-0 bg-light">
+          <div class="py-2 text-uppercase">Quantity</div>
+        </th>
+        <th scope="col" class="border-0 bg-light">
+          <div class="py-2 text-uppercase">price</div>
+        </th>
+        <th scope="col" class="border-0 bg-light">
+          <div class="py-2 text-uppercase">Totale price</div>
+        </th>
+        <th scope="col" class="border-0 bg-light">
+          <div class="py-2 text-uppercase">Change poids</div>
+        </th>
+        <th scope="col" class="border-0 bg-light">
+          <div class="py-2 text-uppercase">Actions</div>
+        </th>
+      </tr>
+      </thead>
+      <tbody *ngIf="dataOrd">
+      <tr >
+        <th scope="row" class="border-0">
+          <div class="p-2">
+            <img [src]="[DetaiOrd.image]" alt="" width="70" class="img-fluid rounded shadow-sm">
+            <div class="ml-3 d-inline-block align-middle">
+              <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{DetaiOrd.frname}}({{DetaiOrd.arabaname}})</a>
+              </h5><span class="text-muted font-weight-normal font-italic d-block">quantite Comande: {{dataOrd.qte}}<br><small class="badge">(quantity in stock :{{DetaiOrd.qte_pro}})</small></span><br>
+              <span class="text-muted font-weight-normal font-italic ">poid Comande: {{DetaiOrd.poids}}</span><br>
+              <span class="text-muted font-weight-normal font-italic ">price Comande: {{DetaiOrd.price}}</span><br>
+              <span class="text-muted font-weight-normal font-italic " *ngIf="poidschange" style="color: green">poid change: {{poidschange}}</span>
+            </div>
+          </div>
+        </th>
+        <td class="border-0 align-middle"><strong>
+          <input type="number" class="form-control"
+                               id="qte"
+                               [(ngModel)]="DetaiOrd.qte"
+                               (change)="sume(DetaiOrd.id, DetaiOrd.qte , DetaiOrd.pricepro)"
+                               [max]="DetaiOrd.qte_pro" [min]="1" style="width: 60px">
+        </strong></td>
+        <td class="border-0 align-middle pt-3" id="pricestyle" ><strong>{{ ( dataOrd.pricep)| currency: 'DH'}}</strong></td>
+        <td class="border-0 align-middle pt-3" id="pricestyle1" *ngIf="!poidprice"><strong>{{dataOrd.pricepro  * DetaiOrd.qte| currency: 'DH'}}</strong></td>
+        <td class="border-0 align-middle pt-3" id="pricestyle2" *ngIf="poidprice && dataOrd.pricep"><strong>{{(dataOrd.pricep?dataOrd.pricep : poidprice)   | currency: 'DH'}}</strong></td>
+        <td class="border-0 align-middle pt-3" id="pricestyle3"*ngIf="poidprice"><strong>{{ poidprice * DetaiOrd.qte | currency: 'DH'}}</strong></td>
+        <td class="border-0 align-middle pt-3"> <mat-form-field >
+          <mat-label>G/L</mat-label>
+          <mat-select #myselect >
+            <mat-option   *ngFor="let poid of poids" [value]="poid.id_manage_gramage" (click)="click($event, poid.pricepoids )">
+              {{poid.poids}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></td>
+        <td class="border-0 align-middle west"><a class="btn btn-info btn-my" [routerLink]="['/dashboard/all_orders']"><i class="">Roteur</i></a></td>
+      </tr>
+      </tbody>
+    </table>
+    <hr>
+    <button class="btn btn-success btn-my" style="float: right;" (click)="saveChanges(DetaiOrd.id , DetaiOrd.poids, poidschange , poidprice ,DetaiOrd.price, DetaiOrd.qte)" >Enregistre</button>
+  </div>
+  <!-- End -->
+</div>

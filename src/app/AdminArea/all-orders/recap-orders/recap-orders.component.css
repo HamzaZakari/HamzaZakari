@@ -1,0 +1,61 @@
+.table-dark {
+  color: #4e4e4e;
+  background-color: #f3eded;
+  font-size: 17px;
+}
+td {
+  font-size: 15px;
+  color: #484a48;
+}
+/* Styles for wrapping the search box */
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+input.form-control {
+  height: 54px;
+  font-size: 17px;
+}
+mat-form-field.mat-form-field{
+  font-size: 13px;
+}
+mat-form-field.mat-form-field.classmy{
+  font-size: 13px;
+  position: relative;
+  left: 38px;
+}
+button.fisrt{
+  position: relative;
+  left: 70px;
+}
+tr:hover {
+  transition: all 600ms ease;
+  background: #d5dcdc;
+}
+tr{
+  cursor: pointer;
+}
+h4.text-center.text-danger {
+  font-size: 25px;
+  margin-top: 35px;
+  font-weight: bold;
+}

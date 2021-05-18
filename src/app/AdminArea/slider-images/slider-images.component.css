@@ -1,0 +1,24 @@
+.catimage {
+  padding-top: 20px;
+  height: 128px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+button {
+  background: #ff6116;
+  border: none;
+  border-radius: 20%;
+  /* font-size: 12px; */
+  width: 36px;
+  height: 24px;
+}
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #e8e8e8;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-align: center;
+}

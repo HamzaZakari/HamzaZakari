@@ -1,0 +1,9 @@
+button.btn.btn-default.dropdown-toggle.dropdown-toggle{
+  background: aliceblue;
+  font-size: 13px;
+  margin: 8px;
+  width: 87px;
+}
+ul.dropdown-menu.show{
+  font-size: 14px;
+}

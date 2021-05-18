@@ -1,0 +1,45 @@
+<form [formGroup]="postForm" (ngSubmit)="save()">
+  <mat-card>
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="">Télécharger des images pour le slider</h4>
+    </div>
+    <div class="modal-body">
+      <h4>En relation avec catégorie</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Catégorie</mat-label>
+        <mat-select  name="cat"  formControlName="cat">
+          <mat-option *ngFor="let cat of Category" [value]="cat.id" (click)="fliterprod(cat.id, cat.id_boutique)">
+           {{cat.titlefr != 'null' ? cat.titlefr : cat.titlearab}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <h4>En relation avec produit</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>produits</mat-label>
+        <mat-select name="prod" formControlName="prod">
+          <mat-option *ngFor="let pro of Produits" [value]="pro.id" >
+           {{pro.title != 'null' ? pro.title : pro.titlearab}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div><br><br>
+        <button mat-stroked-button type="button" (click)="openFile.click()">Télécharger une image</button>
+
+        <input type="file" class="inputclass" #openFile (change)="onchangeimage($event)">
+      </div>
+      <div class="image-privew" *ngIf="imagepreview && postForm.get('image').valid">
+        <img [src]="imagepreview" alt="">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btndash" placement="top" ngbTooltip="dissmiss add product">
+          Fermer
+        </button>
+        <button mat-button class="btn btn-success btndash" type="submit" >Sauvegarder</button>
+      </div>
+
+    </div>
+  </mat-card>
+</form>
+

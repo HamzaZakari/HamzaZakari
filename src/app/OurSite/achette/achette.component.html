@@ -1,0 +1,98 @@
+
+<app-secondnavbar></app-secondnavbar>
+<div class="container">
+  <ul class="nav nav-tabs checkout-tab">
+    <li class="my" active="" style="">
+      <a href="" data-toggle="tab" style="cursor: default;pointer-events: none !important;">
+        <div class="numeral-box" [ngClass]="'etape1'"></div>
+        <span ><i class="fa fa-check one"></i></span>
+        <div class="title" [ngClass]="'title_etape1'">
+          Valider Vos Informations</div>
+      </a>
+    </li>
+    <li class="my" style="">
+      <a href="" data-toggle="tab" style="cursor: default;pointer-events: none !important;">
+        <div class="numeral-box" [ngClass]="'etape1'"></div>
+        <span ><i class="fa fa-check one"></i></span>
+        <div class="title" [ngClass]="'title_etape1'">
+          confirmation de la commande</div>
+      </a>
+    </li>
+  </ul>
+</div>
+<section class="section orders-section"><div class="container">
+  <div class="order-message"><div class="message-header">
+    <img src="assets/media/thanks-msg-2.svg" alt="Order succss">
+  </div> <div class="message-body"><div class="app-heading">
+    <h1 class="heading-primary">Félicitation! votre commande est bien été enregistré,  vous serai contacté par notre service clients dans les plus brefs délais.</h1>
+  </div>
+    <div class="fr-view">Herboshop.ma vous remercie pour votre confiance.</div>
+    <div class="fr-view"><p class="alert-info" *ngIf="cmdcode"> Le code pour le suivi de votre commande "{{cmdcode}}"</p></div>
+    <div class="actions"><a [routerLink]="['/']" class="button primary-button">Poursuivre vos achats</a>
+    </div></div></div> <div class="single-order"><div class="single-order-header"><div class="order-item">
+  <h2>Statut</h2> <p class="table-label paid">Commandée</p></div> <div class="order-item">
+  <h2>Informations de paiement</h2> <p>
+  {{genre}}
+</p>
+</div>
+</div>
+  <div class="single-order-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Produit</th>
+        <th class="text-center">Prix unitaire</th>
+        <th class="text-center">Quantité</th>
+        <th class="text-center">Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of Data_panier">
+        <td class="table-ref">
+          <a [routerLink]="['/products', p.id_tonire,p.title !='null'?p.title:p.titlear]" class="text-primary">{{p.title != 'null' ? p.title : p.title_arab}}</a>
+        </td>
+        <td class="text-center">
+          <div class="currency-value">
+            <span class="value">{{(p.pricepoids?p.pricepoids:p.price)| currency: 'DH'}}</span>
+            <!--            <span class="currency">&nbsp;DH</span>-->
+          </div>
+        </td>
+        <td class="text-center">
+          <span class="product-qty">{{p.qtyPanier}}</span>
+        </td>
+        <td class="text-center">
+          <div class="currency-value">
+            <span class="value">{{((p.pricepoids?p.pricepoids:p.price)* p.qtyPanier) | currency:'DH'}}</span>
+            <!--            <span class="currency">&nbsp;DH</span>-->
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <table class="table table-total">
+      <tbody>
+      <tr>
+        <td class="mb-td"></td> <td class="mb-td"></td> <td class="text-right">Total :</td>
+        <td class="text-right"><div class="currency-value"><span class="value">{{total | currency :'DH'}}</span>
+          <!--    <span class="currency">&nbsp;DH</span>-->
+        </div></td></tr> <tr><td class="mb-td"></td>
+        <td class="mb-td"></td> <td class="text-right">Livraison :</td> <td class="text-right">
+          <div class="currency-value"><span class="value">{{+prix_liv | currency: 'DH'}}</span>
+            <!--      <span class="currency">&nbsp;DH</span>-->
+          </div>
+        </td></tr> <tr class="tr-total"><td class="mb-td"></td> <td class="mb-td"></td> <td class="text-right">Prix total :</td>
+        <td class="text-right"><div class="currency-value">
+          <span class="value">{{(prix_liv + total) | currency:'DH'}}</span>
+          <!--  <span class="currency">&nbsp;DH</span> -->
+        </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</section>
+<app-footer></app-footer>
+
+

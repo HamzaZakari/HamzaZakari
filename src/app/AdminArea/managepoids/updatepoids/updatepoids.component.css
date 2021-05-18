@@ -1,0 +1,34 @@
+form.ng-valid.ng-touched.ng-dirty {
+  font-size: 12px;
+}
+.example-container.ng-star-inserted {
+  font-size: 12px;
+}
+.text-center{
+  width: 100%;
+  text-align: center;
+}
+.text-center button{
+  text-align: center;
+}
+.example-container.ng-star-inserted {
+  width: 40%;
+}
+mat-form-field {
+   width: 100%;
+}
+button.fa.fa-save {
+  font-size: 18px;
+  width: 30%;
+  height: 34px;
+  border: none;
+  background: #14ce14;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px grey;
+}
+
+mat-spinner.mat-spinner.mat-progress-spinner.mat-primary.mat-progress-spinner-indeterminate-animation {
+  position: absolute;
+  left: 46%;
+}

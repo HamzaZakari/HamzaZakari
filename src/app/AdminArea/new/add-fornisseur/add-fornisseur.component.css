@@ -1,0 +1,20 @@
+
+button {
+  padding: 9px;
+  margin: 15px;
+  border: none;
+  box-shadow: 2px 2px 4px grey;
+  width: 94px;
+  border-radius: 3px;
+}
+mat-form-field {
+  margin-top: 31px!important;
+  width: 50%;
+}
+mat-card.card2{
+  margin-top: 15px;
+}
+button.delete {
+  position: absolute;
+  right: 12px;
+}

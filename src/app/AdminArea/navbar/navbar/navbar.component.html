@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">HerboShop.ma <i class="fa fa-user"></i><span class="manager">Manager: {{Superadmin}}</span></a>
+<!--        <span>Deconxion <i class="fa fa-power-off"></i></span-->
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a >Dashboard</a></li>
+          <li><a >Produits</a></li>
+          <li><a>Catégories</a></li>
+          <li><a >Clients</a></li>
+           <li><a >orderes</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a>welcome manager | {{Superadmin}}</a></li>
+          <li style="margin-left:30px; " *ngIf="fullname"><a style="cursor: pointer;" (click)="logout()">LOGOUT</a></li>
+          <li style="margin-left:30px; " *ngIf="!fullname"><a style="cursor: pointer;">LOGIN</a></li>
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+    <!--Header-->
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1 id="manage"><span class="fa fa-cog" aria-hidden="true"></span> <span class="dashbord">Dashboard</span> <small>Manager {{Superadmin}}</small></h1>
+                </div>
+                <div class="col-md-2 ">
+               <!-- here popus veiw-->
+               <app-popus-new class="drop"></app-popus-new>
+              </div>
+            </div>
+        </div>
+    </header>

@@ -1,0 +1,36 @@
+<div class="col8 -phn -mvxs card _fw" *ngIf= "meil1.length >= 2 && meil2.length >= 2">
+  <header class="-fs12" style="    color: black;
+    background:rgb(29 163 15);">
+    <div class="-df -i-ctr -phs">
+      <h2 class="ttl -m -fs16 -elli -phs -pvxs -lh-15">Produits D'argan</h2>
+      <a [routerLink]="['/products', boutique_id, cat_id]" class="-upp -mla -b -fsh0 -pas">Voir plus</a>
+    </div>
+  </header>
+  <div class="row _no-g -paxs">
+    <div class="box1">
+  <div class="col4" *ngFor="let pro of meil1">
+    <a  class="prd _box _tch"  [routerLink]="pro.test_pro != 1 ? ['/product_detail',pro.id?pro.id:pro.product_id]: ''">
+      <div class="img-c" [ngStyle]="{backgroundImage:'url('+url+ pro.image+')'}">
+        <img >
+      </div><h3 class="name">{{pro.title != 'null'?pro.title:pro.title_arab}}</h3>
+      <div class="prc">{{(pro.pricePromo != null?pro.pricePromo:pro.price) | currency:'Dhs'}}
+        <span class="text-muted" *ngIf="pro.poids!= 'null'">{{pro.poids != 'nul'?pro.poids:''}}</span></div>
+      <div>
+        <a class="panier" (click)="addtocart(pro.product_id,pro.poids)" *ngIf="pro.test_pro == 1">+ panier</a></div>
+    </a>
+  </div>
+    </div>
+    <div class="box2">
+      <div class="col4" *ngFor="let pro of meil2">
+    <a  class="prd _box _tch" [routerLink]="pro.test_pro != 1 ? ['/product_detail',pro.id?pro.id:pro.product_id]: ''">
+      <div class="img-c" [ngStyle]="{backgroundImage:'url('+url+ pro.image+')'}">
+        <img >
+      </div><h3 class="name">{{pro.title != 'null'?pro.title:pro.title_arab}}</h3>
+      <div class="prc">{{(pro.pricePromo != null?pro.pricePromo:pro.price) | currency:'Dhs'}}
+        <span class="text-muted" *ngIf="pro.poids!= 'null'"> {{pro.poids != 'nul'?pro.poids:''}}</span></div>
+      <div ><a class="panier" (click)="addtocart(pro.product_id,pro.poids)" *ngIf="pro.test_pro == 1"> + panier</a></div>
+    </a>
+  </div>
+    </div>
+  </div>
+</div>

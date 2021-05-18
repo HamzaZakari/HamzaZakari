@@ -1,0 +1,17 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let b of banners; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="fa fa-trash"(click)="delete(b.id_ichhar)"></i>   Cliquez pour l'ouvrir
+      </mat-panel-title>
+      <mat-panel-description>
+        title N {{i+1}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{b.titlefr}}</p><br>
+    <hr>
+    <p>{{b.titlearb}}</p><br>
+    <hr>
+    <p>{{b.titleeng}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

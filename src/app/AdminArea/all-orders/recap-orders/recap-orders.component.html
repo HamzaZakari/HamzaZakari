@@ -1,0 +1,88 @@
+<div class="main">
+
+  <!-- Actual search box -->
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Recherche..." (keyup)="search($event)">
+  </div>
+</div>
+<mat-divider></mat-divider>
+<mat-form-field >
+  <mat-label>Calclate with status</mat-label>
+  <mat-select>
+    <mat-option  *ngFor="let st of status" [value]="st.status" (click)="getCMD(st.status)">{{st.status}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="classmy">
+
+  <mat-label>la date</mat-label>
+  <mat-select>
+    <mat-option  *ngFor="let st of timer" [value]="st.time" (click)="timers(st.time, st.value)">{{st.time}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-button class="fisrt" (click)="calcultedata()" style="color: white; background: #11ce00"> valider</button>
+<mat-divider></mat-divider>
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Le client</th>
+    <th scope="col">produits</th>
+    <th scope="col">le poids</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Prix unitaire x (Quantity)</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of Recap; let i = index;">
+    <th scope="row">{{i+1}}</th>
+    <td  [style]="r.Full_name == r.Full_name ? 'color: green;' : ''">{{r.Full_name}}</td>
+    <td>{{r.title != 'null' ? r.title : r.title_arab}}</td>
+    <td>{{r.poidscomonde}}</td>
+    <td>{{r.qtycomonde}}</td>
+    <td>{{r.totalcomonde}}</td>
+    <td><button class="btn-success" (click)="show(r.product_id)">deja vu</button></td>
+  </tr>
+  </tbody>
+</table>
+<!--<div class="container text-center w-100">-->
+<!--  <div class="row w-100">-->
+<!--    <div class="col-4">Calcule la somme</div>-->
+<!--    <div class="col-4">totale: 0 dhs</div>-->
+<!--    <div class="col-4"><button class="btn-success">Calculer</button></div>-->
+<!--  </div>-->
+<!--</div>-->
+<mat-divider></mat-divider><br>
+<div class="container w-100" *ngIf="archive.length > 0">
+  <h2 class="text-uppercase text-muted">table Archive</h2>
+  <hr><br>
+  <table class="table table-danger">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Le client</th>
+      <th scope="col">produits</th>
+      <th scope="col">le poids</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Prix unitaire x (Quantity)</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of archive; let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td  [style]="r.Full_name == r.Full_name ? 'color: green;' : ''">{{r.Full_name}}</td>
+      <td>{{r.title != 'null' ? r.title : r.title_arab}}</td>
+      <td>{{r.poidscomonde}}</td>
+      <td>{{r.qtycomonde}}</td>
+      <td>{{r.totalcomonde}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container text-center" *ngIf="Recap.length == 0">
+  <div class="text-center">
+    <h4 class="text-center text-danger" >No data founded !!!!</h4>
+  </div>
+</div>

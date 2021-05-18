@@ -1,0 +1,1363 @@
+.col16 {
+  flex-basis: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  padding: 2rem;
+}
+section.card._fw.-rad4.-oh {
+  padding: 19px;
+}
+.name {
+  margin-top: 14px;
+  font-size: 11px!important;
+  color: #565656;
+}
+.prc {
+  display: grid!important;
+}
+.text-muted {
+  color: #6c757d!important;
+  margin-top: 10px;
+  margin-left: -7px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.prc {
+  display: flex;
+  text-align: center;
+  color: darkblue;
+  margin: 5px;
+  font-size: 11px!important;
+  padding: 2px;
+}
+.sug .sec._xprs .info[data-mid-txt]::after, .sug .sec._prd .all[data-mid-txt]::after, .sug .sec._emp .ttl[data-mid-txt]::after, .sug .sec ~ .sec[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .btn._sm, .btn._md, .prd._fl .main, .cms th, .cms td, .cms .tabs>label, .sug .ttl, .sug .itm, .sug .sec .name, .sug .sec._emp, #jm .-phm, .sldr[data-count]::after, .markup ul, .markup ol, #jm .-plm {
+  padding-left: 16px;
+}
+
+.sug .sec._xprs .info[data-mid-txt]::after, .sug .sec._prd .all[data-mid-txt]::after, .sug .sec._emp .ttl[data-mid-txt]::after, .sug .sec ~ .sec[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .btn._sm, .btn._md, .prd._fl .main, .cms th, .cms td, .cms .tabs>label, .sug .ttl, .sug .itm, .sug .sec .name, .sug .sec._emp, #jm .-phm, #jm .-prm {
+  padding-right: 16px;
+}
+.ar, #jm .-mh-48px {
+  height: 0;
+}
+#jm .-mh-48px {
+  min-height: 48px;
+}
+#jm .-fw-nw {
+  flex-wrap: nowrap;
+}
+.btn._def._ti, .btn._i, .btn._fab, .tag, .rad ~ .lbl, .cb ~ .lbl, .fk-cb, .fk-rad, .pfi-w, .pi-w, .find, [data-ci]::after, .noti .msg, .popup, .flyout .itm, .s-menu .m-itm, .pg, .stpr .stp .circ, .sldr[data-count]::after, .prd .spon, .prd._fb .s-prc-w, .prd._fb .rev, .prd._fl .rev, .prd._fl .rel, .prd._fl .ft, .prd._fl .s-prc-w, .sug .itm, .sug .sec._emp .msg, .load-w, .cntd._def, #jm .-i-ctr {
+  align-items: center;
+}
+#jm .-j-bet {
+  justify-content: space-between;
+}
+.row, #jm .-mla {
+  margin-left: auto;
+}
+.row, #jm .-mra {
+  margin-right: auto;
+}
+.row {
+  max-width: 1184px;
+}
+.popup .ttl, .sldr[data-count]::after, .prd._fl .prc, #jm .-fs20 {
+  font-size: 1.25rem;
+}
+
+.fi-er, .find input, .flyout .text, .flyout .tit, .flyout .s-itm, .prd._box .name, .prd._fl .stk, .prd._fl .add, .sug .prod .p-name, .brcbs, #jm .-elli, .prd._fb .name, .prd._fl .name, #jm .-elli2 {
+  text-overflow: ellipsis;
+}
+.fi-er, .find input, .flyout .text, .flyout .tit, .flyout .s-itm, .prd._box .name, .prd._fl .stk, .prd._fl .add, .sug .prod .p-name, .brcbs, #jm .-elli, .fi+.lbl, .sel+.lbl, .dp+.lbl, .ta+.lbl, .prd._fl .rel {
+  white-space: nowrap;
+}
+.sug .sec._xprs .info[data-mid-txt]::after, .sug .sec._prd .all[data-mid-txt]::after, .sug .sec._emp .ttl[data-mid-txt]::after, .sug .sec ~ .sec[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .btn, .brd-btn, .tag, .var-w .vl, .dpdw .pfx, .popup .ttl, .rate .star::before, .rate .star::after, .flyout .tit, .flyout .s-itm:hover, .s-menu .m-itm._act, .s-menu .m-itm[data-visible="true"], .s-menu .m-itm[data-visible="true"] ~ .m-itm:hover, .s-menu .m-itm:hover, .pg, .stpr .stp._curr .ttl, .prd .mpg::before, .prd .mpg::after, .prd .spon, .prd._box .prc, .prd._fb .prc, .prd._fl .prc, .cms th, .cms .tabs>label, .sug .ttl, .sug .prod .prc, .sug .sec._cat .name, .cntd._def, #jm .-hov-m:hover, #jm .-m {
+  font-weight: 500;
+}
+.fi-er, .find input, .flyout .text, .flyout .tit, .flyout .s-itm, .prd._box .name, .prd._fl .stk, .prd._fl .add, .sug .prod .p-name, .brcbs, #jm .-elli, .fi+.lbl, .sel+.lbl, .dp+.lbl, .ta+.lbl, .prd._fb .name, .prd._fl .name, #jm .-elli2, .lockscroll, .btn._prim, .btn._sec, .btn._ter, .btn._fb, .pfs-w .ps, .dpdw .inbox, .flyout, .flyout .co, .s-menu, .prd._box, .prd._fb, .prd._fl .img-c, .prd._fl .rel, .cms table, .crs-w, .banner-pop, .sug, .sug .prod, #jm .-oh {
+  overflow: hidden;
+}
+.row .row[class*='col'], .sug .sec._emp .ttl, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:first-child, .cms .cola:first-child, .crs-w._gal:not(._nav) .itm:first-of-type, #jm .-pln {
+  padding-left: 0;
+}
+.row .row[class*='col'], .sug .sec._emp .ttl, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:last-child, .rate._btns, .cms .cola:last-child, .crs-w._gal:not(._nav) .itm:last-of-type, #jm .-prn {
+  padding-right: 0;
+}
+.rate._btns, .prd._fl .s-prc-w, #jm .-j-end {
+  justify-content: flex-end;
+}
+.sug .sec._xprs .info[data-mid-txt]::after, .sug .sec._prd .all[data-mid-txt]::after, .sug .sec._emp .ttl[data-mid-txt]::after, .sug .sec ~ .sec[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .lbl::first-letter, #jm .-flupp::first-letter, .btn, .brd-btn, .tag._na, .tag._oos, footer .f-t, .flyout .tit, .sug .ttl, #jm .-upp {
+  text-transform: uppercase;
+}
+.flyout .itm:hover .ic, .prd .spon:hover .ic, .prd .spon:focus .ic, .crs-w._gal .c-btn:hover:not(._dis) .ic, #jm .-hov-or5:hover .ic, #jm .-hov-or5:focus .ic, #jm .-f-or5 {
+  fill: #f68b1e;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+user agent stylesheet
+:not(svg) {
+  transform-origin: 0px 0px;
+}
+.brd-btn._rnd, #jm .-paxs {
+  padding: 4px;
+}
+
+.row, #jm .-mla {
+  margin-left: auto;
+}
+.row, #jm .-mra {
+  margin-right: auto;
+}
+.row {
+  max-width: 1184px;
+}
+._6c-shs>.col, ._6cl-4cm-shs>.col {
+  width: calc(16.66667% - 8px);
+}
+
+.prd._box, #jm .-lh-1 {
+  line-height: 1;
+}
+.var-w .vl, .prd._box, .prd._fb, #jm .-maxs {
+  margin: 4px;
+}
+.row .row[class*='col'], .sug .sec._emp .ttl, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:first-child, .cms .cola:first-child, .crs-w._gal:not(._nav) .itm:first-of-type, #jm .-pln {
+  padding-left: 0;
+}
+.btn._sm, .btn._i._md, .vb, .rate .star::before, .rate .star::after, .sldr .dot, .markup p, .markup h1, .markup h2, .markup h3, .cms th, .cms td, .sug .ttl, .sug .itm, .sug .sec._xprs .info, .sug .sec._emp, .cntd._def .s, #jm .-pvs, .fi, .sel, .dp, .prd .stk, .prd._box, .prd._fb, .prd._fb .info, #jm .-pbs {
+  padding-bottom: 8px;
+}
+.row .row[class*='col'], .sug .sec._emp .ttl, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:last-child, .rate._btns, .cms .cola:last-child, .crs-w._gal:not(._nav) .itm:last-of-type, #jm .-prn {
+  padding-right: 0;
+}
+.fi-w._ha, .header .logo, .rate._btns .star::before, .rate._btns .star::after, .sldr._prod>.itm, .prd .img {
+  height: auto;
+}
+
+.row, .btn._prim::after, .btn._sec::after, .btn._ter::after, .btn._fb::after, .ar, .ar>img, .y-ifm, .jpw-ifm, .fi, .fi-er, .sel, .dp, .ta, .pfi-w, .pi-w, .pi, .pfs-w, .pfs-w::after, .pfs-w .ps, .find, .dpdw .box, .card._fw, .rate._btns .star::before, .rate._btns .star::after, .flyout .co._fl, .sldr>.itm, .sldr._cms, .prd .img, .prd._box, .prd._fb .add, .prd._fl .main, .prd._fl .add, .markup table, .cms .tabs>div, .crs-w .itm-sel, .nl-form .nl-fi-w .nl-fi, .banner, .sug, .stars::before, .meter, #jm .-fw {
+  width: 100%;
+}
+.reco .ttl:empty::after, .prd .name:empty::after, .prd .prc:empty::after, article, aside, footer, header, nav, section, .sel, .find input:not([value=""])+.rst, .dpdw._hov:hover .tgl:not(:checked) ~ .box, .flyout .itm:hover+.sub img, .flyout .itm:focus+.sub img, .flyout .sub:hover img, .flyout .tit, .flyout .s-itm, .stpr .stp._curr .circ::before, .sldr>.sld:checked+.itm+.lab, .sldr>.sld:checked ~ .lab ~ .lab ~ .lab, .prd .img, .prd._box .prc[data-oprc]::after, .markup img, .crs-w._c-btn-on .c-btn._dis._hid, .sug._open, #jm .-db {
+  display: block;
+}
+img {
+  border-style: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body, .btn, .tag._dsct, .tag._na, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .pi, .prd._box .name, .prd._fb .prc, .prd._fl .stk, .nl-form._pop .nl-fi-w .nl-fi, #jm .-fs14 {
+  font-size: .875rem;
+}
+
+.fi-er, .find input, .flyout .text, .flyout .tit, .flyout .s-itm, .prd._box .name, .prd._fl .stk, .prd._fl .add, .sug .prod .p-name, .brcbs, #jm .-elli, .prd._fb .name, .prd._fl .name, #jm .-elli2 {
+  text-overflow: ellipsis;
+}
+.fi-er, .find input, .flyout .text, .flyout .tit, .flyout .s-itm, .prd._box .name, .prd._fl .stk, .prd._fl .add, .sug .prod .p-name, .brcbs, #jm .-elli, .fi+.lbl, .sel+.lbl, .dp+.lbl, .ta+.lbl, .prd._fl .rel {
+  white-space: nowrap;
+}
+.fi, .fi+.lbl, .sel, .dp, .ta, .find input, .noti, .rate .star::before, .rate .star::after, .stpr .stp, .prd._box .prc, .prd._fl .name, .prd._fl .old, .sug .sec._cat .q, #jm .-fs16 {
+  font-size: 1rem;
+}
+
+.dp, .rate._btns .star::before, .rate._btns .star::after, .prd._box .prc, .prd._fb .prc, .sug .prod .prc, #jm .-tal {
+  text-align: left;
+}
+.prd._box .prc[data-oprc]::after {
+  content: attr(data-oprc);
+}
+.popup .cls, .prd._box ._dsct, .prd._fb .camp, .prd._fl .spon {
+  top: 8px;
+}
+
+.popup .cls, .prd._box ._dsct, .prd._fb ._oos, .prd._fl .spon, .prd._fl .sd-ft, .crs-w._main .c-btn._next {
+  right: 8px;
+}
+.tag._dsct::before {
+  content: '-';
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+span.prix {
+  margin-right: 19px;
+}
+a.-df.-i-ctr.-upp.-m.-pvxs.-or5 {
+  float: right;
+  font-size: 12px;
+  position: relative;
+  top: -33px;
+  color: #ffa704;
+  font-weight: bold;
+}
+img.img {
+  border: 2px solid #ffc26f52;
+}
+@media (min-width: 415px) and (max-width: 425px) {
+  .col16 {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    padding: 2rem;
+    position: absolute;
+    right: 13px;
+  }
+  section.card._fw.-rad4.-oh {
+    padding: 19px;
+    width: 414px;
+  }
+}
+
+
+
+
+
+.jpw-ifm, .tag._na, .crs._cms-th .thb, .cntd._def .t, #jm .-paxs {
+  padding: 4px;
+}
+
+.row, .cola, img[data-lazy], .markup img, #jm .-img-fl-mw {
+  max-width: 100%;
+}
+.row, .gr, .jpw-ifm, .ar, .ar>img, .fi, .fi-er, .sel, .fs, .fis, .dp, .ta, .rng .rs-w, .rng .rs-w::after, .rng .rs, .rng .ri, .hdr .main .nav-b::after, .btn._def::after, .btn._prim::after, .btn._sec::after, .btn._ter::after, .btn._fb::after, .card._fw, .stars .in, .popup, .crs, .crs._prd-i .itm:only-child, .crs._gal-m .itm, .crs._gal-m .img[data-lazy], .crs._cms-th .img, .prd .img, .prd._full .btn, #tog-v:checked+.prd-w .col .prd .info, .markup table, .banner, .meter, .s-menu .m-itm, #jm .-fw {
+  width: 100%;
+}
+.row, .vars, #jm .-fw-w {
+  flex-wrap: wrap;
+}
+.row {
+  flex: 0 1 auto;
+}
+.row, #jm, .s-hdr, .rad ~ .lbl::after, .cb ~ .lbl::after, .fs, .vars, .rng .ris-w, .rng .ri-w, .btn._i, .noti .msg, .popup .cw .t-bar, .sdw .sdl, .sdw .sdtl, .stpr, .stpr .hd, .stpr .circ, .lwo, .crs, .crs._cms-th .thb, .prd, .prd._full .s-prc-w, .prd._full .rev, .prd._full .spon, #tog-v:checked+.prd-w .col .prd .core, #tog-v:checked+.prd-w .col .prd .ftr, .xpnd .cta-w, .gal, .gal .main, [data-ad], .s-menu .m-itm, #jm .-df {
+  display: flex;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.row .row[class*='col'], .fi, .prd._rec .img-c, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:first-child, #jm .-pln {
+  padding-left: 0;
+}
+.row .row[class*='col'], .fi, .prd._rec .img-c, #jm .-phn, ._no-g>[class*='col'], ._no-go>[class*='col']:last-child, #jm .-prn {
+  padding-right: 0;
+}
+.col4 {
+  flex-basis: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  width: 50%;
+}
+.row[class*='col'], .fis._sm, .rate .star, .btn._def._sm, .card-w>.ttl, .prd._full .info, .prd._full .spon, .prd._rec .name, .prd._rec .prc, #jm .-phs, .gr, .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .cola, .rng .ri-f:last-child, a._more._i, .crs._prd-i .itm, .crs._bnrs .itm, .crs._gal-th .itm, #jm .-pls {
+  padding-left: 8px;
+}
+.row[class*='col'], .fis._sm, .rate .star, .btn._def._sm, .card-w>.ttl, .prd._full .info, .prd._full .spon, .prd._rec .name, .prd._rec .prc, #jm .-phs, .gr, .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .cola, .fs .rst, .rng .ri-f:first-child, .crs._prd-i .itm:last-child, .crs._bnrs .itm:last-child, #tog-v:checked+.prd-w .col .prd .stk, #jm .-prs {
+  padding-right: 8px;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+
+.vars .vl, .prd._box, #jm .-maxs {
+  margin: 4px;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .hdr, .s-hdr, .vars, .btn._sec, .btn._ter, .card, .s-menu, .popup .cw, .sdw, .crs._gal-th .itm, .prd._box, .prd._rec, .cntd._def .t, #jm .-bg-wt {
+  background-color: #fff;
+}
+.ta, .rng .ri-w, .btn, .card, .card-b, .popup._ctr .cw, .crs._bnrs .img, .crs._gal-th._def .img, .prd._box, #tog-v:checked+.prd-w .col .prd .img-c, .meter, #jm .-rad4 {
+  border-radius: 4px;
+}
+.fi-bl button, .fi-br button, .cb ~ .lbl, .rad ~ .lbl, #jm .-vr+.-vr, .sdw .sdtl, #tog-v:checked+.prd-w .col .prd .ftr, #jm .-hr, .ar, .fi-w, .rate, .vars, .rng, .rng .rs-w, .hdr .main .nav-b, .btn._def, .btn._prim, .btn._sec, .btn._ter, .btn._fb, .stars, .stpr .stp, .prd, .prd._full .img-c, .banner, #jm .-pr {
+  position: relative;
+}
+#jm, .stpr, .crs._cms-th .thb, .prd, .gal, .gal .main, #jm .-d-co {
+  flex-direction: column;
+}
+.row, #jm, .s-hdr, .rad ~ .lbl::after, .cb ~ .lbl::after, .fs, .vars, .rng .ris-w, .rng .ri-w, .btn._i, .noti .msg, .popup .cw .t-bar, .sdw .sdl, .sdw .sdtl, .stpr, .stpr .hd, .stpr .circ, .lwo, .crs, .crs._cms-th .thb, .prd, .prd._full .s-prc-w, .prd._full .rev, .prd._full .spon, #tog-v:checked+.prd-w .col .prd .core, #tog-v:checked+.prd-w .col .prd .ftr, .xpnd .cta-w, .gal, .gal .main, [data-ad], .s-menu .m-itm, #jm .-df {
+  display: flex;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a, .a, .prd._full ._dsct {
+  text-decoration: none;
+}
+a, .a, .prd .prc:empty::after, .cntd._def .t {
+  display: inline-block;
+}
+button, a, .fi-bl button, .fi-br button, .fi, .rad ~ .lbl::after, .cb ~ .lbl::after, .sel, .dp, .rng .rs, .rng .ri, .btn, .btn._dis._def, .btn._def:disabled {
+  background-color: rgba(0,0,0,0);
+}
+.hdr .main .nav-b, .s-hdr button, .s-hdr a, .fi-bl button, .fi-br button, .fi, .sel, .fis, .dp, .rate .star, .rng .rs, .rng .ri, .btn, a, .a, .popup .cw .cls {
+  outline: 0;
+}
+a {
+  -webkit-text-decoration-skip: objects;
+}
+a {
+  color: inherit;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+
+.vars .vl, .prd._box, #jm .-maxs {
+  margin: 4px;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .hdr, .s-hdr, .vars, .btn._sec, .btn._ter, .card, .s-menu, .popup .cw, .sdw, .crs._gal-th .itm, .prd._box, .prd._rec, .cntd._def .t, #jm .-bg-wt {
+  background-color: #fff;
+}
+.ta, .rng .ri-w, .btn, .card, .card-b, .popup._ctr .cw, .crs._bnrs .img, .crs._gal-th._def .img, .prd._box, #tog-v:checked+.prd-w .col .prd .img-c, .meter, #jm .-rad4 {
+  border-radius: 4px;
+}
+.fi-bl button, .fi-br button, .cb ~ .lbl, .rad ~ .lbl, #jm .-vr+.-vr, .sdw .sdtl, #tog-v:checked+.prd-w .col .prd .ftr, #jm .-hr, .ar, .fi-w, .rate, .vars, .rng, .rng .rs-w, .hdr .main .nav-b, .btn._def, .btn._prim, .btn._sec, .btn._ter, .btn._fb, .stars, .stpr .stp, .prd, .prd._full .img-c, .banner, #jm .-pr {
+  position: relative;
+}
+#jm, .stpr, .crs._cms-th .thb, .prd, .gal, .gal .main, #jm .-d-co {
+  flex-direction: column;
+}
+.row, #jm, .s-hdr, .rad ~ .lbl::after, .cb ~ .lbl::after, .fs, .vars, .rng .ris-w, .rng .ri-w, .btn._i, .noti .msg, .popup .cw .t-bar, .sdw .sdl, .sdw .sdtl, .stpr, .stpr .hd, .stpr .circ, .lwo, .crs, .crs._cms-th .thb, .prd, .prd._full .s-prc-w, .prd._full .rev, .prd._full .spon, #tog-v:checked+.prd-w .col .prd .core, #tog-v:checked+.prd-w .col .prd .ftr, .xpnd .cta-w, .gal, .gal .main, [data-ad], .s-menu .m-itm, #jm .-df {
+  display: flex;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a, .a, .prd._full ._dsct {
+  text-decoration: none;
+}
+a, .a, .prd .prc:empty::after, .cntd._def .t {
+  display: inline-block;
+}
+button, a, .fi-bl button, .fi-br button, .fi, .rad ~ .lbl::after, .cb ~ .lbl::after, .sel, .dp, .rng .rs, .rng .ri, .btn, .btn._dis._def, .btn._def:disabled {
+  background-color: rgba(0,0,0,0);
+}
+.hdr .main .nav-b, .s-hdr button, .s-hdr a, .fi-bl button, .fi-br button, .fi, .sel, .fis, .dp, .rate .star, .rng .rs, .rng .ri, .btn, a, .a, .popup .cw .cls {
+  outline: 0;
+}
+a {
+  -webkit-text-decoration-skip: objects;
+}
+a {
+  color: inherit;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.prd._box .img-c, .fi-w._cb>.fi-er, .fi-w._rad>.fi-er, .fi-w._cb, .rad ~ .lbl {
+  padding-left: 32px;
+}
+.prd._box .img-c, .sel {
+  padding-right: 32px;
+}
+.hdr .main .nav-b, .s-hdr button, .s-hdr a, .fi-w, .fi-bl button, .fi-br button, .rate .star, .popup .cw .cls, .crs._bnrs .itm, .prd .img-c, .prd._full .info, .banner, .meter, #jm .-fs0 {
+  font-size: 0rem;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.crs._cms-th .img, .prd .img, #jm .-img-fl-mw {
+  height: auto;
+}
+.row, .gr, .jpw-ifm, .ar, .ar>img, .fi, .fi-er, .sel, .fs, .fis, .dp, .ta, .rng .rs-w, .rng .rs-w::after, .rng .rs, .rng .ri, .hdr .main .nav-b::after, .btn._def::after, .btn._prim::after, .btn._sec::after, .btn._ter::after, .btn._fb::after, .card._fw, .stars .in, .popup, .crs, .crs._prd-i .itm:only-child, .crs._gal-m .itm, .crs._gal-m .img[data-lazy], .crs._cms-th .img, .prd .img, .prd._full .btn, #tog-v:checked+.prd-w .col .prd .info, .markup table, .banner, .meter, .s-menu .m-itm, #jm .-fw {
+  width: 100%;
+}
+img {
+  border-style: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.hdr .main .nav-b, .s-hdr button, .s-hdr a, .fi-w, .fi-bl button, .fi-br button, .rate .star, .popup .cw .cls, .crs._bnrs .itm, .prd .img-c, .prd._full .info, .banner, .meter, #jm .-fs0 {
+  font-size: 0rem;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .tag._dsct._sm, .tag._na, .tag._score, .foot, .fi:not([value=""])+.lbl, .fi:focus+.lbl, .fi[placeholder]+.lbl, .lbl, .fi-er, .vars, .btn._sm, .card-w>.ttl, .sdw .sdtl, .stpr .ft, .prd._full .name, .prd._full .old, .prd._full .rev, .prd._box .name, .gal .count, .s-menu .m-itm, #jm .-fs12 {
+  font-size: .75rem;
+}
+
+.fi-er, .prd._box .name, .prd._rec .name, #jm .-elli, .prd._full .name, #jm .-elli2, .s-menu .itm, #jm .-elli3, #jm .-elli6 {
+  text-overflow: ellipsis;
+}
+.fi-er, .prd._box .name, .prd._rec .name, #jm .-elli, .fi+.lbl, .sel+.lbl, .dp+.lbl, .ta+.lbl, .s-menu .itm, #jm .-elli3, #jm .-elli6 {
+  white-space: nowrap;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .foot, .fis._def, .btn._sm, .btn._md, .popup._btm .t-bar, .sdw .sdl, .sdw .sdtl, .prd._box .name, .prd._box .prc, #jm .-phm, .fis ~ .fis-b, .vars .fi-er, .crs._gal-th .itm:first-child, .markup ul, .markup ol, #jm .-plm {
+  padding-left: 16px;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .foot, .fis._def, .btn._sm, .btn._md, .popup._btm .t-bar, .sdw .sdl, .sdw .sdtl, .prd._box .name, .prd._box .prc, #jm .-phm, .popup._ctr .t-bar, .crs._gal-th .itm:last-child, .gal .count, #jm .-prm {
+  padding-right: 16px;
+}
+.rate .star::after, .rng .lbl, .btn._sm, .sdw .sdtl, .crs._gal-th._s, .xpnd, #jm .-pvs, .prd._full .rev, .prd._box .name, .prd._rec .name, .prd._rec .prc, #tog-v:checked+.prd-w .col .prd .core, .xpnd .cta-w, #jm .-pts {
+  padding-top: 8px;
+}
+.fi-er, .prd._box .name, .prd._rec .name, #jm .-elli, .fi+.lbl, .sel+.lbl, .dp+.lbl, .ta+.lbl, .prd._full .name, #jm .-elli2, .lockscroll #jm, .rec-crs .crs, .fis, .rng .rs, .hdr .main .nav-b, .btn._def, .btn._prim, .btn._sec, .btn._ter, .btn._fb, .prd._full, #tog-v:checked+.prd-w .col .prd .img-c, .xpnd .wpr, .gal .main, .s-menu .itm, #jm .-elli3, #jm .-elli6, #jm .-oh {
+  overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6, .tag._score::after, #jm .-r {
+  font-weight: 400;
+}
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, li, figure, fieldset, legend, button, input, optgroup, select, textarea, #jm .-man {
+  margin: 0;
+}
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, li, figure, fieldset, legend, [type="checkbox"], [type="radio"], #jm .-pan {
+  padding: 0;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .tag._dsct, .tag._na, .tag._oos, .rate .star::after, .vars .vl, .rng .lbl, .btn, .card-w>.ttl, .popup .cw .ttl, .stpr .stp._curr .ttl, .prd._full .prc, .prd._full .spon, .prd._box .prc, .prd._rec .prc, .s-menu .m-itm._act, .cntd._def, #jm .-m {
+  font-weight: 500;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .foot, .fis._def, .btn._sm, .btn._md, .popup._btm .t-bar, .sdw .sdl, .sdw .sdtl, .prd._box .name, .prd._box .prc, #jm .-phm, .fis ~ .fis-b, .vars .fi-er, .crs._gal-th .itm:first-child, .markup ul, .markup ol, #jm .-plm {
+  padding-left: 16px;
+}
+.rate .star::after, .rng .lbl, .btn._sm, .sdw .sdtl, .crs._gal-th._s, .xpnd, #jm .-pvs, .foot, .fi, .sel, .dp, .card-w>.ttl, .stpr .stp:not(:last-child) .ft::after, .prd._box .prc, #jm .-pbs {
+  padding-bottom: 8px;
+}
+.sdw .sdtl[data-mid-txt]::after, #tog-v:checked+.prd-w .col .prd .ftr[data-mid-txt]::after, #jm .-hr[data-mid-txt]::after, .foot, .fis._def, .btn._sm, .btn._md, .popup._btm .t-bar, .sdw .sdl, .sdw .sdtl, .prd._box .name, .prd._box .prc, #jm .-phm, .popup._ctr .t-bar, .crs._gal-th .itm:last-child, .gal .count, #jm .-prm {
+  padding-right: 16px;
+}
+.btn._i._def, .prd._full .spon, .markup p, .markup h1, .markup h2, .markup h3, #jm .-pvxs, .fi-er, .prd._full .prc, .prd._full .shipp, .prd._box .prc, .meter._xs, #jm .-ptxs {
+  padding-top: 4px;
+}
+.tag._dsct, .tag._score, .prd .prc, .prd._full .old, #jm .-ltr {
+  direction: ltr;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+.hdr [data-ci]::before, .rate .star::after, .vars .vl, .btn, .prd._box, .banner, .s-menu .itm, #jm .-tac {
+  text-align: center;
+}
+.btn, a, .a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+}
+body {
+  direction: ltr;
+}
+body, .tag._dsct, .tag._mall._md, .tag._glb._md, .rad ~ .lbl, .cb ~ .lbl, .fis._sm, .rng .ri, .btn, .noti, .prd._rec .name, #jm .-fs14 {
+  font-size: .875rem;
+}
+button, body, .fi, .sel, .dp, .ta, .rng .ri, .btn {
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body, .tag._oos, .fi, .rad ~ .lbl, .cb ~ .lbl, .sel, .dp, .rng .ri, .stpr .stp._curr, .cntd._def .t, #jm .-gy8 {
+  color: #282828;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.box1, .box2 {
+  display: contents;
+}
+/* hada gha zayd*/
+
+.col8.-phn.-mvxs.card._fw {
+  margin-bottom: 4px;
+  width: 100%;
+  margin-left: 0px;
+}
+a.panier {
+  position: relative;
+  left: -6px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/* hada gha zayd*/
+header.-fs12 {
+  width: auto;
+  margin-left: 0;
+  margin-left: 0;
+  box-shadow: 0px 2px 250px 2px #a06007;
+  border-radius: 1px 1px 1px 1px;
+  height: 50px;
+}
+a.-upp.-mla.-b.-fsh0.-pas {
+  float: right;
+  position: relative;
+  top: -5px;
+  right: 33px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 1px #4a84ff;
+}
+h2.ttl.-m.-fs16.-elli.-phs.-pvxs.-lh-15 {
+  /* margin-top: 9px; */
+  font-size: 17px;
+  position: relative;
+  top: 14px;
+  left: 0px;
+  margin: 1px 1px 1px 18px;
+  font-weight: 600;
+  color: #fdfdfd;
+  text-shadow: 1px 1px 1px grey;
+}
+.img-c {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 96px;
+  height: 100px;
+}
+.img-c {
+  position: relative;
+  left: 34px;
+  border: 1px solid #ffd9949e;
+  border-radius: 5px 5px 5px 5px;
+}
+.prc {
+  position: relative;
+  left: 41px;
+}
+.col8 {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  .col8 {
+    display: block;
+  }
+}
+@media (min-width: 366px) and (max-width: 375px) {
+  .col8.-phn.-mvxs.card._fw {
+    margin-bottom: 4px;
+    width: 100%;
+    margin-left: 1px;
+  }
+  header.-fs12 {
+    width: auto;
+    margin-left: 0;
+    box-shadow: 0px 2px 250px 2px #a06007;
+    border-radius: 1px 1px 1px 1px;
+    height: 50px;
+  }
+}
+@media (min-width: 310px) and (max-width: 320px){
+  header.-fs12 {
+    width: auto;
+    margin-left: 0;
+    box-shadow: 0px 2px 250px 2px #a06007;
+    border-radius: 1px 1px 1px 1px;
+    height: 50px;
+  }
+  .col8.-phn.-mvxs.card._fw {
+    margin-bottom: 4px;
+    width: 100%;
+    margin-left: 3px;
+  }
+  h2.ttl.-m.-fs16.-elli.-phs.-pvxs.-lh-15 {
+    font-size: 13px;
+    position: relative;
+    top: 14px;
+    left: 0px;
+    margin: 1px 1px 1px 18px;
+    font-weight: 600;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 1px grey;
+  }
+  a.-upp.-mla.-b.-fsh0.-pas{
+    float: right;
+    position: relative;
+    top: -3px;
+    right: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 1px #4a84ff;
+  }
+  .img-c {
+    position: relative;
+    left: 19px;
+    border: 1px solid #ffd9949e;
+    border-radius: 5px 5px 5px 5px;
+  }
+  .prc {
+    position: relative;
+    left: 22px;
+  }
+  a.panier {
+    position: relative;
+    left: -2px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 340px) and (max-width: 360px) {
+  header.-fs12 {
+    width: auto;
+    margin-left: 0;
+    box-shadow: 0px 2px 250px 2px #a06007;
+    border-radius: 1px 1px 1px 1px;
+    height: 50px;
+  }
+  .col8.-phn.-mvxs.card._fw {
+    margin-bottom: 4px;
+    width: 100%;
+    margin-left: 0px;
+    border-radius: 0;
+  }
+  a.panier{
+    position: relative;
+    left: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  h2.ttl.-m.-fs16.-elli.-phs.-pvxs.-lh-15{
+    font-size: 13px;
+    position: relative;
+    top: 14px;
+    left: 0px;
+    margin: 1px 1px 1px 18px;
+    font-weight: 600;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 1px grey;
+  }
+}
+@media (min-width: 390px) and (max-width: 411px) {
+  .col8.-phn.-mvxs.card._fw {
+    margin-bottom: 4px;
+    width: 100%;
+    margin-left: 0px;
+  }
+  header.-fs12 {
+    width: auto;
+    margin-left: 0;
+    box-shadow: 0px 2px 250px 2px #a06007;
+    border-radius: 1px 1px 1px 1px;
+    height: 50px;
+  }
+  h2.ttl.-m.-fs16.-elli.-phs.-pvxs.-lh-15{
+    font-size: 13px;
+    position: relative;
+    top: 14px;
+    left: 0px;
+    margin: 1px 1px 1px 18px;
+    font-weight: 600;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 1px grey;
+  }
+}
+
+
+
+
+
+
+
+
+
+.pd-wrap {
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
+}
+.heading-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sub-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  display: block;
+  font-weight: 600;
+  color: #2e9ca1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.heading-section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+  color: gray;
+  text-transform: uppercase;
+  margin-top: -16px;
+}
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  min-width: 80px;
+  background-size: 100%;
+}
+.carousel-testimonial .item {
+  padding: 30px 10px;
+}
+.quote {
+  position: absolute;
+  top: -23px;
+  color: #2e9da1;
+  font-size: 27px;
+}
+.name {
+  margin-bottom: 0;
+  line-height: 14px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.position {
+  color: #adadad;
+  font-size: 14px;
+}
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  outline: none;
+  height: 25px;
+}
+.owl-nav button svg {
+  width: 25px;
+  height: 25px;
+}
+.owl-nav button.owl-prev {
+  left: 25px;
+}
+.owl-nav button.owl-next {
+  right: 25px;
+}
+.owl-nav button span {
+  font-size: 45px;
+}
+.product-thumb .item img {
+  height: 100px;
+}
+.product-name {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 4px;
+}
+.product-price-discount {
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px 0;
+  clear: both;
+}
+.product-price-discount span.line-through {
+  text-decoration: line-through;
+  margin-left: 10px;
+  font-size: 14px;
+  vertical-align: middle;
+  color: #a5a5a5;
+}
+.display-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.product-info {
+  width: 100%;
+}
+.reviews-counter {
+  font-size: 13px;
+}
+.reviews-counter span {
+  vertical-align: -2px;
+}
+.rate {
+  float: left;
+  padding: 0 10px 0 0;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 21px;
+  color:#ccc;
+  margin-bottom: 0;
+  line-height: 21px;
+}
+.rate:not(:checked) > label:before {
+  content: '\2605';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+.product-dtl p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #7a7a7a;
+}
+.product-dtl .form-control {
+  font-size: 15px;
+}
+.product-dtl label {
+  line-height: 16px;
+  font-size: 15px;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.product-count {
+  margin-top: 15px;
+}
+.product-count .qtyminus,
+.product-count .qtyplus {
+  width: 34px;
+  height: 34px;
+  background: #212529;
+  text-align: center;
+  font-size: 19px;
+  line-height: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+.product-count .qtyminus {
+  border-radius: 3px 0 0 3px;
+}
+.product-count .qtyplus {
+  border-radius: 0 3px 3px 0;
+}
+.product-count .qty {
+  width: 60px;
+  text-align: center;
+}
+.round-black-btn {
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4c4949!important;
+  padding: 7px 45px;
+  display: inline-block;
+  margin-top: 20px;
+  border: solid 2px #17ff03;
+  transition: all 0.5s ease-in-out 0s;
+  width: 100%;
+  text-align: center;
+}
+.round-black-btn:hover,
+.round-black-btn:focus {
+  background: #809d18;
+  color: #fbfbfa;
+  text-decoration: none;
+}
+
+.product-info-tabs {
+  margin-top: 25px;
+}
+.product-info-tabs .nav-tabs {
+  border-bottom: 2px solid #d8d8d8;
+}
+.product-info-tabs .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.product-info-tabs .nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #323232;
+}
+.product-info-tabs .nav-tabs .nav-item .nav-link:hover {
+  border: none;
+}
+.product-info-tabs .nav-tabs .nav-item.show .nav-link,
+.product-info-tabs .nav-tabs .nav-link.active,
+.product-info-tabs .nav-tabs .nav-link.active:hover {
+  border: none;
+  border-bottom: 2px solid #d8d8d8;
+  font-weight: bold;
+}
+.product-info-tabs .tab-content .tab-pane {
+  padding: 30px 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #7a7a7a;
+}
+.review-form .form-group {
+  clear: both;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.review-form .rate {
+  float: none;
+  display: inline-block;
+}
+.review-heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  color: #000;
+}
+.review-form .form-control {
+  font-size: 14px;
+}
+.review-form input.form-control {
+  height: 40px;
+}
+.review-form textarea.form-control {
+  resize: none;
+}
+.review-form .round-black-btn {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button.close {
+  position: absolute;
+  right: 23px;
+  top: 12px;
+  font-size: 25px;
+}
+@media (max-width: 425px) {
+  div.modal{
+    display: block!important;
+  }
+  .modal-content {
+    height: 522px;
+    width: 425px!important;
+    font-size: 15px!important;
+    position: relative;
+    right: 5px;
+    top: -6px;
+  }
+  button.close {
+    z-index: 100;
+  }
+  mat-expansion-panel {
+    margin-top: 9px!important;
+    margin-left: 5px!important;
+    width: 100%!important;
+    overflow: hidden!important;
+    position: absolute;
+  }
+  .item {
+    margin-left: 0px;
+    width: 301px;
+    margin-top: 1px;
+  }
+  img.prod_det {
+    width: 237px;
+    height: 233px;
+  }
+  .product-name {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: -11px;
+    color: gray;}
+  span.price{
+    color: gray;
+  }
+
+  .product-price-discount {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 0px;
+    clear: both;
+  }
+  .product-price-discount span.line-through{
+    text-decoration: line-through;
+    margin-left: 12px;
+    font-size: 11px;
+    vertical-align: middle;
+    color: #a5a5a5;
+  }
+  .product-dtl p {
+    font-size: 12px;
+    line-height: 24px;
+    color: #7a7a7a;
+  }
+  .col-md-6.glas {
+    position: relative;
+    right: 20px;
+  }
+  .product-count {
+    margin-top: 52px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(3.25rem + 2px);
+  }
+  .heading-section h2 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 3px;
+    padding-bottom: -5px;
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+    text-transform: uppercase;
+    margin-top: 11px;
+    float: left;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: block;
+  overflow: hidden;
+  outline: 0;
+}
+@media (max-width: 375px) {
+  .modal-content {
+    height: 530px!important;
+    width: 375px!important;
+    font-size: 15px!important;
+    position: relative;
+    right: 5px;
+    top: -6px;
+  }
+}
+@media (max-width: 320px) {
+  .modal-content{
+    height: 520px !important;
+    width: 320px !important;
+    font-size: 15px !important;
+    position: relative;
+    right: 5px;
+    top: -6px;
+  }
+  .product-count {
+    margin-top: 52px;
+    width: 320px;
+    margin-left: -26px;
+  }
+  .round-black-btn {
+    border-radius: 4px;
+    background: #9dbd2a;
+    color: #fff;
+    padding: 10px 45px;
+    display: inline-block;
+    margin-top: 20px;
+    border: solid 2px #f5bc01;
+    transition: all 0.5s ease-in-out 0s;
+    width: 100%;
+    text-align: center;
+  }
+  .round-black-btn {
+    border-radius: 4px;
+    background: #9dbd2a;
+    color: #fff;
+    padding: 10px 45px;
+    display: inline-block;
+    margin-top: 20px;
+    border: solid 2px #f5bc01;
+    transition: all 0.5s ease-in-out 0s;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media  (min-width: 340px) and (max-width: 360px) {
+  .modal-content {
+    height: 460px !important;
+    width: 360px !important;
+    font-size: 15px !important;
+    position: relative;
+    right: 5px;
+    top: -6px;
+  }
+  .product-count {
+    margin-top: -12px;
+    width: 360px;
+    margin-left: -26px;
+  }
+  .round-black-btn {
+    border-radius: 4px;
+    background: #9dbd2a;
+    color: #fff;
+    padding: 7px 45px;
+    display: inline-block;
+    margin-top: 20px;
+    border: solid 2px #f5bc01;
+    transition: all 0.5s ease-in-out 0s;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 411px) and (max-width: 414px) {
+  .modal-content {
+    height: 457px!important;
+    width: 411px!important;
+    font-size: 15px!important;
+    position: relative;
+    right: 5px;
+    top: -6px;
+  }
+}
+div.modal {
+  display: none;
+}

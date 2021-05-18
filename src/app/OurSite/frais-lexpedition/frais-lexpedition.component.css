@@ -1,0 +1,21 @@
+.navmy {
+  margin-top: -10px;
+}
+
+.container {
+  padding-top: 9%;
+}
+h1 {
+  text-align: center;
+}
+.shopify-policy__body {
+  font-size: 20px;
+  text-align: left;
+  font-family: sans-serif;
+  padding-top: 3%;
+}
+@media (max-width: 425px) {
+  main#MainContent {
+    margin-top: 74px;
+  }
+}

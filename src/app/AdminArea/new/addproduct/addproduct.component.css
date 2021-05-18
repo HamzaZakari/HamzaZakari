@@ -1,0 +1,59 @@
+.btn-success {
+  border: 1px solid gray;
+}
+.modal-content.smal1 {
+  z-index: 999;
+}
+.btn-danger{
+  float: left;
+}
+.small{
+  width: 370px;
+  position: relative;
+  left: 280px;
+  top:-25px;
+}
+.smal1{
+  width: 550px;
+  top:-25px;
+}
+.modal-body{
+  font-size: 14px;
+}
+select#form7 {
+  height: 36px;
+}
+/*.radio{*/
+/*  margin-left: 12px;*/
+/*}*/
+/*.radio2{*/
+/*  margin-left: 12px;*/
+/*}*/
+.inputclass{
+  visibility: hidden;
+}
+.image-privew{
+  height: 5rem;
+  margin: 1rem;
+}
+.image-privew img{
+  height: 100%;
+}
+mat-card{
+  margin-bottom:20px;
+}
+.modal-body{
+  padding: 32px
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+mat-form-field {
+  width: 478px;
+}
+.pricefiled{
+  width: 300px;
+  padding: 20px;
+  font-size: 17px;
+  margin-top:-40px;
+}

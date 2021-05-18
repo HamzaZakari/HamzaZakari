@@ -1,0 +1,232 @@
+<!-- The Modal -->
+<div class="modal" id="myModal" *ngIf="showModules">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title text-warning">Avertissement !!</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="showModules = false ; check_if_vide_livraison = false">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-danger" *ngIf="check_if_vide_livraison == false && yesdelete == true">
+        êtes-vous sûr de vouloir supprimer cette commande !!
+      </div>
+      <div class="modal-body text-danger" *ngIf="check_if_vide_livraison == true && yesdelete == false">
+        êtes-vous sûr de vouloir vider la livraison de  cette commande !!
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success mr-1" data-dismiss="modal"(click)="yeshesur()">Oui
+        <span class="spinner-border spinner-border-sm" *ngIf="showspenner"></span>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="nosur()">No</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="modal" id="myModal2" *ngIf="showmodulpdf">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content" id="content" #content>-->
+<!--        <mat-list role="list" *ngFor="let ord of DetailOrd; let i = index" >-->
+<!--          <mat-list-item role="listitem">{{ord.title !='null'?ord.title:ord.title_arab}} - Prix: {{ord.totalcomonde | currency:'DH'}} - QTY:{{ord.qtycomonde}} </mat-list-item>-->
+<!--        <br>-->
+<!--          <hr>-->
+<!--        </mat-list>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-success mr-1" data-dismiss="modal"(click)="formatpdf()">Oui-->
+<!--          <span class="spinner-border spinner-border-sm" *ngIf="showspenner"></span>-->
+<!--        </button>-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="nosur()">No</button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<mat-card >
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Commandes ({{orders.length}})</h3>
+    </div>
+    </div>
+  <div class="row">
+    <h4>Sélectionnez le statut des comandes que vous souhaitez modifier</h4>
+    <div class="status">
+    <mat-form-field >
+      <mat-label>Recherche par status</mat-label>
+      <mat-select >
+        <mat-option (click)="showall()" value="tous les Commandes">Voir tous les Commandes</mat-option>
+        <mat-option  *ngFor="let st of mystatus" [value]="st.status" (click)="filterStatus(st.status, st.val,st.statusbtn)">{{st.status}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+      <mat-form-field class="regionss">
+        <mat-label>Régions</mat-label>
+        <mat-select >
+          <mat-option (click)="toutsreg()" value="Tout les regions">Régions</mat-option>
+          <mat-option  *ngFor="let st of regions" [value]="st.regions" (click)="checkmyregions(st.id_region,st.regions,st.value)">{{st.regions}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+<!--      <mat-form-field class="regionss">-->
+<!--        <mat-label>Filter par livreurs</mat-label>-->
+<!--        <mat-select >-->
+<!--          <mat-option (click)="toutsreg()" value="Tout les regions">Tout les regions</mat-option>-->
+<!--          <mat-option  *ngFor="let st of regions" [value]="st.regions" (click)="checkmyregions(st.id_region,st.regions,st.value)">{{st.regions}}</mat-option>-->
+<!--        </mat-select>-->
+<!--      </mat-form-field>-->
+      <button class="btn btn-warning"  id="export"  (click)="exportAsXLSX()" *ngIf="orders.length > 0"> Export au Excel</button>
+<!--      <button class="btn btn-warning"  id="myracp"  (click)="showme()"  *ngIf="orders.length > 0">Afficher le récap d'aujourd'hui</button>-->
+    </div>
+    <div class="col-md-12">
+      <input class="form-control" type="text" id="search_text" name="search_text" placeholder="Recherche..."(keyup)="search($event)">
+    </div>
+  </div>
+  <br>
+
+  <div class="messtatus">
+<!--  <mat-form-field >-->
+<!--    <mat-label>Sélectionnez le statut</mat-label>-->
+<!--    <mat-select >-->
+<!--      <mat-option (click)="touts()" value="Tout les Commande">Tout les Commande</mat-option>-->
+<!--      <mat-option  *ngFor="let st of mystatus" [value]="st.status" (click)="checkmystatusforcheckall(st.status, st.val,st.statusbtn)">{{st.status}}</mat-option>-->
+<!--    </mat-select>-->
+<!--  </mat-form-field>-->
+
+
+  </div>
+  <div class="allagents" *ngIf="Checktousreturndata || checkifyouclickasinglecheckbox || idchecked.length !=0">
+    <mat-form-field >
+      <mat-label>Agents des commandes</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let ag of allagentscmd" [value]="ag.Full_name" (click)="agentcmdchose(ag.Role, ag.Full_name)">
+          {{ag.Full_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Agents Livraisons</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let ag1 of allagentsLiv" [value]="ag1.Full_name" (click)="agentLivchose(ag1.Role, ag1.Full_name)">
+          {{ag1.Full_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Livreurs</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let ag2 of LesLivreurs" [value]="ag2.Full_name" (click)="Livreurschose(ag2.Role, ag2.Full_name)">
+          {{ag2.Full_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="btn btn-success btnss" [disabled]="biegindoexport" (click)="validerAgnetsTraitemen()">Valider
+    <span class="spinner-border mys" *ngIf="isloadingagenst"></span>
+      <span class="fa fa-check-circle" *ngIf="!isloadingagenst && showsuccsesscheck"></span>
+    </button>
+  </div>
+  <table class="table table-striped" *ngIf="rolename != 'Agent de Commandes'">
+    <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th *ngIf="rolename != 'service clients' && rolename != 'Agent de Commandes'">Sélectionner tout</th>
+       <th *ngIf="rolename != 'service clients' && rolename != 'Agent de Commandes'"><mat-checkbox  [color]="['primary']"  [checked]="Checktousreturndata" (change)="checkall($event)"></mat-checkbox></th>
+      <th scope="col" style="text-align: center;">Nom</th>
+      <th scope="col" style="text-align: center;">Téléphone</th>
+      <th scope="col" style="text-align: center;">Régions</th>
+      <th scope="col" style="text-align: center;">Adresse</th>
+      <th scope="col" style="text-align: center;" >Quantité</th>
+      <th scope="col" style="text-align: center;">Total Commande</th>
+      <th scope="col" style="text-align: center;">Code Livraison</th>
+      <th scope="col" style="text-align: center;">Prix Livraison</th>
+    <!-- <th scope="col" style="text-align: center;">frais Livraison</th> -->
+      <th scope="col" style="text-align: center;">Code Commande</th>
+      <th scope="col" style="text-align: center;"> Créé le</th>
+      <th scope="col" style=" text-align: center;">Livreurs</th>
+      <th scope="col" style=" text-align: center;">Status</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let ord of orders  let i = index">
+    <tr  style="text-align: center"[ngClass]="ord.status =='Réserve'?'orange':'' || ord.status == 'Non Livrée'?'red':'' || ord.status == 'Clôturée'?'grey':'' || ord.status =='Livrée'?'green':''">
+      <th scope="row" >{{i+1}}</th>
+      <th scope="row"   *ngIf="rolename != 'service clients'">
+        <span class="material-icons" (click)="delete(ord.id)" style="cursor:pointer;">delete_forever</span>
+        <button class="btn-success" (click)="vidercash(ord.id)">Vider livraison
+         </button>
+      </th>
+<!--      [(ngModel)]="checks[i]"-->
+<!--      <th *ngIf="checkeddd ==  false && toutslescmd ==  false && checkQuartie == false && ord.status != 'Clôturée'"><mat-checkbox   [color]="['primary']"  [(ngModel)]="checks[i]"(change)="check($event , ord.id , ord.status)"></mat-checkbox></th>-->
+      <th *ngIf="Checktousreturndata == false && ord.status != 'Clôturée' && rolename != 'service clients'"><mat-checkbox   [color]="['primary']"  [(ngModel)]="checks[i]"(change)="check($event , ord.id , ord.status)"></mat-checkbox></th>
+<!--      <th *ngIf="checkeddd ==  true || toutslescmd == true && checkQuartie == false && ord.status != 'Clôturée'"><mat-checkbox   [color]="['primary']"  [checked]="mystatusforcheckall == ord.status?checkeddd:touscheck"></mat-checkbox></th>-->
+<!--      <th *ngIf="checkQuartie == true"><mat-checkbox   [color]="['primary']"  [checked]="Quartier == ord.regions?checkQuartie12:touscheck"></mat-checkbox></th>-->
+      <th *ngIf="Checktousreturndata == true && rolename != 'service clients'"><mat-checkbox   [color]="['primary']"  [checked]="Checktousreturndata"></mat-checkbox></th>
+      <td >
+        {{ord.clientfulname}}
+      </td>
+      <td >
+        {{ord.teleclient}}
+      </td>
+      <td >
+        {{ord.regions}}
+      </td>
+      <td >
+      {{ord.adress}}
+      </td>
+
+
+      <td>{{ord.count_pro}}</td>
+      <td >{{ord.total_whit_prix_livreson| currency:'DH'}}</td>
+      <td >{{ord.CodeLiveraison}}</td>
+      <td >{{(ord.prixLevrison?ord.prixLevrison:0) | currency:'DH'}}</td>
+      <!-- <td >{{(ord.frais_levrison?ord.frais_levrison:0 )| currency:'DH'}}</td> -->
+      <td>{{ord.CodeCMD?ord.CodeCMD:'CMD'+ord.id+datecode}}</td>
+      <td >{{ord.created_at| date:'dd/MM/yyyy hh:mm'}}</td>
+      <td >{{ord.livreur != null?ord.livreur:'  '}}</td>
+<!--      <td >{{ord.created_at}}</td>-->
+      <td class="btn_genarate">
+<!--        <button class="btn btn-success" id="actions" value="{{valuebtn}}"-->
+<!--                (click)="gereorder(ord.id_produits, ord.affstatus , ord.valuestatus, ord.status)"-->
+<!--                *ngIf="ord.valuestatus ==1 && ord.status != 'Cloturé'">{{ord.status}}</button>-->
+<!--        <button class="btn btn-success" id="actions" value="{{ord.valuestatus }}"-->
+<!--                (click)="gereorder(ord.id_produits, ord.affstatus , ord.valuestatus, ord.status)"-->
+<!--                  *ngIf="ord.status != 'Cloturé'">{{ord.status }}</button>-->
+        <span class="" style="width: 100%;color: green;">{{ord.affstatus}}</span>
+      </td>
+      <td><a [routerLink]="['/dashboard/detail_Order' , ord.id]" ><i class="fa fa-info"></i></a></td>
+<!--      <td><a  (click)="pdf(ord.id)"><i class="fa fa-file-pdf-o"></i></a></td>-->
+<!--      <button class="btn btn-warning"   (click)="exportAsPDF()" *ngIf="orders.length > 0"> Downdload PDF</button>-->
+<!--      <td><a [routerLink]="['/dashboard/edit_Orders' , ord.id]" color="primary" *ngIf="ord.affstatus != 'Clôturée' && ord.affstatus != 'Annulée' "><i class="fa fa-edit"></i></a></td>-->
+      <!--  <td>{{times | date}}</td>-->
+    </tr>
+    </tbody>
+  </table>
+  <mat-spinner *ngIf="isloding" style="margin-left: 300px;"></mat-spinner>
+  <div *ngIf="this.orders.length <=0 && !isloding">
+    <p class="alert alert-warning"> Aucune commande trouvée!</p>
+  </div>
+  <hr>
+<!--  <h4>Basic mat-select</h4>-->
+  <div class="bottomstatus">
+    <mat-form-field *ngIf="orders.length > 0 && rolename != 'service clients' && rolename != 'Agent de Commandes'">
+      <mat-label>Sélectionner le status</mat-label>
+      <mat-select>
+        <strong  *ngFor="let str of statusAf">
+          <mat-option *ngIf="str.statusbtn == 'Anuller'" [value]="str.val"  (click)="selectstate(str.status , str.val , str.statusbtn)" style="background: darkred">
+            <strong *ngIf="str.statusbtn == 'Anuller'" style="color: white; z-index: 2;">{{str.statusbtn}}</strong>
+          </mat-option>
+          <mat-option *ngIf="str.statusbtn != 'Anuller'"  [value]="str.val"  (click)="selectstate(str.status , str.val , str.statusbtn)" >
+            <strong *ngIf="str.statusbtn != 'Anuller'" >{{str.statusbtn}}</strong>
+          </mat-option>
+        </strong>
+      </mat-select>
+    </mat-form-field>
+    <!-- <a class="btn-info" [routerLink]="['/dashboard/Download-orders-commandee']"> imprimer les commandes <i class="fa fa-download"></i></a> -->
+  </div>
+</mat-card>
+

@@ -1,0 +1,160 @@
+<app-secondnavbar></app-secondnavbar>
+<ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" [showNavigationIndicators]="false" (slide)="onSlide($event)">
+  <ng-template ngbSlide *ngFor="let img of imagesS; index as i" style="cursor: pointer">
+    <a  target="_blank" rel="nofollow noopener noreferrer" (click)="sliderroute(img.product_id, img.cat_id, img.boutique_id)">
+      <div class="picsum-img-wrapper" (click)="sliderroute(img.product_id, img.cat_id, img.boutique_id)">
+        <div class="myslide" >
+         <img [src]="url + img.images">
+        </div>
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>
+<div class="container">
+  <div class="row">
+    <div class="category-header">
+      <h4 class="font-weight-bold">Nos Collections</h4>
+    </div>
+  </div>
+  <div class="row cats">
+    <div class="col-lg-3 col-md-4 col-sm-4  col-xs-4  col-6" *ngFor="let cat of Category" (click)="cat_event(cat.id_boutique,cat.id)">
+      <div class="card">
+        <div class="space-image" [ngStyle]="{backgroundImage:'url('+url+cat.image+')'}">
+        </div>
+        <div class="infomations">
+          <h4 class="text-muted" *ngIf="cat.titlefr != 'null'"> <a [routerLink]="['/products',cat.id_boutique,cat.id]">{{cat.titlefr }}</a></h4>
+          <h5 class="text-muted" *ngIf="cat.titlearab !='null'"> <a [routerLink]="['/products',cat.id_boutique,cat.id]">{{cat.titlearab}}</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="">-->
+<!--  <div class="col-lg-12 mylist">-->
+<!--    <div class="section-title">-->
+<!--      <div class="spinner-border" *ngIf="isloading2"></div>-->
+<!--      <h2 *ngIf="!isloading2 && Category.length !=0" class="nos">Nos collections</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="banner-section spad">-->
+<!--  <div class="container">-->
+<!--    <div class="row ml-0">-->
+<!--      <div class="blog-sidebar col-xl-2 col-lg-2 col-md-4 col-sm-4  col-xs-4  col-4 mycats" *ngFor="let cat of Category">-->
+<!--        <div class="single-banner">-->
+<!--          <a [routerLink]="['/products',cat.id_boutique,cat.id]" class="catimage">-->
+<!--            <div class="catimage" [ngStyle]="{backgroundImage:'url('+url+cat.image+')'}">-->
+<!--              &lt;!&ndash;            <img [src]="">&ndash;&gt;-->
+<!--            </div>-->
+<!--          </a>-->
+<!--          <a class="myhover" [routerLink]="['/products',cat.id_boutique,cat.id]"> <div class="inner-text">-->
+<!--            <h4 class="titlefr"><strong class="titlefr" *ngIf="cat.titlefr !='null'">{{cat.titlefr}}</strong><br><span class="titlear" *ngIf="cat.titlearab !='null'">{{cat.titlearab}}</span></h4>-->
+<!--          </div></a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-top-selling-product></app-top-selling-product>
+<div class="nos-compenent">
+<app-packs></app-packs>
+<div class="mycompenent"></div>
+<app-cat-meil></app-cat-meil>
+<app-cat-beldi></app-cat-beldi>
+<app-cat-esepices></app-cat-esepices>
+<app-cat-fruit-secs></app-cat-fruit-secs>
+<app-cat-oliver-cornichons></app-cat-oliver-cornichons>
+<app-cat-graines></app-cat-graines>
+</div>
+<div class="resconponent">
+  <app-res-packs></app-res-packs>
+  <app-test></app-test>
+  <app-res-beldi></app-res-beldi>
+  <app-res-eseepices></app-res-eseepices>
+  <app-res-fruit-secs></app-res-fruit-secs>
+  <app-res-graies></app-res-graies>
+  <app-res-oliver-cornichon></app-res-oliver-cornichon>
+</div>
+<!--<iframe src="https://web.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3D2789238167831960%26id%3D100002374116964&width=500" width="500" height="199" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" style="z-index: 9999"></iframe>-->
+<!-- category was here-->
+<!-- Banner Section End -->
+
+
+
+<!--<app-banners></app-banners>-->
+
+
+
+
+<!--<section class="latest-blog spad">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-12">-->
+<!--        <div class="section-title">-->
+<!--          <h2 *ngIf="!isloading && Produits.length != 0 ">Nouveaux produits</h2>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        <mat-spinner color="warn" *ngIf="isloading"></mat-spinner>&ndash;&gt;-->
+<!--        <p class="alert-info" *ngIf="Produits.length == 0 && !isloading">Aucun produit trouvé ici...</p>-->
+<!--        <p *ngIf="checkbtn == true">-->
+<!--          <ngb-alert [dismissible]="false">-->
+<!--            <strong>Warning!</strong>{{msg}}-->
+<!--            <button class="closebtn" (click)="closebtn()">X</button>-->
+<!--          </ngb-alert>-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-3 col-sm-3 col-6" *ngFor="let pro of Produits">-->
+<!--        <div class="product-grid">-->
+<!--          <div class="product-image" [ngStyle]="{backgroundImage: 'url('+url+ pro.image +')'}">-->
+<!--            <a class="images">-->
+<!--              <img class="pic-1" >-->
+<!--              &lt;!&ndash;              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">&ndash;&gt;-->
+<!--            </a>-->
+<!--            <ul class="social">-->
+<!--              <li><a  [routerLink]="['/product_detail',pro.id]" data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>-->
+<!--              &lt;!&ndash;              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>&ndash;&gt;-->
+<!--              <li *ngIf="pro.quantity !=0" class="cartadd"><a  data-tip="Ajouter au panier" (click)="addtocart(pro.id, pro.poids)"><i class="fa fa-shopping-cart"></i></a></li>-->
+<!--            </ul>-->
+<!--            <span class="product-new-label" *ngIf="pro.state === 'BIO'">{{pro.state}}</span>-->
+<!--          </div>-->
+<!--          <div class="product-content" [ngClass]="pro.quantity == 0 ? 'puisee' : ''">-->
+<!--            <h3 class="title"><span *ngIf="pro.poids !='null' && pro.quantity !=0">{{pro.poids}}</span><a [routerLink]="['/product_detail',pro.id]" ><span *ngIf="pro.title !='null'">{{pro.title}}</span><small class="tiarabe" *ngIf="pro.titlearab !='null'"> {{pro.titlearab}}</small></a></h3>-->
+<!--            <h3 *ngIf="pro.quantity ==0"><strong class="epuise">Épuisé</strong></h3>-->
+<!--            <div class="price" *ngIf="pro.quantity !=0">{{(pro.pricep?pro.pricep : pro.price) | currency:'DH'}}-->
+<!--              <span *ngIf="pro.pricep">{{pro.price|currency:'DH'}}</span>-->
+<!--            </div>-->
+<!--            <a class="add-to-cart" (click)="addtocart(pro.id, pro.poids)" style="cursor: pointer;color: #33c11a" *ngIf="pro.quantity != 0">+ Au panier</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<a [style.color]="'white'" (click)="gotowhatsap()" class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
+  <span (click)="gotowhatsap()" class="messageW">Commander sur WhatsApp</span>
+</a>
+
+<app-footer></app-footer>

@@ -1,0 +1,96 @@
+<div class="modal" id="myModal" *ngIf="showModules">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" (click)="showModules = false">&times;</button>
+      <!-- Modal body -->
+      <div class="modal-body text-danger" *ngFor="let p of detaul_data">
+        <div class="heading-section">
+          <h2>Details de produit</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div >
+              <div class="item">
+                <img class="prod_det" [src]="url + p.image" />
+              </div>
+            </div>
+            <div >
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="product-dtl">
+              <div class="product-info">
+                <div class="product-name">{{p.title != 'null'?p.title:p.title_arab}}</div>
+                <div class="product-price-discount" *ngIf="poidsprice == null"><span class="price">{{(p.pricePromo != null?p.pricePromo:p.price) | currency:'DH'}}</span><span class="line-through"*ngIf="p.pricePromo != null">{{p.price | currency:'DH'}}</span></div>
+                <div class="product-price-discount" *ngIf="poidsprice != null"><span class="price">{{(prixp != null?prixp:poidsprice) | currency:'DH'}}</span><span class="line-through"*ngIf="prixp != null">{{poidspoids | currency:'DH'}}</span></div>
+              </div>
+              <p *ngIf="p.descreption != '.' && p.descreption!= 'null'">{{p.descreption}}</p>
+              <hr>
+              <p class=" alert alert-info">Taxes incluses. <a [routerLink]="['/policies/shipping-policy']" style="color: #7dd8ff">Frais d'expédition</a> calculés lors du passage à la caisse.</p>              <div class="row">
+              <div class="col-md-6 glas">
+                <mat-accordion>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{poidspoids != null?poidspoids:p.poids}}
+                      </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <p *ngFor="let poid of poids">
+                      <strong *ngIf="poid.qtypoids !=0"  (click)="click($event , poid.pricepoids ,poid.qtypoids,poid.prixa,poid.prixp , p.product_id, poid.poids)">{{poid.poids}}</strong>
+                    </p>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+            </div>
+              <div class="product-count"  *ngIf="p.quantity !=0">
+                <a  class="round-black-btn" (click)="addtocart2(p.product_id ,p.title != 'null' ? p.title : p.title_arab,p.poids, poidspoids , poidsprice , prixp , qtypoids )">Ajouter au panier</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col8 -phn -mvxs card _fw" *ngIf= "meil1.length >= 2 && meil2.length >= 2">
+  <header class="-fs12" style="    color: black;
+    background: rgb(29 163 15);">
+    <div class="-df -i-ctr -phs">
+      <h2 class="ttl -m -fs16 -elli -phs -pvxs -lh-15">Système nerveux</h2>
+      <a [routerLink]="['/products',boutique_id, cat_id]" class="-upp -mla -b -fsh0 -pas">Voir plus</a>
+    </div>
+  </header>
+  <div class="row _no-g -paxs">
+    <div class="box1">
+      <div class="col4" *ngFor="let pro of meil1">
+        <a  class="prd _box _tch"  [routerLink]=" pro.test_pro != 1 ? ['/product_detail',pro.id?pro.id:pro.product_id] : ''">
+<!--        <a  class="prd _box _tch"  (click)="show_quicks(pro.id?pro.id:pro.product_id)">-->
+          <div class="img-c" [ngStyle]="{backgroundImage:'url('+url+ pro.image+')'}">
+            <img >
+          </div><h3 class="name">{{pro.title != 'null'?pro.title:pro.title_arab}}</h3>
+          <div class="prc">{{(pro.pricePromo != null?pro.pricePromo:pro.price) | currency:'Dhs'}}
+            <span class="text-muted" *ngIf="pro.poids!= 'null'">{{pro.poids != 'nul'?pro.poids:''}}</span></div>
+          <div>
+            <a class="panier" (click)="addtocart(pro.product_id,pro.title != 'null' ? pro.title : pro.title_arab,pro.poids)" *ngIf="pro.test_pro == 1">+ panier</a></div>
+        </a>
+      </div>
+    </div>
+    <div class="box2">
+      <div class="col4" *ngFor="let pro of meil2">
+        <a  class="prd _box _tch"  [routerLink]="pro.test_pro != 1 ? ['/product_detail',pro.id?pro.id:pro.product_id] : ''">
+<!--        <a  class="prd _box _tch" (click)="show_quicks(pro.id?pro.id:pro.product_id)">-->
+          <div class="img-c" [ngStyle]="{backgroundImage:'url('+url+ pro.image+')'}">
+            <img >
+          </div><h3 class="name">{{pro.title != 'null'?pro.title:pro.title_arab}}</h3>
+          <div class="prc">{{(pro.pricePromo != null?pro.pricePromo:pro.price) | currency:'Dhs'}}
+            <span class="text-muted" *ngIf="pro.poids!= 'null'">{{pro.poids != 'nul'?pro.poids:''}}</span></div>
+          <div ><a class="panier" (click)="addtocart(pro.product_id,pro.poids)" *ngIf="pro.test_pro == 1">  + panier</a></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-quick-views [QuickDetail]="QuickDetail" [PoidsQuick]="PoidsQuick"></app-quick-views>

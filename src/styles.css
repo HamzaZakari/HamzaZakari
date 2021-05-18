@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~swiper/css/swiper.min.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Dosis&display=swap');
+html, body { height: 100%; margin: 0;padding: 0 }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html.cdk-global-scrollblock {
+  overflow-y: hidden;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.lh{
+  line-height: 27px;
+}
+span.carousel-control-prev-icon {
+  font-size: 20px!important;
+  background: #10101085!important;
+  padding: 24px 17px 13px 21px!important;
+  border-radius: 42px!important;
+}
+span.carousel-control-next-icon {
+  font-size: 20px!important;
+  background: #10101085;
+  padding: 24px 17px 13px 21px;
+  border-radius: 42px;
+}
+.owl-nav.ng-star-inserted {
+  display: flex;
+}
+.owl-next {
+  font-size: 22px!important;
+  position: absolute;
+  right: 44%;
+  padding: 0px 10px 4px 10px!important;
+  border-radius: 20px!important;
+  box-shadow: 1px 0px 8px #929292;
+ background: #1ca12a!important;
+  margin-top: 2px!important;
+}
+.owl-prev {
+  font-size: 22px!important;
+  position: absolute;
+  right: 48%;
+  padding: 0px 10px 4px 10px!important;
+  border-radius: 20px!important;
+  box-shadow: 1px 0px 8px #929292;
+  background: #1ca12a!important;
+  margin-top: 2px!important;
+}
+.col-lg-12.pack {
+  z-index: 2;
+}
+@media (max-width: 1000px) {
+  .owl-prev {
+    right: 50%;
+  }
+}
+@media (max-width: 700px) {
+  .owl-prev {
+    right: 52%;
+  }
+}
+
+@media (max-width: 425px) {
+  .owl-next{
+    right: 40%;
+    padding: 1px 12px 4px 11px!important;
+  } .owl-prev{
+    padding: 1px 12px 4px 11px!important;
+  }
+  div#cdk-overlay-0,div#cdk-overlay-1,div#cdk-overlay-2 {
+    min-width: 180px;
+    pointer-events: auto;
+    font-size: 12px;
+    bottom: 78.125px!important;
+    left: 12px;
+    transform: translateX(-4px) translateY(-11px);
+  }
+}
+@media (max-width: 411px) {
+  div#cdk-overlay-0,div#cdk-overlay-1 {
+    bottom: 374.125px!important;
+  }
+}
+@media (max-width: 375px) {
+  div#cdk-overlay-0,div#cdk-overlay-1 {
+    bottom: 558.125px!important;
+  }
+}
+.success{
+  background: #0c7d00;
+  color: white;
+}
+.error{
+  background: rgba(205, 5, 5, 0.75);
+  color: white;
+}

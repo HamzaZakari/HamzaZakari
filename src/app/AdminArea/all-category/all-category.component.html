@@ -1,0 +1,62 @@
+
+<mat-card>
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg d-flex">
+      <h3 class="panel-title">Catégories</h3>
+      <button mat-button (click) = "gotoADDcat()"><span class="material-icons">add</span></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input class="form-control" type="text" id="search_text" name="search_text" placeholder="rechercher..."(keyup)="search($event)">
+<!--      (keyup)="search($event)">-->
+
+    </div>
+  </div>
+  <br>
+  <table class="table table-striped" *ngIf="!isloding">
+    <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Image</th>
+      <th scope="col">Titre française</th>
+      <th scope="col">Titre anglaise</th>
+      <th scope="col">Titre arabic</th>
+      <th scope="col">Date de création</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cat of Category let i = index ">
+      <th scope="row">{{i+1}}</th>
+      <td>
+        <div class="post-image">
+          <img [src]="[url+cat.image]" class="img-responsive ">
+        </div>
+      </td>
+      <td>
+        {{cat.titlefr != 'null'?cat.titlefr:' '}}
+      </td>
+      <td >
+        {{cat.titleAng != 'null'?cat.titleAng:' '}}
+      </td>
+      <td>
+        {{cat.titlearab != 'null'?cat.titlearab:' '}}
+      </td>
+
+
+      <td>{{cat.created | date}}</td>
+      <td class="d-flex" *ngIf="role !='service clients'">
+        <a [routerLink]="['/dashboard/update_category',cat.id]" class="btn btn-primary btn-my" ><i class="fa fa-edit"></i></a> |
+        <button type="button" class="btn btn-danger btn-my" (click)="delete(cat.id)"><span class="material-icons" style="cursor:pointer;">delete_forever</span></button>
+      </td>
+<!--  <td>{{times | date}}</td>-->
+      <td *ngIf="(cat.created |date) === (times | date)"><span class="new badge p-12" style="background: #5cb85c"> new </span></td>
+    </tr>
+    </tbody>
+  </table>
+  <mat-spinner *ngIf="isloding" style="margin-left: 300px;"></mat-spinner>
+  <div *ngIf="this.Category.length <=0 && !isloding">
+    <p class="alert alert-warning"> Aucune catégorie trouvée !</p>
+  </div>
+</mat-card>

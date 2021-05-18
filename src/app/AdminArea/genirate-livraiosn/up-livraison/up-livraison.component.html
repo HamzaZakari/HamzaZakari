@@ -1,0 +1,143 @@
+<div class="container">
+  <div class="panel-heading">
+    <h3 class="text-info"> Gestion de la livraison</h3>
+    <hr>
+    <div class="page-header d-flex">
+    <mat-form-field appearance="fill">
+      <mat-label>Ajouter une Ville</mat-label>
+      <input matInput [(ngModel)]="ville">
+    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Prix de livraison de la Ville</mat-label>
+        <input matInput [(ngModel)]="prixLiv">
+      </mat-form-field>
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Frais  de livraison de la Ville</mat-label>
+        <input matInput [(ngModel)]="frasidelivraison">
+      </mat-form-field> -->
+      <button class="btn-success" (click)="save(ville,prixLiv,frasidelivraison)">Ajoute
+        <span class="spinner-border spinner-border-sm" *ngIf="isloading3"></span>
+      </button>
+    </div>
+    <div class="page-header d-flex">
+      <mat-form-field>
+        <mat-label>Choisir une ville </mat-label>
+        <mat-select>
+            <mat-option *ngFor="let v of Ville" (click)="getidVille(v.id_Ville)" [value]="v.id_Ville">
+            {{v.ville}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Région</mat-label>
+        <input matInput [(ngModel)]="region">
+      </mat-form-field>
+      <button class="btn-success" (click)="saveregions()">Ajoute
+<!--        <span class="spinner-border spinner-border-sm" *ngIf="isloading3"></span>-->
+      </button>
+    </div>
+
+    <p class="text-muted">Sélectionnez la ville que vous souhaitez mettre à jour</p>
+    <hr>
+   <div class="panel-body">
+     <div class="row">
+       <div class="col-md-4 col-xs-3" *ngFor="let vi of Ville; let i = index">
+<!--         <i class="fa fa-check-circle" *ngIf="vi.status ==1"></i>-->
+         <mat-checkbox class="mycheck" [color]="'primary'" (change)="checked($event, vi.id_Ville)" [checked]="vi.status == 1? ngcheckd2 : ngcheckd3" >{{vi.ville}}</mat-checkbox>
+         <div class="btn trashbtn">
+             <span class="material-icons" (click)="delete(vi.id_Ville)" style="cursor:pointer;">delete_forever</span>
+         </div>
+         <div class="btn edithbtn">
+           <i class="fa fa-edit" (click)="updatees(vi.id_Ville)"></i>
+         </div><div class="panel-body" *ngIf="id == vi.id_Ville && !myloading"><br>
+       <hr>
+         <mat-form-field appearance="fill">
+           <mat-label>Le nom de la Ville</mat-label>
+           <input matInput [(ngModel)]="upville">
+           <small>{{vi.ville}}</small>
+         </mat-form-field>
+         <mat-form-field appearance="fill">
+           <mat-label>Prix de livraison de la Ville</mat-label>
+           <input matInput [(ngModel)]="upLiv">
+           <small>{{vi.prixLivraison}}</small>
+         </mat-form-field>
+         <!-- <mat-form-field appearance="fill">
+           <mat-label>frais de livraison de la Ville</mat-label>
+           <input matInput [(ngModel)]="upfraisliv">
+           <small>{{vi.fraislivraison}}</small>
+         </mat-form-field> -->
+         <button class="btn-success btnchekc" (click)="upvilles(vi.id_Ville,upville, upLiv,upfraisliv)"><i class="fa fa-check"></i></button>
+         <button class="btn-danger btnchekcdanger" (click)="close(vi.id_Ville)"><i class="fa fa-close"></i></button>
+
+       </div>
+         <div><span class="spinner-border spinner-border-sm" *ngIf="myloading && id== vi.id_Ville"></span></div>
+
+       </div>
+     </div>
+     <hr>
+     <button class="btn btn-success" (click)="Valider()" > Valider
+       <span class="spinner-border spinner-border-sm" *ngIf="isloading2"></span>
+     </button>
+   </div>
+    <!-- <div class="panel-footer">
+      <h3 class="text-info"> les frais livraison si le panier inferieur ou superieur a 200 dh</h3>
+      <br>
+      <div class="page-header d-flex frais">
+        <mat-form-field appearance="fill">
+          <mat-label>Frais Livrason panier > prix panier</mat-label>
+          <input matInput [(ngModel)]="frais200">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Frais Livrason panier < prix panier</mat-label>
+          <input matInput [(ngModel)]="frais002">
+        </mat-form-field>
+        <br>
+        <button class="btn-success btnvalide" (click)="update(frais200,frais002)">Valider
+          <span class="spinner-border spinner-border-sm" *ngIf="isloading"></span>
+        </button>
+      </div>
+    </div> -->
+    <!-- <hr> -->
+    <!-- <div class="panel-footer">
+      <h3 class="text-info"> les prix livraison si le panier inferieur ou superieur a X  (?)  prix </h3>
+      <br>
+      <div class="page-header d-flex frais ourcontrols">
+        <mat-form-field >
+          <mat-label>Filter par status</mat-label>
+          <mat-select >
+           <mat-option (click)="showall()" value="tous les Commandes">Voir tous les Commandes</mat-option>
+            <mat-option  *ngFor="let st of Ville" [value]="st.ville" (click)="filterStatus(st.id_Ville)">{{st.ville}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>prix panier</mat-label>
+          <input matInput [(ngModel)]="prixpanier">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>prix  Livraison panier > prix panier</mat-label>
+          <input matInput [(ngModel)]="prixG">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>prix Livraison panier < prix panier</mat-label>
+          <input matInput [(ngModel)]="prixS">
+        </mat-form-field>
+        <br>
+        <button class="btn-success btnvalide" (click)="updatepanielivraison(prixpanier, prixG,prixS)">Valider
+          <span class="spinner-border spinner-border-sm" *ngIf="isloadingpanier"></span>
+          <span class="fa fa-check-circle" *ngIf="showsuccessdone && !isloadingpanier"></span>
+        </button>
+      </div>
+    </div> -->
+  </div>
+</div>
+<div class="toast" *ngIf="show_message">
+  <div class="toast-header">
+    <strong class="mr-auto text-primary">{{text_notes}}</strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+  </div>
+  <div class="toast-body">
+    {{text_message}}
+  </div>
+</div>
+
+

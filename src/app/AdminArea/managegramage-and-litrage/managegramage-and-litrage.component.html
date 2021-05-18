@@ -1,0 +1,45 @@
+
+<form (submit)="save(PoidForm)" #PoidForm="ngForm" >
+  <mat-card>
+        <div class="modal-header">
+          <h4 class="modal-title" >Ajouter un poids</h4>
+        </div>
+        <div class="modal-body">
+          <div class="mat-form-field-flex ">
+            <mat-form-field>
+                <input matInput placeholder="Le Poids" name="gramage" value="" ngModel required>
+              <mat-error >your title is inccorect !</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Le prix de vente" name="pricev" value="" ngModel required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Le prix D'achate" name="pricea" value="" ngModel required>
+              <mat-error >your price vendu is required !</mat-error>
+            </mat-form-field>
+
+          </div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Le prix promotion" name="pricep" value="" ngModel >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="La Quantité" name="qty" value="" ngModel required>
+            <mat-error >the quantity is required !</mat-error>
+          </mat-form-field>
+
+          <div class="modal-footer ">
+            <p class="alert alert-success" *ngIf="message" > {{message}}</p>
+            <a [routerLink]="['/dashboard/all_products']" type="button" class="btn btn-danger" placement="top" ngbTooltip="dissmiss add product">
+              Close
+            </a>
+            <button mat-button class="btn btn-success " type="submit" >Save
+              <span class="spinner-border spinner-border-sm" *ngIf="isloading"></span>
+            </button>
+          </div>
+
+        </div>
+
+  </mat-card>
+</form>
+
+

@@ -1,0 +1,33 @@
+<!--<button class="btn-info" (click)="PDF()">Imprimer <i class="fa fa-download"></i></button>-->
+<div class="container" id="content">
+
+  <div *ngFor="let datas of dataAfiche">
+    <hr>
+  <h2 class="text-info">Commande de : {{datas.CodeCMD}}</h2>
+  <h2 class="text-info">Commande de : {{datas.clientfulname}}</h2>
+  <h2 class="text-info"> {{datas.ville}} | {{datas.regions !='null'?datas.regions:'' }}<br><span style="font-size: 15px;width: 500px"> Adress :{{datas.adress}}</span></h2>
+  <h2 class="text-info">Totale avec Livraison : {{datas.total_whit_prix_livreson |currency:'dh':'DH'}}</h2>
+  <div *ngFor="let data of subdata">
+  <table class="table table-striped" *ngIf="data.id_orders == datas.id">
+    <thead>
+    <tr>
+      <th>produits</th>
+      <th>price</th>
+      <th>poids</th>
+      <th>commande qty</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr >
+      <td>{{data.title_arab != 'null' ? data.title_arab : data.title}}</td>
+      <td>{{data.totalcomonde | currency:'DH'}}</td>
+      <td>{{data.poidscomonde}}</td>
+      <td>{{data.qtycomonde}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  </div>
+  </div>
+  <hr>
+</div>

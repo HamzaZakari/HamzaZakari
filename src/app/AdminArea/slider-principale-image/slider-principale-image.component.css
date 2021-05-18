@@ -1,0 +1,18 @@
+.image-privew{
+  height: 5rem;
+  margin: 1rem;
+}
+.image-privew img{
+  height: 100%;
+}
+.inputclass{
+  visibility: hidden;
+}
+.pricefiled {
+  font-size: 17px;
+}
+.btndash{
+  width: 87px;
+  height: 30px;
+  font-size: 15px;
+}

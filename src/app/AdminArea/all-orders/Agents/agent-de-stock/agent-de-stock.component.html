@@ -1,0 +1,57 @@
+<div class="sections">
+  <header class="jumbotron jumbotron-fluid">
+    <div class="container-fluid text-center">
+      <h1 class="display-3">Bonjour agents de stock <span class="text-success role">agents de stock</span> </h1>
+      <!--    <p class="lead pb-4">We help you maximize performance and build a healthy organization.</p>-->
+      <!--    <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn More</a></p>-->
+    </div>
+  </header>
+<div class="row">
+  <div class="container">
+  <div class="col-sm-12">
+    <div class="white-box">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>N</th>
+            <th></th>
+            <th>Produits</th>
+            <th>le prix </th>
+            <th>le poid</th>
+            <th>Quantité actuelle</th>
+            <th>Quantité requise</th>
+            <th></th>
+            <th>status</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let p of Produits; let i = index">
+          <tr>
+<!--            [ngClass]="p.quantity == 0?'reds':'' || p.quantity < p.ciel?'oranges':'' || p.quantity == p.ciel?'greens':''"-->
+            <td><button class="btn btn-success">Traiter</button></td>
+            <td>{{i+1}}</td>
+            <td>
+              <div class="product-image" [ngStyle]="{backgroundImage:'url('+p.image+')'}">
+                <img src="">
+              </div>
+            </td>
+            <td>{{p.title}}({{p.titlearab}})</td>
+            <td>{{p.price | currency:'DH'}}</td>
+            <td>{{p.poids?p.poids:''}}</td>
+            <td>{{p.quantity}}</td>
+            <td><span  class="badge" matTooltip="الكمية التي يجب جلبها">{{p.min - p.ciel}}</span></td>
+            <td>
+              <i matTooltip="La quantité de ce produit doit être ajustée nécessaire" class="fa fa-exclamation-circle" *ngIf="p.quantity <= p.ciel">
+              </i>
+            </td>
+            <td  *ngIf="p.quantity <= p.ciel"><span class="text-danger">Alarme</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

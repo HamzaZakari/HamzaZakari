@@ -1,0 +1,89 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+<script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
+<app-secondnavbar></app-secondnavbar>
+<!-- Content page -->
+<section class="bgwhite p-t-55 p-b-65">
+  <div class="container">
+    <div class="row">
+      <div>
+      <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+        <div class="leftbar p-r-20 p-r-0-sm">
+          <!--  -->
+          <h4 class="m-text14 p-b-7">
+            Catégories
+            <span class="fa fa-bars" (click)="opennav()"></span>
+          </h4>
+
+          <ul class="p-b-54" [ngClass]="classnav?classnav:''">
+            <li class="p-t-4" [ngClass]="class1?class1:''" (click)="tousclick()">
+              <a  class="s-text13 active1">
+                Tous les produits
+              </a>
+              <span class="badge" *ngIf="cat_id == null"></span>
+            </li>
+            <li class="p-t-4"  *ngFor="let c of Category" [ngClass]="(c.cat_id?c.cat_id:c.id) == cat_id?'catclass':''" (click)="clickcat(c.cat_id?c.cat_id:c.id,c.id_boutique)">
+              <a  class="s-text13 active1" *ngIf="!showall">
+                {{c.titleFr != 'null'?c.titleFr: c.titleArab}}
+              </a>
+              <a  class="s-text13 active1" *ngIf="showall">
+                {{c.titlefr != 'null'?c.titlefr: c.titlearab}}
+              </a>
+              <span class="badge" *ngIf="cat_id == c.cat_id?c.cat_id:c.id && id_boutique !=null"></span>
+
+            </li>
+          </ul>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-12 col-md-8 col-lg-9 p-b-50" *ngIf="!isloading">
+        <!-- Product -->
+        <div class="row">
+            <div class="container">
+                <div class="col-xl-2 col-md-3 col-sm-3 col-xs-3 col-6" *ngFor="let pro of Produits">
+                  <div class="product-grid6">
+                    <div class="product-image6">
+                      <a class="product" [ngClass]="pro.quantity == 0 ? 'epuisee': ''" [ngStyle]="{backgroundImage: 'url('+ url  + pro.image +')'}">
+                        <img class="pic-1">
+                        <span class="poids" *ngIf="pro.poids !='null' && pro.quantity != 0">{{pro.poids}}</span>
+                      </a>
+                    </div>
+                    <div class="product-content">
+                      <div><h3 class="name">{{pro.title != 'null'?pro.title:(pro.titlearab?pro.titlearab:pro.title_arab)}}</h3></div>
+                      <div class="price"*ngIf="pro.quantity != 0">{{(pro.pricep?pro.pricep : pro.price) | currency:'DH'}}
+<!--                        <span *ngIf="pro.pricep && pro.quantity != 0">{{pro.price | currency:'DH'}}</span>-->
+                      </div>
+                      <strong *ngIf="pro.quantity==0" class="price text-danger">Épuisé</strong>
+                      <strong *ngIf="pro.test_pro == 1" class="price text-danger">VIDE</strong>
+                    </div>
+                    <ul class="social" *ngIf="pro.test_pro != 1">
+                      <li><a [routerLink]="['/product_detail',pro.id?pro.id:pro.product_id]" data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>
+<!--                      <li><a (click)="show_quicks(pro.id?pro.id:pro.product_id)" data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>-->
+<!--                      <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>-->
+                      <li><a  data-tip="Ajouter au panier" *ngIf="pro.quantity != 0" (click)="addtocart(pro.id?pro.id:pro.product_id, pro.title != 'null' ? pro.title : pro.title_arab, pro.poids)"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+        <div class="container">
+          <mat-paginator [length]="totalproduit"
+                         [pageSize]="produitperpage"
+                         [pageSizeOptions]="pageSize"
+                         (page)="onChangePage($event)"
+                         *ngIf="Produits.length>0 && showpaginations == true"></mat-paginator>
+        </div>
+        </div>
+    </div>
+    <div class="row mt-lg-5">
+      <div class="spinner-border" *ngIf="isloading"></div>
+      <p class="alert alert-warning"  id="alert" *ngIf="!isloading && Produits.length <=0">aucun produit trouvé</p>
+    </div>
+  </div>
+</section>
+<br>
+
+<!--<app-quick-views [QuickDetail]="QuickDetail" [PoidsQuick]="PoidsQuick" [type]="'all'"></app-quick-views>-->

@@ -1,0 +1,38 @@
+.mat-card{
+  margin-bottom: 40px;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+input.ville-search {
+  height: 47px;
+  padding: 13px;
+  background: antiquewhite;
+}
+form{
+  width: 950px;
+}
+.mat-card{
+  font-size: 17px;
+}
+.alert-success{
+  float: left;
+}
+.btn-danger{
+  margin-right: 10px;
+}
+.btn-success{
+  border: 1px solid gray;
+}
+.mat-form-field{
+  margin-left: 10px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

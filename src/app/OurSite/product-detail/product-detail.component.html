@@ -1,0 +1,191 @@
+<!--<link rel="stylesheet" href="../../../assets/css/font-awesome.min.css">-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+<script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<!--<div class="cart-popup-wrapper" role="dialog" aria-modal="true" aria-labelledby="CartPopupHeading" data-cart-popup-wrapper="" tabindex="-1" (click)="closemode()" *ngIf="coloseemodule">-->
+<!--  <div class="cart-popup" data-cart-popup="" tabindex="-1">-->
+<!--    <h2 id="CartPopupHeading" class="cart-popup__heading">Ajouté au panier à l'instant</h2>-->
+<!--    <button class="cart-popup__close" aria-label="Fermer" data-cart-popup-close="" (click)="closemode()"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 40 40"><path d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z" class="layer"></path></svg></button>-->
+
+<!--    <div class="cart-popup-item"  *ngFor="let po of pupupcart">-->
+<!--      <div class="cart-popup-item__image-wrapper" data-cart-popup-image-wrapper="">-->
+<!--        <div class="cart-popup-item__image cart-popup-item__image&#45;&#45;placeholder hide" data-cart-popup-image-placeholder="" style="max-width: 95px;">-->
+<!--          <div data-placeholder-size="" style="padding-top: 100%;"></div>-->
+<!--          <div class="placeholder-background placeholder-background&#45;&#45;animation"></div>-->
+<!--        </div>-->
+<!--        <div class="cart-popup-item__image" [ngStyle]="{backgroundImage:'url('+url+po.image+')'}">-->
+
+<!--          <img>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="cart-popup-item__description">-->
+<!--        <div>-->
+<!--          <div class="cart-popup-item__title" data-cart-popup-title="">{{po.poids}} {{po.title !='null'?po.title:''}}({{po.title_arab}})</div>-->
+<!--          <ul class="product-details" aria-label="Détails des produits" data-cart-popup-product-details=""><li class="product-details__item product-details__item&#45;&#45;variant-option">Poids: {{po.poids}}</li></ul>-->
+<!--        </div>-->
+<!--        <div class="cart-popup-item__quantity">-->
+<!--          <span style="font-size: 11px" class="visually-hidden" data-cart-popup-quantity-label="">Quantité&nbsp;: {{po.qtyPanier}}</span>-->
+<!--          <span style="font-size: 11px" aria-hidden="true">Qté:</span>-->
+<!--          <span style="font-size: 11px" aria-hidden="true" data-cart-popup-quantity="">{{po.qtyPanier}}</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <a [routerLink]="['/panier']" style="font-size: 9px" class="cart-popup__cta-link btn btn&#45;&#45;secondary-accent">-->
+<!--      Voir le panier (<span data-cart-popup-cart-quantity="" aria-label="4 articles">{{pupdata.length}}</span>)-->
+<!--    </a>-->
+
+<!--    &lt;!&ndash;    <div class="cart-popup__dismiss">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <button class="cart-popup__dismiss-button text-link text-link&#45;&#45;accent" data-cart-popup-dismiss="">&ndash;&gt;-->
+<!--    &lt;!&ndash;        Poursuivre vos achats&ndash;&gt;-->
+<!--    &lt;!&ndash;      </button>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
+<app-secondnavbar></app-secondnavbar>
+
+
+<div class="container">
+  <div class="span9">
+    <ul class="breadcrumb">
+      <li><a [routerLink]="''">Aceuil</a> <span class="divider"></span></li>
+      <li><a [routerLink]="'/all_product'">Produits</a> <span class="divider"></span></li>
+      <li class="active">DETAILS PRODUITS</li>
+    </ul>
+    <p *ngIf="checkbtn == true">
+      <ngb-alert [dismissible]="false">
+        <strong>Warning!</strong>{{msg}}
+        <button class="closebtn" (click)="close()">X</button>
+      </ngb-alert>
+    </p>
+  </div>
+</div>
+<!-- section -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!--  Product Details -->
+      <div class="product product-details clearfix" *ngIf="produit">
+        <div class="col-md-6">
+          <div id="product-main-view">
+            <div class="product-view mydefaultimage"  *ngIf="checkimage === false && imagemy">
+              <img   [src]="url + imagemy">
+            </div>
+            <div class="product-view mydefaultimage"  *ngIf="checkimage === false && !imagemy" >
+              <img   [src]="url + produit.image">
+            </div>
+            <div class="product-view mydefaultimage" *ngIf="checkimage === true">
+              <img  [src]="url +previewImage">
+            </div>
+          </div>
+          <div id="product-view" class="imageproreview">
+            <div class="product-view imagespreview" *ngFor="let img of images" >
+              <div class="displayimages" [ngStyle]="{backgroundImage:'url('+url+img.images+')'}" (click)="showImage(img.images, img.product_id)" class="photos" *ngIf="images.length >= 2">
+              <img >
+                <img >
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 myinfo">
+          <div class="product-body">
+            <div class="product-label">
+              <span style="z-index: 1" *ngIf="(produit.created_at | date) === (newdate| date)">New</span>
+              <span class="sale" style="z-index: 1" *ngIf="produit.quantity !=0 && produit.qtypoids ==0">{{produit.state}}</span>
+              <span class="sale text-danger" style="z-index: 1" *ngIf="produit.quantity ==0 && produit.qtypoids ==0">Épuisé</span>
+
+            </div>
+            <h2 class="product-name"><span *ngIf="produit.poids !='null' && produit.quantity !=0">{{produit.poids}}</span>  <strong *ngIf="produit.title !='null'">{{produit.title}} </strong><small *ngIf="produit.titlearab !='null'">   {{produit.titlearab}}</small></h2>
+            <h3 class="product-price" *ngIf="!poidprice && produit.quantity !=0 " >{{(produit.prixPromo ?produit.prixPromo:produit.price)| currency: 'DH'}} <del class="product-old-price" *ngIf="produit.prixPromo">{{produit.price |currency:'DH'}}</del></h3>
+            <span class="product-price" *ngIf="poidprice && produit.quantity !=0">{{(pricep?pricep : poidprice)  | currency: 'DH'}} <del class="product-old-price" *ngIf="pricep">{{poidprice | currency:'DH'}}</del></span>
+            <div>
+              <div class="product-options" *ngIf="poids.length > 0 && produit.poids !='null'">
+                <mat-form-field *ngIf="produit.quantity !=0 && produit.qtypoids !=0">
+                  <mat-label *ngIf="!poidspoids">{{produit.poids}}</mat-label>
+                  <mat-label *ngIf="poidspoids">{{poidspoids}}</mat-label>
+                  <mat-select #myselect>
+                    <strong *ngFor="let poid of poids" >
+                    <mat-option  *ngIf="poid.qtypoids !=0"  [value]="poid.id" (click)="click($event , poid.pricepoids ,poid.qtypoids,poid.prixa,poid.prixp , produit.id, poid.poids)">
+                     {{poid.poids}}
+                    </mat-option>
+                    </strong>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <hr *ngIf="produit.poids =='null'">
+              <div class="product-btns">
+                <button *ngIf="produit.quantity !=0 && produit.qtypoids !=0" class="primary-btn add-to-cart"  (click)="addtocart(produit.id ,produit.title != 'null' ? produit.title : produit.titlearab,produit.poids, poidschange , poidprice , pricep , qtypoids )"><i class="fa fa-shopping-cart"></i> ajouter au panier</button>
+                <button *ngIf="produit.quantity ==0 && produit.qtypoids ==0" class="primary-btn add-to-cart" [disabled]="true">Épuisé</button>
+
+              </div>
+              <br><hr>
+            </div>
+            <p class=" alert alert-info">Taxes incluses. <a [routerLink]="['/policies/shipping-policy']" style="color: #7dd8ff">Frais d'expédition</a> calculés lors du passage à la caisse.</p>
+<!--              <div class="product-rating">-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star-o empty"></i>-->
+<!--              </div>-->
+<!--              <a href="#">3 Review(s) / Add Review</a>-->
+            <br><hr>
+            <div class=""><p [innerHTML]="produit.descreption"><strong>DESCRIPTION <br><hr> </strong></p></div>
+            </div>
+
+        </div>
+      </div>
+      <!-- /Product Details -->
+    </div>
+    <!-- /row -->
+    <br>
+    <hr>
+    <br>
+<!--    <mat-card class="alsolike" *ngIf="CategoryProduit.length > 0">-->
+<!--      <mat-card-title>Vous pourriez aimer également</mat-card-title>-->
+<!--      <hr>-->
+<!--      <mat-card-content>-->
+<!--        <div class="row">-->
+<!--          <div class="col-md-3 col-sm-3 col-6" *ngFor="let pro of CategoryProduit">-->
+<!--            <div class="product-grid">-->
+<!--              <div class="product-image" [ngClass]="pro.quantity == 0 ? 'epuisee': ''" [ngStyle]="{backgroundImage: 'url('+url+ pro.image +')'}">-->
+<!--                <a [routerLink]="['/product_detail',pro.id]" class="images">-->
+<!--                  <img class="pic-1" >-->
+<!--                  &lt;!&ndash;              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">&ndash;&gt;-->
+<!--                </a>-->
+<!--                <ul class="social">-->
+<!--                  <li><a [routerLink]="['/product_detail',pro.product_id]"data-tip="Aperçu rapide"><i class="fa fa-eye"></i></a></li>-->
+<!--                  &lt;!&ndash;              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>&ndash;&gt;-->
+<!--                  <li *ngIf="pro.quantity !=0 && pro.qtypoids !=0"><a  data-tip="Ajouter au panier" (click)="addtocart(pro.product_id,pro.poids)"><i class="fa fa-shopping-cart"></i></a></li>-->
+<!--                </ul>-->
+<!--                <span class="product-new-label" *ngIf="pro.state === 'BIO'">{{pro.state}}</span>-->
+<!--&lt;!&ndash;                <span class="product-discount-label" *ngIf="pro.quantity !=0">New</span>&ndash;&gt;-->
+<!--                <span class="product-discount-label text-danger" *ngIf="pro.quantity <= 1">Épuisé</span>-->
+<!--              </div>-->
+<!--              <div class="product-content">-->
+<!--                <h3 class="title" ><span *ngIf="pro.poids != 'null' && pro.quantity != 0">{{pro.poids}}</span><a [routerLink]="['/product_detail',pro.product_id]" ><span *ngIf="pro.title !='null'">{{pro.title}}</span><small class="tiarabe" *ngIf="pro.title_arab !='null'">{{pro.title_arab}}</small></a> </h3>-->
+<!--                <div class="price" *ngIf="pro.quantity !=0">{{(pro.pricePromo?pro.pricePromo : pro.price) | currency:'DH' }}-->
+<!--                  <span *ngIf="pro.pricePromo">{{pro.price|currency:'DH'}}</span>-->
+<!--                </div>-->
+<!--                <div class="price text-danger" *ngIf="pro.quantity == 0">Épuisé-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+  </div>
+  <!-- /container -->
+
+</div>
+<app-footer></app-footer>
+
+

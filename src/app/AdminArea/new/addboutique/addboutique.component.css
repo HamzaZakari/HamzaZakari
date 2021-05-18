@@ -1,0 +1,48 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+mat-form-field{
+  font-size: 15px;
+  width: 70%;
+  margin: 0px 0px 0px 111px;
+}
+.imgprv{
+  text-align: center;
+}
+.btn-my{
+  font-size: 16px;
+}
+.modal-footer {
+  margin-top: 46px;
+}
+mat-card.shadow-lg.p-3.mb-5.bg-white.rounded.mat-card {
+  height: 100%;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.image-privew.ng-star-inserted {
+  text-align: center;
+}
+/*.example-container > * {*/
+/*  width: 100%;*/
+/*}*/
+mat-card{
+  width: 833px;
+  height: 600px;
+  margin-left: 27px;
+  border-radius: 36px;
+  box-shadow: lightgray;
+}
+.inputclass{
+  visibility: hidden;
+}
+/*.image-privew{*/
+/*  height: 5rem;*/
+/*  margin: 1rem;*/
+/*}*/
+/*.image-privew img{*/
+/*  height: 100%;*/
+/*}*/

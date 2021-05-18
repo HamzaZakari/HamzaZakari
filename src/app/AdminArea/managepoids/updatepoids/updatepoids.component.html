@@ -1,0 +1,33 @@
+<mat-spinner *ngIf="isloading"></mat-spinner>
+<form (ngSubmit)="save(poidsform)" #poidsform="ngForm" *ngIf="!isloading">
+<div class="example-container" *ngFor="let po of poids">
+  <mat-form-field appearance="fill">
+    <mat-label>poids</mat-label>
+    <input matInput name="poids" [(ngModel)]="poidss" >
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>prix</mat-label>
+    <input matInput name="prixv" [(ngModel)]="price" >
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>prix achat</mat-label>
+    <input matInput  name="prixa" [(ngModel)]="prixa">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>prix promotion</mat-label>
+    <input matInput [value]="[prixp]" name="prixp" [(ngModel)]="prixp">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>quantite</mat-label>
+    <input matInput [value]="[qty]" name="qty" [(ngModel)]="qty">
+  </mat-form-field>
+  <br>
+  <div class="text-center">
+  <button type="submit" class="fa fa-save"></button>
+  </div>
+  </div>
+</form>

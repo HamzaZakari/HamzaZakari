@@ -1,0 +1,221 @@
+
+<div>
+<form [formGroup]="postForm" (ngSubmit)="save()">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content smal1">
+            <div class="modal-header d-flex">
+              <h4 class="modal-title w-100 mt-10" id="myModalLabel">Ajouter Produit</h4>
+              <button mat-button (click) = 'goToprods()'><span class="material-icons">
+                reply
+                </span>
+                </button>
+            </div>
+            <div class="modal-body" >
+              <mat-checkbox (change)="testChecked($event)">Ce produit juste un test</mat-checkbox> <br><hr>
+              <mat-checkbox (change)="check($event)">Ce produit a un poids</mat-checkbox><br><hr>
+              <mat-checkbox (change)="checkBio($event)">Bio</mat-checkbox><br><hr>
+              <div class="form-group">
+                <mat-form-field>
+                <input
+                 matInput
+                 name="title"
+                 type="text"
+                 placeholder="Titre français"
+                 formControlName="title">
+                <mat-error *ngIf="postForm.get('title').invalid">your title is inccorect !</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field>
+                  <input
+                    matInput
+                    name="titlearab"
+                    type="text"
+                    placeholder="Titre arabe"
+                    formControlName="titlearab">
+                  <mat-error *ngIf="postForm.get('titlearab').invalid">your title is inccorect !</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field>
+                  <input
+                    matInput
+                    name="titleeng"
+                    type="text"
+                    placeholder="Le titre du produit en english"
+                    formControlName="titleeng">
+                  <mat-error *ngIf="postForm.get('titleeng').invalid">Le titre est incorrect!</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                <p class="alert alert-warning" *ngIf="mode== 'edit'">La dernière catégorie est<span class="badge" style="color: green;background: whitesmoke " *ngIf="Produit">{{this.selectedcategory}}</span></p>
+                <div class="select" >
+                  <label for="form7" class="marq">Catégorie</label>
+                  <select class="browser-default custom-select" id="form7" name="category" formControlName="category">
+                    <option  *ngFor="let cat of Category" [value]="cat.id">{{cat.titlefr != 'null'?cat.titlefr:cat.titlearab}}</option>
+                  </select>
+                </div>
+              </div>
+               <!-- <div class="form-group">
+                 <mat-form-field appearance="fill">
+                   <mat-label>Nom Fournisseur</mat-label>
+                   <mat-select name="forni" formControlName="forni">
+                     <mat-option *ngFor="let f of Fournisseur" [value]="f.id_forni">{{f.nom_forni}}</mat-option>
+                   </mat-select>
+                 </mat-form-field>
+               </div> -->
+              <div class="form-group">
+<!--                  <textarea matInput placeholder="Textarea" name="La descreption"  rows="8" formControlName="descreption"></textarea>-->
+                  <angular-editor name="descreption" formControlName="Descreption" [config]="editorConfig" style="z-index: 9" rows = '100'></angular-editor>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-xs-4">
+      <div class="" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content small">
+            <div class="modal-header">
+              <h4 class="modal-title" >Prix | Quantités</h4>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group" style="margin-bottom: -2px;">
+                <mat-form-field class="pricefiled">
+                  <input
+                    matInput
+                    name="pricev"
+                    type="number"
+                    placeholder=" Prix de vente"
+                    formControlName="pricev">
+                  <mat-error *ngIf="postForm.get('pricev').invalid">Le prix est incorrect !</mat-error>
+                </mat-form-field>
+                <mat-form-field class="pricefiled">
+                  <input
+                    matInput
+                    name="pricea"
+                    type="number"
+                    placeholder="Prix d'achat"
+                    formControlName="pricea">
+                </mat-form-field>
+                <mat-form-field class="pricefiled">
+                  <input
+                    matInput
+                    name="pricep"
+                    type="number"
+                    placeholder="Prix promotion"
+                    formControlName="pricep">
+                </mat-form-field>
+                <mat-form-field class="pricefiled" *ngIf="checked == true">
+                  <input
+                    matInput
+                    name="poids"
+                    type="text"
+                    placeholder="Poids par default"
+                    formControlName="poids">
+                  <mat-error *ngIf="postForm.get('poids').invalid">Le poids est incorrect !</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-group" style="margin-bottom: -22px;">
+                <mat-form-field class="pricefiled">
+                  <input
+                    matInput
+                    name="quantity"
+                    type="number"
+                    placeholder="Quantité"
+                    formControlName="quantity">
+                  <mat-error *ngIf="postForm.get('quantity').invalid">La Quantité est incorrect!</mat-error>
+                </mat-form-field>
+<!--                <mat-form-field class="pricefiled">-->
+<!--                  <input-->
+<!--                    matInput-->
+<!--                    name="ciel"-->
+<!--                    type="number"-->
+<!--                    placeholder="Seuil"-->
+<!--                    formControlName="ciel">-->
+<!--                  <mat-error *ngIf="postForm.get('ciel').invalid">your ciel is invalid !</mat-error>-->
+<!--                </mat-form-field>-->
+<!--                <mat-form-field class="pricefiled">-->
+<!--                  <input-->
+<!--                    matInput-->
+<!--                    name="min"-->
+<!--                    type="number"-->
+<!--                    placeholder="Min"-->
+<!--                    formControlName="min">-->
+<!--                  <mat-error *ngIf="postForm.get('min').invalid">your Min Filed is invalid !</mat-error>-->
+<!--                </mat-form-field>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content small">
+            <div class="modal-header">
+              <h4 class="modal-title" id="">Choisir une Image</h4>
+            </div>
+            <div class="modal-body">
+              <!-- in app.component.html -->
+<div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+	<ngx-dropzone-label>
+		<div>
+      <h2 *ngIf="mode === 'created'">vous pouvez faire glisser l'image et la déposer ici ou vous pouvez la télécharger</h2>
+      <h2 *ngIf="mode === 'edit'">vous pouvez faire glisser l'image et la déposer ici ou vous pouvez la téléchargers</h2>
+      <img width="50px" height="50px" [src]="url + Produit.image" *ngIf="mode === 'edit'">
+		</div>
+  </ngx-dropzone-label>
+  <div *ngIf="mode === 'created'">
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f " [removable]="true" (removed)="onRemove(f)">
+      <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+    </ngx-dropzone-image-preview>
+  </div>
+  <div *ngIf="mode === 'edit'">
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+      <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+    </ngx-dropzone-image-preview>
+  </div>
+</div>
+              <!-- <div>
+                <button mat-stroked-button type="button" (click)="openFile.click()">Upload Image</button>
+                <input type="file" class="inputclass" #openFile (change)="onchangeimage($event)">
+              </div>
+              <div class="image-privew" *ngIf="imagepreview && postForm.get('image').valid && mode === 'created' ">
+                <img [src]="imagepreview" alt="postForm.value.title">
+              </div>
+              <div class="image-privew" *ngIf="postForm.get('image').valid && mode === 'edit'">
+                <img [src]="imagepreview ? imagepreview : url + Produit.image" alt="postForm.value.image">
+              </div> -->
+              <div class="modal-footer">
+                <a type="button" class="btn btn-danger" placement="top" ngbTooltip="dissmiss add product" [routerLink]="['/dashboard/all_products']">
+                  fermer
+                </a>
+                <button mat-button class="btn btn-success" type="submit" *ngIf="mode =='created'" >enregistrer
+                  <span class="spinner-border spinner-border-sm" *ngIf="isloading"></span>
+                </button>
+                <button mat-button class="btn btn-success" type="submit" *ngIf="mode =='edit'" >Modifié</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<div class="alert alert-success" *ngIf="message">
+  <p>{{ message}}</p>
+</div>
+
+<!--add to DB-->
+

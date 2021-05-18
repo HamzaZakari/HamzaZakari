@@ -1,0 +1,61 @@
+
+<mat-card>
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input class="form-control" type="text" id="search_text" name="search_text" placeholder="Filter Category..."(keyup)="search($event)">
+      <!--      (keyup)="search($event)">-->
+
+    </div>
+  </div>
+  <br>
+  <table class="table table-striped" *ngIf="!isloding">
+    <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col"></th>
+      <th scope="col">Le nom de boutique</th>
+      <th scope="col">boutique name</th>
+      <th scope="col">اسم متجر</th>
+      <th scope="col">Created_at</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cat of Boutique let i = index ">
+      <th scope="row">{{i+1}}</th>
+      <td>
+        <div class="post-image">
+          <img [src]="[url+cat.imageboutique]" class="img-responsive ">
+        </div>
+      </td>
+      <td>
+        {{cat.nomFr != 'null'?cat.nomFr:'فارغ'}}
+      </td>
+      <td >
+        {{cat.nomAng  != 'null'  ?cat.nomAng:'no english فارغ'}}
+      </td>
+      <td>
+        {{cat.nomAr != 'null' ?cat.nomAr:'فارغ'}}
+      </td>
+
+
+      <td>{{cat.created | date}}</td>
+      <td class="d-flex" *ngIf="role !='service clients'">
+        <a [routerLink]="['/dashboard/update_category',cat.id_boutique]" class="btn btn-primary btn-my" ><i class="fa fa-edit"></i></a> |
+        <button type="button" class="btn btn-danger btn-my" (click)="delete(cat.id_boutique)"><span class="material-icons" style="cursor:pointer;">delete_forever</span></button>
+      </td>
+      <!--  <td>{{times | date}}</td>-->
+      <td *ngIf="(cat.created_at |date) === (times | date)"><span class="new badge p-12" style="background: #5cb85c"> new </span></td>
+    </tr>
+    </tbody>
+  </table>
+  <mat-spinner *ngIf="isloding" style="margin-left: 300px;"></mat-spinner>
+  <div *ngIf="this.Boutique.length <=0 && !isloding">
+    <p class="alert alert-warning"> aucune BOUTIQUE trouvée !</p>
+  </div>
+</mat-card>

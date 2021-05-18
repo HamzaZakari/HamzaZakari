@@ -1,0 +1,130 @@
+h3.text-info {
+  text-align: center;
+}
+mat-checkbox {
+  line-height: 24px!important;
+  font-size: 14px!important;
+  font-family: sans-serif;
+  color: #00230c!important;
+}
+button.btn-success {
+  width: 13%;
+  margin-left: 16px;
+  height: 40px;
+  border: none;
+  box-shadow: 2px 3px 5px grey;
+  border-radius: 5px;
+  background: #259225;
+  font-family: unset;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+mat-form-field.mat-form-field.ng-tns-c6-1.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder {
+  padding-left: 10px;
+}
+mat-form-field.mat-form-field.ng-tns-c6-1.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.ng-valid.mat-form-field-should-float.ng-dirty.ng-touched {
+  padding-left: 10px;
+}
+mat-form-field.mat-form-field.ng-tns-c6-27.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder.ng-untouched.ng-pristine.ng-valid {
+  margin-left: 20px;
+}
+.btn.trashbtn {
+  float: right;
+  color: #c10000;
+  font-size: 12px;
+  border: 1px solid #f7ecd9d9;
+}
+.btn.edithbtn {
+  float: right;
+  color: #02d0da;
+  font-size: 12px;
+  border: 1px solid #f7ecd9d9;
+}
+.page-header.d-flex.frais {
+  width: 100%;
+  left: 169px;
+  position: relative;
+}
+.page-header.d-flex.frais.ourcontrols{
+  width: 100%;
+  left: -4px;
+  position: relative;
+}
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  padding: 0px 5px 0px 5px;
+}
+i.fa.fa-check-circle.ng-star-inserted {
+  color: #08c708;
+  font-size: 12px;
+}
+.btn.trashbtn:hover {
+   background: red;
+   color: white;
+ }
+.btn.edithbtn:hover {
+  background: #00cfff;
+  color: #3d4d58;
+}
+button.btn-success.btnchekc {
+  width: 29%;
+  margin-left: -2px;
+  height: 27px;
+  border: none;
+  box-shadow: 2px 3px 5px grey;
+  border-radius: 5px;
+  background: #059405;
+  font-family: unset;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+button.btn-danger.btnchekcdanger {
+  width: 29%;
+  margin-left: 7px;
+  height: 27px;
+  border: none;
+  box-shadow: 2px 3px 5px grey;
+  border-radius: 5px;
+  background: #ef3600;
+  font-family: unset;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+mat-form-field.mat-form-field.ng-tns-c6-3.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder.ng-untouched.ng-pristine.ng-valid {
+  padding-left: 11px;
+}
+mat-form-field.mat-form-field.ng-tns-c6-3.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.ng-pristine.ng-valid.ng-touched.mat-form-field-hide-placeholder {
+padding-left: 10px;
+}
+span.spinner-border.spinner-border-sm {
+  margin-left: 15px;
+  font-size: 11px;
+}
+.toast {
+  width: 25%;
+  overflow: hidden;
+  font-size: 11px;
+  background-color: rgba(255,255,255,1);
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  border-radius: .25rem;
+  position: fixed;
+  top: 25px;
+  left: 630px;
+  box-shadow: 0px 1px 5px grey;
+}
+button.btn.btn-success {
+  float: right;
+}
+mat-form-field.mat-form-field.ng-tns-c6-3.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-focused  {
+  margin-left: 20px;
+}
+mat-form-field.mat-form-field.ng-tns-c6-1.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-focused{
+margin-left: 20px;
+}

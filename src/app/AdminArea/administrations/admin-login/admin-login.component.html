@@ -1,0 +1,33 @@
+<div class="main">
+  <p class="sign" align="center">Créer users</p>
+  <form class="form1" (ngSubmit)="Adminsingup(rapidecom)" #rapidecom="ngForm" >
+    <input class="un " type="text" align="center" placeholder="Nom complète" name="name" ngModel required>
+    <input class="pass" type="password" align="center" placeholder="Mot de passe" name="pass" ngModel required="">
+    <input class="pass" type="password" align="center" placeholder="Confirmez le mot de passe" name="Vrpass" ngModel required="">
+    <mat-form-field>
+      <mat-label>Le Role</mat-label>
+      <mat-select value="">
+        <mat-option *ngFor="let rol of Role" value="{{rol.role}}"(click)="click(rol.role, rol.value)">
+          {{rol.role}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="submit" align="center">Enregistrer <span class="spinner-border" *ngIf="isloading"></span></button>
+    <p class="forgot new" align="center" [routerLink]="['/dashboard/all_orders']"><a>Routeur a la page d'accueil</a></p>
+  </form>
+  <div class="polite" aria-live="" aria-atomic="" *ngIf="showtoast">
+    <div class="polite2">
+      <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+        <div class="toast-header">
+          <strong class="mr-auto">Alert</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true" (click)="closed()">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+         {{this.messageToast}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

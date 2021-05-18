@@ -1,0 +1,12 @@
+<div class="main">
+  <p class="sign" align="center">Authentifications !</p>
+  <form class="form1" (ngSubmit)="saverapide(rapidecom)" #rapidecom="ngForm" *ngIf="!isloading2">
+    <input class="un " type="text" align="center" placeholder="Nom complète" name="name" ngModel required>
+    <input class="pass" type="password" align="center" placeholder="Mot de passe" name="pass" ngModel required="">
+    <button class="submit" align="center">se connecter <span class="spinner-border" *ngIf="isloading"></span></button>
+<!--    <p class="forgot" align="center" [routerLink]="['/Creat-acount']"><a>Créer users?</a></p>-->
+<!--    <p class="forgot" align="center" ><a>Change mode passe?</a></p>-->
+  </form>
+  <span class="spinner-border mybordres" *ngIf="isloading2"></span>
+</div>
+
